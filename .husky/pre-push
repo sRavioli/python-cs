@@ -1,0 +1,57 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"   # husky stuff
+
+# Load conda.sh to use conda commands in this script
+source C:/tools/miniconda3/etc/profile.d/conda.sh
+
+# activating conda environment, exporting then exiting
+function call_conda() {
+  # activate
+  conda activate ./noodles
+
+  # export to different file
+  conda env export > noodles_temp.yml
+
+  # deactivate
+  conda deactivate
+
+  return 0
+}
+
+
+# Exporting environment to same file will always results in a true if(changed)
+# Workaround: export to temp file, compare files then act accordingly
+function are_equal() {
+  if cmp -s "./noodles.yml" "./noodles_temp.yml"; then
+    echo -e "Environment hasn't changed"
+
+    # Since equal, remove temp file
+    rm noodles_temp.yml && echo "Removing temp file"
+
+    # No error, can push normally
+    return 0
+  else
+    echo -e "Environment has changed"
+
+    # Since files differ, replace original with temp file
+    rm noodles.yml && echo "Replacing noodles.yml with temp file"
+    mv noodles_temp.yml noodles.yml && echo "Renaming to noodles.yml"
+
+    # Automatically track modified file
+    git add noodles.yml && echo -e "\nAutomatically tracking new file"
+
+    # Prevent push, user needs to commit file
+    return 1
+  fi
+}
+
+
+function main() {
+  echo -e "Invoking conda, exporting\n" &
+  call_conda &
+  wait
+
+  are_equal
+}
+
+main
