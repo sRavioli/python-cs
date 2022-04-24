@@ -47,7 +47,7 @@ function are_equal() {
 
 
 function main() {
-  echo -e "Invoking conda, exporting\n" &
+  echo -e "Initializing conda, exporting environment to temp file\n" &
   call_conda &
   wait
 
