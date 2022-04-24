@@ -10,6 +10,10 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 - [01 – Introduzione a Python](#01--introduzione-a-python)
+    - [Introduzione a Python](#introduzione-a-python)
+    - [L'interprete di Python](#linterprete-di-python)
+        - [Python e la tipizzazione](#python-e-la-tipizzazione)
+        - [Duck Typing](#duck-typing)
 
 <!-- /TOC -->
 </details>
@@ -133,4 +137,4 @@ afferma:
 
 > If it walks like a duck and it quacks like a duck, then it must be a duck.
 
-ovvero, all'incirca, 
+ovvero, all'incirca,
