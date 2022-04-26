@@ -10,26 +10,26 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 - [01 – Introduzione a Python](#01--introduzione-a-python)
-    - [Introduzione a Python](#introduzione-a-python)
-    - [L'interprete di Python](#linterprete-di-python)
-        - [Python e la tipizzazione](#python-e-la-tipizzazione)
+- [Introduzione a Python](#introduzione-a-python)
+    - [Python e la tipizzazione](#python-e-la-tipizzazione)
         - [Duck Typing](#duck-typing)
+- [L'interprete Python](#linterprete-python)
 
 <!-- /TOC -->
 </details>
 
-## Introduzione a Python
+# Introduzione a Python
 
 Prima di iniziare a parlare del linguaggio Python, è opportuno verificare che
 l'interprete sia installato nel nostro sistema. Per farlo, apriamo un
 terminale (Shell o Command Prompt, a seconda del nostro sistema), e scriviamo:
 
 ```sh
-~$ python --version
+$ python --version
 Python 3.9.7
 ```
 
-> I simboli `~$` indicano l'input in bash. È importante che la versione di Python sia `3.9.n`.
+> Il simbolo `$` indica l'input in bash. È importante che la versione di Python sia `3.9.n`.
 >
 > <details>
 >     <summary>Per i curiosi</summary>
@@ -48,9 +48,6 @@ distribuzione come [Anaconda](https://www.anaconda.com).
 
 > Se Anaconda non fa per te, prova [miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
-
-## L'interprete di Python
-
 A differenza del C, Python è un linguaggio _pseudocompilato_: un interprete si
 occupa di analizzare il codice sorgente (semplici file testuali con estensione
 `.py`) e, se sintatticamente corretto, di eseguirlo. In Python, non esiste una
@@ -64,8 +61,8 @@ comando e interagirvi.
 
 Facciamolo:
 
-```sh
-~$ python
+```pycon
+$ python
 Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
@@ -74,8 +71,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 > <details>
 >     <summary>Se scaricato tramite Anaconda</summary>
 >
-> ```bash
-> ~$ python
+> ```pycon
+> $ python
 > Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
 > Type "help", "copyright", "credits" or "license" for more information.
 > >>>
@@ -84,12 +81,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 Possiamo ora chiuderlo, lo useremo in seguito:
 
-```py
+```pycon
 >>> quit()
 ```
 
+> A differenza della shell che usa `$`, indichiamo con `>>>` l'input
+> nell'interprete Python.
 
-### Python e la tipizzazione
+
+## Python e la tipizzazione
 
 Python è un linguaggio a tipizzazione dinamica. Questo significa che
 l'interprete valuta il tipo di variabile a _runtime_ e, dato che il tipo può
@@ -122,7 +122,7 @@ Questo passaggio non è necessario in Python, è possibile effettuare
 direttamente le operazioni desiderate
 
 ```python
-var + 1.1   # ovvero 0 + 1.1 = 1.1
+var + 1.1   # ovvero 1.1
 ```
 
 Questo è, apparentemente, una grande semplificazione poiché non è più
@@ -132,9 +132,92 @@ principio del _duck typing_.
 
 ### Duck Typing
 
-Il nome del concetto si riferisce al duck test attribuito a James W. Riley che
+Il nome del concetto si riferisce al _duck test_ attribuito a James W. Riley che
 afferma:
 
 > If it walks like a duck and it quacks like a duck, then it must be a duck.
 
-ovvero, all'incirca,
+che in italiano sarabbe "Se cammina come un papero, e starnazza come un papero,
+allora dev'essere un papero". Ma che significa?
+
+Immaginiamo, tramite l'interprete Python, di assegnare alla nostra variabile
+`var` il valore di `1`. Per l'interprete `var` si _comporta_ come un numero
+intero e quindi stabilisce che lo sia.
+
+Proviamo a sommare a `var` il valore `1.1`, il risultato sarà un numero
+decimale, `2.1`, quindi l'interprete "cambierà idea" poiché i comportamenti
+assunti da `var` sono assimilabili ad una variabile di tipo `float`.
+<!-- Possiamo verificarlo con l'interprete
+
+```pycon
+$ python
+Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> var = 1
+>>> type(var)
+<class 'int'>
+>>> type(var + 1.1)
+<class 'float'>
+>>>
+```
+
+> Abbiamo invocato la funzione `type()`, che usiamo per conoscere il tipo della
+> variabile `var`. Vedremo più avanti cosa sono le funzioni. -->
+
+L'utilità del _duck typing_ è evidente: permette allo sviluppatore di omettere
+delle operazioni di casting, rendendo il codice più semplice da scrivere e
+mantenere. Tuttavia, **bisogna** tenere conto di questa proprietà nel momento
+in cui si usano classi e oggetti, dato che l'interprete proverà ad inferire
+ed usare automaticamente un tipo in base al contesto in cui viene usata la
+variabile, con le comodità (ma anche i disastri) che questo comporta.
+
+# L'interprete Python
+
+Nella sezione [introduttiva](#introduzione-a-python) abbiamo visto come
+installare Python, in modo da avere un ambiente di lavoro accessibile da riga di
+comando. Apriamo una shell (Powershell, bash, etc.) e invochiamo l'interprete
+usando il seguente comando:
+
+```sh
+$ python
+```
+
+Possiamo ora utilizzare Python in maniera interattiva.
+
+# Operazioni matematiche
+
+Possiamo usare l'interprete come se fosse una calcolatrice, semplicemente
+digitiamo le operazioni che vogliamo eseguire e premiamo <kbd>Enter</kbd>.
+Proviamo con le quattro operazioni aritmetiche:
+
+```pycon
+>>> 2 + 2
+4
+>>> 4 - 1
+3
+>>> 3 * 8
+24
+>>> 24 / 2
+12.0
+```
+
+Notiamo immediatamente una stranezza nella divisione, il risultato è di tipo
+`float` nonostante i due operandi fossero di tipo `int`.
+
+> <details>
+>     <summary>Possiamo verificarlo...</summary>
+>
+> ... invocando la _funzione_ `type()` che ci permette di verificare quale sia
+> il tipo di una variabile. Vedremo in seguito cosa è una funzione.
+> ```pycon
+> >>> type(24)
+> <class 'int'>
+> >>> type(2)
+> <class 'int'>
+> >>> type(24 / 2)
+> <class 'float'>
+> ```
+> </details>
+
+Questo accade perché le divisioni restituiscono **sempre** un numero in virgola
+mobile
