@@ -2,6 +2,8 @@
 
 > Corso di Python per il calcolo scientifico
 
+> Appunti redatti da Simone Fidanza, s.fidanza1@studenti.uniba.it
+
 Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <details>
@@ -85,6 +87,8 @@ editor di testo.
 
 ## Modalità 2 – Tema d'anno
 
+**Questa è la modalità suggerita**
+
 Consiste nella stesura di un tema d’anno descrivente la soluzione ad un
 problema pratico scelto dagli studenti.
 In tale modalità, saranno formati gruppi da 1 a 3 studenti, ognuno dei quali
@@ -97,5 +101,3 @@ dovrà redarre:
 
 Il codice dovrà essere messo a disposizione mediante
 [GitHub](https://www.github.com/), secondo le modalità indicate dal docente.
-
-**Questa è la modalità suggerita.**
