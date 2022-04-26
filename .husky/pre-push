@@ -40,7 +40,10 @@ function are_equal() {
     # Automatically track modified file
     git add noodles.yml && echo -e "\nAutomatically tracking new file"
 
-    # Prevent push, user needs to commit file
+    # Automatically commit modified file
+    git commit -m "fix(env): auto-commit updated environment" && echo "Automatically committing..."
+
+    # Prevent push so user can amend commit msg or push
     return 1
   fi
 }
