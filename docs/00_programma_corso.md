@@ -39,12 +39,13 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 | Data e Ora (16:00 - 19:00) | Argomenti Trattati                                       |
 |:-------------------------- |:-------------------------------------------------------- |
-| 21/04/2022  | Introduzione al Corso <br/>Introduzione a Python         |
-| 28/04/2022  | Concetti sintattici fondamentali in PythonStrutture dati |
-| 05/05/2022  | Classi, moduli e package in Python                       |
-| 12/05/2022  | Introduzione a NumPy <br/> Array in NumPy                |
-| 19/05/2022  | Aritmetica ed algebra in NumPy                           |
-| 23/05/2022  | Operazioni polinomiali e statistica in NumPy             |
+| 21/04/2022                 | Introduzione al Corso <br/>Introduzione a Python         |
+| 28/04/2022                 | Concetti sintattici fondamentali in PythonStrutture dati |
+| 05/05/2022                 | Classi, moduli e package in Python                       |
+| 12/05/2022                 | Introduzione a NumPy <br/> Array in NumPy                |
+| 19/05/2022                 | Aritmetica ed algebra in NumPy                           |
+| 23/05/2022                 | Operazioni polinomiali e statistica in NumPy             |
+
 
 
 > Parte 2 (Data Analysis)
