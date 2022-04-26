@@ -10,25 +10,28 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 -   [00 – Programma e obiettivi del corso](#00--programma-e-obiettivi-del-corso)
-    -   [Informazioni utili](#informazioni-utili)
-    -   [Programma del corso](#programma-del-corso)
-    -   [Metodo di Valutazione](#metodo-di-valutazione)
-        -   [Modalità 1 – Colloquio Orale](#modalità-1--colloquio-orale)
-        -   [Modalità 2 – Tema d'anno](#modalità-2--tema-danno)
+-   [Informazioni utili](#informazioni-utili)
+-   [Programma del corso](#programma-del-corso)
+-   [Metodo di Valutazione](#metodo-di-valutazione)
+    -   [Modalità 1 – Colloquio Orale](#modalità-1--colloquio-orale)
+    -   [Modalità 2 – Tema d'anno](#modalità-2--tema-danno)
 
 <!-- /TOC -->
 </details>
 
 
-## Informazioni utili
+# Informazioni utili
 
 -   **Indirizzo email:**  angelo.cardellicchio@stiima.cnr.it;
--   **Svolgimento delle lezioni:** le lezioni sono svolte in modalità ibrida. È comunque **fortemente consigliata** la frequenza in presenza;
--   È **obbligatorio**, ai fini del superamento dell’esame, **seguire almeno il 70% delle lezioni**, in qualunque modalità;
--   **Materiale didattico:** [del prof](https://python.angelocardellicchio.it), [miei](https://www.github.com/sRavioli/pythoncs).
+-   **Svolgimento delle lezioni:** le lezioni sono svolte in modalità ibrida. È
+  comunque **fortemente consigliata** la frequenza in presenza;
+-   È **obbligatorio**, ai fini del superamento dell’esame, **seguire almeno il
+  70% delle lezioni**, in qualunque modalità;
+-   **Materiale didattico:** [del prof](https://python.angelocardellicchio.it),
+  [mio](https://www.github.com/sRavioli/pythoncs).
 
 
-## Programma del corso
+# Programma del corso
 
 > Parte 1 (Fondamentali)
 
@@ -68,19 +71,31 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 | 05/07/2022                 | Seminario didattico – Angela Lombardi, Ph.D., Dipartimento Interateneo di Fisica, UniBa |
 
 
-## Metodo di Valutazione
+# Metodo di Valutazione
 
-### Modalità 1 – Colloquio Orale
+Sono presenti due modalità di valutazione.
 
-Consiste in un colloquio della durata indicativa di 30 minuti all’interno del quale saranno poste tre domande, una di natura teorica, e due di natura pratica. Per le domande di natura pratica sarà necessario disporre di una editor di testo.
 
-### Modalità 2 – Tema d'anno
+## Modalità 1 – Colloquio Orale
 
-Consiste nella stesura di un tema d’anno descrivente la soluzione ad un problema pratico scelto dagli studenti.
-In tale modalità, saranno formati gruppi da 1 a 3 studenti, ognuno dei quali dovrà redarre:
+Consiste in un colloquio della durata indicativa di 30 minuti all’interno del
+quale saranno poste tre domande, una di natura teorica, e due di natura
+pratica. Per le domande di natura pratica sarà necessario disporre di un
+editor di testo.
+
+## Modalità 2 – Tema d'anno
+
+Consiste nella stesura di un tema d’anno descrivente la soluzione ad un
+problema pratico scelto dagli studenti.
+In tale modalità, saranno formati gruppi da 1 a 3 studenti, ognuno dei quali
+dovrà redarre:
+
 -   una relazione sintetica (massimo quattro pagine) delle attività svolte;
--   una presentazione sintetica (massimo 12 slides) delle attività svolte, da discutere in sede di orale;
+-   una presentazione sintetica (massimo 12 slides) delle attività svolte, da
+  discutere in sede di orale;
 -   il codice (funzionante) relativo alle attività svolte.
-Il codice dovrà essere messo a disposizione mediante [GitHub](https://www.github.com/), secondo le modalità indicate dal docente.
+
+Il codice dovrà essere messo a disposizione mediante
+[GitHub](https://www.github.com/), secondo le modalità indicate dal docente.
 
 **Questa è la modalità suggerita.**
