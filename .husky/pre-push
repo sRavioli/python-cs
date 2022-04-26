@@ -2,59 +2,101 @@
 . "$(dirname "$0")/_/husky.sh"   # husky stuff
 
 # Load conda.sh to use conda commands in this script
-source C:/tools/miniconda3/etc/profile.d/conda.sh
+. C:/tools/miniconda3/etc/profile.d/conda.sh
 
-# activating conda environment, exporting then exiting
-function call_conda() {
-  # activate
-  conda activate ./noodles
+# Variables
+OVERWRITE='\e[1A\e[K'
+CHECK_MARK='\033[0;32m✓\033[0m'
+CROSS_MARK='\033[0;31m✘\033[0m'
+WARNING='\033[1;33m!\033[0m'
+ADD_MARK='\033[0;34m+\033[0m'
+COMMIT_MARK='\033[1;35m→\033[0m'
 
-  # export to different file
-  conda env export > noodles_temp.yml
 
-  # deactivate
-  conda deactivate
+# Check activation of the environment
+check_environment() {
+  if ! [ $CONDA_SHLVL = 1 ]; then
+    # Activate the environment since it is deactivated, print status
+    printf "Activating ${ENVIRONMENT}...\n" &&
+    conda activate ./noodles &&
+    printf "${OVERWRITE}${CHECK_MARK} Activated\n"
+  else
+    # Pass, print status
+    printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
+  fi
 
-  return 0
+  return
+}
+
+
+# Invoke conda to export environment to environment.yaml
+call_conda() {
+  # take environment name as arguments
+  ENVIRONMENT="$1"
+
+  check_environment
+
+  # Export environment to .yaml
+  printf "Exporting to ${ENVIRONMENT}_temp.yaml...\n" &&
+  conda env export > noodles_temp.yaml &&
+  printf "${OVERWRITE}${CHECK_MARK} Exported ${ENVIRONMENT}_temp.yaml\n"
+
+  # Deactivate environment
+  printf "Deactivating ${ENVIRONMENT}...\n" &&
+  conda deactivate &&
+  printf "${OVERWRITE}${CHECK_MARK} Deactivated\n"
+
+  return
 }
 
 
 # Exporting environment to same file will always results in a true if(changed)
 # Workaround: export to temp file, compare files then act accordingly
-function are_equal() {
-  if cmp -s "./noodles.yml" "./noodles_temp.yml"; then
-    echo -e "Environment hasn't changed"
+check_diff() {
+  # Add empty line, acts as a separator
+  printf "\n"
 
-    # Since equal, remove temp file
-    rm noodles_temp.yml && echo "Removing temp file"
+  if cmp -s "./${ENVIRONMENT}.yaml" "./${ENVIRONMENT}_temp.yaml"; then
+    # File unchanged, allow push
+    printf "${CHECK_MARK} Environment unchanged\n"
+    printf "${CHECK_MARK} Allowing push\n" &&
 
-    # No error, can push normally
-    return 0
+    # Remove temp file
+    rm ./${ENVIRONMENT}_temp.yaml
   else
-    echo -e "Environment has changed"
+    # File changed, replace and deny push
+    printf "${WARNING} Environment changed\n"
 
-    # Since files differ, replace original with temp file
-    rm noodles.yml && echo "Replacing noodles.yml with temp file"
-    mv noodles_temp.yml noodles.yml && echo "Renaming to noodles.yml"
+    # Rename temp to noodles.yaml
+    mv ./${ENVIRONMENT}_temp.yaml ./${ENVIRONMENT}.yaml
 
-    # Automatically track modified file
-    git add noodles.yml && echo -e "\nAutomatically tracking new file"
+    # Track changes
+    printf "${ADD_MARK} Tracking changes\n" &&
+    git add ./${ENVIRONMENT}.yaml
 
-    # Automatically commit modified file
-    git commit -m "fix(env): auto-commit updated environment" && echo "Automatically committing..."
+    # Commit changes, can edit with `git commit --amend`
+    printf "${COMMIT_MARK} Committing changes (edit: git commit --amend)\n" &&
+    git commit -m "feat(env): auto-updated ``${ENVIRONMENT}.yaml``"
 
-    # Prevent push so user can amend commit msg or push
-    return 1
+    # Add empty line, acts as a separator
+    printf "\n"
+    # Deny push, make user push again
+    # TODO: Add the possibility to push even if files differ
+    printf "${CROSS_MARK} Denying push\n"
+
+    # Push denied => 126: "command not executable"
+    exit 126
   fi
+
+  return
 }
 
 
-function main() {
-  echo -e "Initializing conda, exporting environment to temp file\n" &
-  call_conda &
-  wait
+main() {
+  call_conda noodles
+  check_diff
 
-  are_equal
+  return
 }
 
 main
