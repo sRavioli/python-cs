@@ -1,3 +1,5 @@
 # PythonCS
 
-hey
+repo del corso.
+
+WiP
