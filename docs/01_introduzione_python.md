@@ -2,7 +2,10 @@
 
 > Corso di Python per il Calcolo Scientifico
 
+> Appunti redatti da Simone Fidanza, s.fidanza1@studenti.uniba.it
+
 Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
+
 
 <details>
     <summary>Outline</summary>
@@ -210,9 +213,8 @@ Notiamo immediatamente una stranezza nella divisione, il risultato è di tipo
 > ... invocando la _funzione_ `type()` che ci permette di verificare quale sia
 > il tipo di una variabile. Vedremo in seguito cosa è una funzione.
 > ```pycon
-> >>> type(24)
+> >>> type(24); type(2)
 > <class 'int'>
-> >>> type(2)
 > <class 'int'>
 > >>> type(24 / 2)
 > <class 'float'>
@@ -220,4 +222,8 @@ Notiamo immediatamente una stranezza nella divisione, il risultato è di tipo
 > </details>
 
 Questo accade perché le divisioni restituiscono **sempre** un numero in virgola
-mobile
+mobile. Proviamo nuovamente:
+
+```pycon
+
+```
