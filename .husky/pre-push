@@ -59,10 +59,9 @@ check_diff() {
   if cmp -s "./${ENVIRONMENT}.yaml" "./${ENVIRONMENT}_temp.yaml"; then
     # File unchanged, allow push
     printf "${CHECK_MARK} Environment unchanged\n"
-    printf "${CHECK_MARK} Allowing push\n" &&
 
-    # Remove temp file
-    rm ./${ENVIRONMENT}_temp.yaml
+    printf "${CHECK_MARK} Allowing push\n" &&
+    rm ./${ENVIRONMENT}_temp.yaml   # Remove temp file
   else
     # File changed, replace and deny push
     printf "${WARNING} Environment changed\n"
