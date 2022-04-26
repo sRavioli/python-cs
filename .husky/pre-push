@@ -75,7 +75,7 @@ check_diff() {
 
     # Commit changes, can edit with `git commit --amend`
     printf "${COMMIT_MARK} Committing changes (edit: git commit --amend)\n" &&
-    git commit -m "feat(env): auto-updated ``${ENVIRONMENT}.yaml``"
+    git commit -m "feat(env): auto-updated \`${ENVIRONMENT}.yaml\`"
 
     # Add empty line, acts as a separator
     printf "\n"
