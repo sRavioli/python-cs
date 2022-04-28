@@ -30,6 +30,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
       7. [Concatenazione con le _f_-strings](#concatenazione-con-le-f-strings)
          1. [Che metodo usare?](#che-metodo-usare)
    3. [Indicizzazione delle stringhe](#indicizzazione-delle-stringhe)
+   4. [Slicing su stringhe](#slicing-su-stringhe)
 
 <!-- /TOC -->
 </details>
@@ -196,8 +197,11 @@ installare Python, in modo da avere un ambiente di lavoro accessibile da riga di
 comando. Apriamo una shell (Powershell, bash, etc.) e invochiamo l'interprete
 usando il seguente comando:
 
-```sh
+```pycon
 $ python
+Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
 ```
 
 Possiamo ora utilizzare Python in maniera interattiva.
@@ -250,7 +254,7 @@ mobile. Proviamo nuovamente:
 1.0
 ```
 
-Sono presenti altri tre operatori che Python usa, vediamoli:
+Sono presenti altri tre operatori, vediamoli:
 
 ```pycon
 >>> 16 // 3
@@ -266,7 +270,8 @@ il quoziente di una divisione, il secondo (`%`) è l'operatore _modulo_ che
 quindi sarebbe il resto di una divisione, l'ultimo (`**`) è l'elevazione a
 potenza.
 
-> Tipi numerici in Python
+> <details>
+> <summary>ℹ️ <em>Tipi numerici in Python</em></summary>
 >
 > Finora abbiamo parlato soltanto di numeri interi o decimali. Python supporta
 > anche altri tipi, ad esempio `Decimal` e `Fraction`. È inoltre presente un
@@ -276,6 +281,8 @@ potenza.
 > >>> 1j + 3j
 > 4j
 > ```
+>
+> </details>
 
 Abbiamo visto vari operatori matematici, riassumiamoli.
 
@@ -315,11 +322,12 @@ sintattico (`SyntaxError`):
 SyntaxError: invalid syntax
 ```
 
-> ✏️ Nota
+> <details>
+> <summary>✏️ <strong>Nota</strong></summary>
 >
 > Tutti i caratteri preceduti dal simbolo `\` saranno interpretati come
-> character, a meno di aggiungere il simbolo `r` prima dell'inizio della
-> stringa:
+> dei caratteri speciali, a meno di aggiungere il simbolo `r` prima dell'inizio
+> della stringa:
 >
 > ```pycon
 > >>> print('C:\nuova_cartella')
@@ -331,14 +339,19 @@ SyntaxError: invalid syntax
 >
 > In parole povere, `r'...'` viene interpretata letteralmente, ignorando le
 > sequenze di escape (`'\n'`, etc.).
+>
+> </details>
 
 ## Stringhe in righe multiple
 
-> Stringhe e liste
+> <details>
+> <summary>ℹ️ <em>Stringhe e liste</em></summary>
 >
 > La maggior parte dei concetti che vedremo nel seguito sono applicabili anche
 > alle liste. Anzi, per essere precisi, derivano proprio dalle liste, in quanto
 > Python considera una stringa un particolare tipo di lista.
+>
+> </details>
 
 Le stringhe possono articolarsi su più righe. Per stampare una stringa
 in righe multiple è necessario usare le _triple-quotes_, ovvero tre virgolette
@@ -364,10 +377,10 @@ Altra stringa
 multilinea
 ```
 
-> Notiamo l'utilizzo del backslash (`\`). Inserire questo carattere comunica
-> all'interprete di non inserire il carattere _newline_ (`\n`) al termine della
-> riga. Infatti viene stampato `linea` subito dopo `multi\` generando così
-> `multilinea`.
+Notiamo l'utilizzo del backslash (`\`). Inserire questo carattere comunica
+all'interprete di non inserire il carattere _newline_ (`\n`) al termine della
+riga. Infatti viene stampato `linea` subito dopo `multi\` generando così
+`multilinea`.
 
 ## Concatenazione di Stringhe
 
@@ -451,8 +464,6 @@ esempio:
 'stringa concatenata'
 ```
 
-> Scrivere ``
-
 ### Concatenazione col metodo `.join()`
 
 Il metodo `.join()` ci permette di concatenare una lista di stringhe in una
@@ -498,8 +509,8 @@ stringhe:
 >>> 'una stringa concatenata'
 ```
 
-> In questo esempio, Python sostituisce il `%s` nel _literal_ con la variabile
-> di tipo stringa corrispondente nella _tuple_ che segue l'operatore `%`.
+In questo esempio, Python sostituisce il `%s` nel _literal_ con la variabile
+di tipo stringa corrispondente nella _tuple_ che segue l'operatore `%`.
 
 ### Concatenazione con il metodo `.format()`
 
@@ -555,4 +566,87 @@ unitaria:
 >>> lettera = "P"
 >>> lettera[0]
 'P'
+```
+
+Gli indici che usiamo per accedere alle stringhe possono essere anche negativi,
+Python dunque considererà gli elementi che vanno da destra verso sinistra.
+Ad esempio:
+
+```pycon
+>>> str[-1]
+'n'
+```
+
+## Slicing su stringhe
+
+L'operazione detta di _slicing_ permette di estrarre una determinata parte di
+una stringa. In generale, il comando, assume il seguente aspetto:
+
+```python
+str[<inizio>:<fine>:<step>]
+```
+
+sono tutti e tre dei valori numerici interi, per la precisione:
+
+- `<inizio>` rappresenta la posizione (indice) da cui far partire lo slicing;
+- `<fine>` rappresenta la posizione (indice) in cui fermarsi per lo slicing;
+- `<step>` rappresenta l'incremento con cui procedere.
+
+Ad esempio:
+
+```pycon
+>>> str = "slicing"
+>>> str[0:2]   # è come scrivere str[0:2:1]
+'sl'
+>>> str[2:5]
+'ici'
+>>> str[0:6:2]
+'sii'
+```
+
+Dunque lo `<step>` è di default pari a `1` e quindi può essere omesso.
+
+> <details>
+> <summary>✏️ <strong>Nota</strong></summary>
+>
+> L'elemento di indice `<inizio>` sarà **incluso** nella stringa finale, al
+> contrario, l'elemento di indice `<fine>` verrà **escluso**, infatti:
+>
+> ```pycon
+> >>> str[0:2]
+> 'sl'   # s ha indice 0, l ha indice 1
+> ```
+>
+> </details>
+
+Per stampare tutti i caratteri che precedono `<fine>` (escluso) possiamo usare
+`[:<fine>]`. Ad esempio:
+
+```pycon
+>>> str[:5]
+'slici'
+```
+
+Per stampare tutti i caratteri che seguono `<inizio>` (incluso) possiamo usare
+`[<inizio>:]`. Ad esempio:
+
+```pycon
+>>> str[2:]
+'icing'
+```
+
+Anche le stringe supportano gli indici negativi. Ad esempio se volessimo
+stampare tutti i caratteri dalla terzultima lettera in poi, possiamo scrivere:
+
+```pycon
+>>> str[-3:]
+'ing'
+```
+
+Se invece volessimo stampare tutti fino alla terzultima lettera (esclusa),
+possiamo scrivere:
+
+```pycon
+>>> str[:-3]
+'slic'
 ```
