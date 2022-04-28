@@ -1,4 +1,4 @@
 PythonCS.code-workspace
-noodles/
-.vscode/
 .markdownlint.json
+.vscode/
+noodles/
