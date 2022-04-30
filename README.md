@@ -38,6 +38,8 @@ modo:
   oppure a casa (`H`);
 - un nome, che è un breve riassunto della traccia.
 
+Ad esempio: `00_L_conta_dieci.py`.
+
 Nelle prime righe di ogni file di esercizi sarà riportata la traccia dello
 stesso.
 
