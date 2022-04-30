@@ -3,13 +3,10 @@
 
 
 def count_ten():
-    # crea contatore
-    i = 0
+    i = 0  # crea contatore
     while i < 10:
-        # incrementa contatore
-        i += 1
-        # stampa contatore
-        print(i)
+        i += 1  # incrementa contatore
+        print(i)  # stampa contatore
 
 
 # chiama funzione
