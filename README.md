@@ -39,7 +39,8 @@ modo:
   oppure a casa (`H`);
 - un nome, che è un breve riassunto della traccia.
 
-Ad esempio: `02-1_L_itera_while`.
+Dunque i file saranno del tipo `<num>-<num>_<L/H>_<nome_breve>.py`,
+ad esempio: `02-1_L_itera_while.py`.
 
 Nelle prime righe di ogni file di esercizi sarà riportata la traccia dello
 stesso.
