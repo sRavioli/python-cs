@@ -28,9 +28,17 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
       5. [Concatenazione con il `%`-formatting](#concatenazione-con-il--formatting)
       6. [Concatenazione con il metodo `.format()`](#concatenazione-con-il-metodo-format)
       7. [Concatenazione con le _f_-strings](#concatenazione-con-le-f-strings)
-         1. [Che metodo usare?](#che-metodo-usare)
+      8. [Che metodo usare?](#che-metodo-usare)
    3. [Indicizzazione delle stringhe](#indicizzazione-delle-stringhe)
    4. [Slicing su stringhe](#slicing-su-stringhe)
+   5. [Lunghezza di una stringa](#lunghezza-di-una-stringa)
+   6. [Immutabilità di una stringa](#immutabilità-di-una-stringa)
+6. [Liste](#liste)
+   1. [Concatenazione, indicizzazione e slicing su liste](#concatenazione-indicizzazione-e-slicing-su-liste)
+      1. [Esempi](#esempi)
+   2. [Mutabilità di una lista](#mutabilità-di-una-lista)
+   3. [Operazioni sulle liste](#operazioni-sulle-liste)
+   4. [Le liste sono eterogenee](#le-liste-sono-eterogenee)
 
 <!-- /TOC -->
 </details>
@@ -542,7 +550,7 @@ Vediamo come:
 'concatenazione di stringhe in Python'
 ```
 
-#### Che metodo usare?
+### Che metodo usare?
 
 Nonostante sono presenti molteplici modi per concatenare stringhe in Python, è
 raccomandato usare o l'operatore standard `+` o il metodo `.join()` o le
@@ -558,6 +566,10 @@ indicizzarli. Ad esempio:
 >>> str[0]
 'P'
 ```
+
+Notiamo che Python (e molti altri linguaggi) hanno come primo indice lo `0`.
+Dunque per accedere al primo carattere, useremo l'indice `0` e **non**
+l'indice `1`.
 
 Anche i singoli caratteri sono considerati come delle stringhe ma di lunghezza
 unitaria:
@@ -649,4 +661,291 @@ possiamo scrivere:
 ```pycon
 >>> str[:-3]
 'slic'
+```
+
+> <details>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> Per ottenere l'intera stringa in un'operazione di slicing basta non inserire
+> né `<inizio>` né `<fine>` né `<step>`. Ad esempio:
+>
+> ```pycon
+> >>> str[:]
+> 'slicing'
+> ```
+>
+> </details>
+
+## Lunghezza di una stringa
+
+Per ottenere la lunghezza di una stringa possiamo usare la funzione `len()`:
+
+```pycon
+>>> str = "stringa"
+>>> len(str)
+7
+```
+
+## Immutabilità di una stringa
+
+In Python le stringhe sono _immutabili_ e come indica la parola stessa, **non**
+possono essere modificate. Se, ad esempio, provassimo a ridefinire uno o più
+elementi a cui accediamo mediante indice, otterremo un errore:
+
+```pycon
+>>> str = "stringa"
+>>> str[0] = "t"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+```
+
+> <details>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> Possiamo assegnare alla variabile la stringa modificata:
+>
+> ```pycon
+> >>> str = "ttringa"
+> >>> str
+> 'ttringa'
+> ```
+>
+> Facendo questo però, non sarà più possibile accedere al valore precedente di
+> `str` (`"stringa"`), esso non viene eliminato immediatamente dalla memoria,
+> però non c'è più modo di accedervi.
+>
+> Per evitare questo spiacevole inconveniente, possiamo assegnare il valore
+> modificato ad una variabile differente:
+>
+> ```pycon
+> >>> str1 = "ttringa"
+> >>> str1
+> 'ttringa'
+> >>> str
+> 'stringa'
+> ```
+>
+> </details>
+
+# Liste
+
+Come detto precedentemente, le stringhe non sono altro che un caso particolare
+di una lista. Dunque cos'è una lista?
+
+La lista è uno dei quattro tipi di strutture _built-in_ che Python offre per
+memorizzare delle sequenze di dati. Esse sono concettualmente simili agli
+_array_ di altri linguaggi di programmazione come il C, seppur con alcune
+significative differenze.
+
+Una lista è, appunto, una lista di elementi separati da una virgola e
+racchiusi tra parentesi quadre (`[...]`). Dichiariamo, ad esempio una lista di
+numeri:
+
+```pycon
+>>> lst = [0, 1, 2, 3, 4]
+>>> lst
+[0, 1, 2, 3, 4]
+```
+
+## Concatenazione, indicizzazione e slicing su liste
+
+Come per le stringhe anche per le liste è possibile effettuare operazioni di
+indicizzazione, slicing e concatenazione:
+
+```pycon
+>>> lst = [0, 1, 2, 3, 4, 5]
+>>> lst[0]
+0
+>>> lst[2:]
+[2, 3, 4, 5]
+>>> lst_2 = [6, 7, 8]
+>>> lst + lst_2
+[0, 1, 2, 3, 4, 5, 6, 7, 8]
+>>> lst + [6]
+[0, 1, 2, 3, 4, 5, 6]
+```
+
+Possiamo dunque accedere ai vari elementi di una lista attraverso l'utilizzo
+degli indici. Questi ultimi si comportano allo stesso modo di quelli delle
+stringhe. D'altronde le stringhe sono un caso particolare di lista.
+
+### Esempi
+
+Prendiamo in considerazione la stringa:
+
+```pycon
+>>> lst = [0, 1, 2, 3, 4, 5, 6]
+```
+
+Stampiamo ora tutti gli elementi di indice pari:
+
+```pycon
+>>> lst[0::2]
+[0, 2, 4, 6]
+```
+
+Oppure tutti gli elementi di indice pari, a partire dal terzultimo:
+
+```pycon
+>>> lst[-3::2]
+[4, 6]
+```
+
+Partendo dal terzultimo elemento, arriviamo al primo:
+
+```pycon
+>>> lst[-3::-1]
+[4, 3, 2, 1, 0]
+```
+
+Partendo dall'ultimo elemento arriviamo al terzultimo elemento, in ordine
+inverso:
+
+```pycon
+>>> lst[:3:-1]
+[6, 5, 4]
+```
+
+Prendiamo gli ultimi tre elementi, in ordine inverso:
+
+```pycon
+>>> lst[len(lst) - 1:len(lst) - 4:-1]
+[6, 5, 4]
+```
+
+> <details>
+> <summary>✏️ <strong>Nota</strong></summary>
+>
+> Abbiamo utilizzato la _funzione_ `len()`, questa ci restituisce la lunghezza
+> di un qualsiasi tipo di struttura dati.
+>
+> </details>
+
+Prendiamo gli elementi di indice pari, in ordine inverso:
+
+```pycon
+>>> lst[::-2]
+[6, 4, 2, 0]
+```
+
+## Mutabilità di una lista
+
+Al contrario delle stringhe, le liste sono oggetti _mutabili_, dunque possiamo
+modificarne il contenuto. Ad esempio:
+
+```pycon
+>>> lst = [0, 1, 2, 3, 4, 5]
+>>> lst[0] = 99
+lst
+[99, 1, 2, 3, 4, 5]
+```
+
+Gli elementi che compongono una lista non devono necessariamente essere dei
+numeri.
+
+## Operazioni sulle liste
+
+Si possono effettuare varie operazioni su una lista. Ad esempio, possiamo
+eliminare degli elementi di una liste con `[]` combinato all'operazione di
+slicing:
+
+```pycon
+>>> lst[4:] = []
+>>> lst
+[0, 1, 2, 3]
+```
+
+> <details>
+> <summary>✏️ <strong>Nota</strong></summary>
+>
+> L'oggetto `[]` non è altro che una lista vuota. Stiamo sostituendo tutti gli
+> elementi selezionati dall'operazione di slicing, con una lista vuota.
+>
+> </details>
+>
+> <details>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> Possiamo eliminare ogni singolo elemento contenuto in una lista utilizzando lo
+> slicing e la lista vuota `[]`:
+>
+> ```pycon
+> >>> lst[:] = []
+> >>> lst
+> >>> []
+> ```
+>
+> Possiamo anche omettere l'operazione di slicing:
+>
+> ```pycon
+> >>> lst = [0, 1, 2, 3, 4, 5]
+> >>> lst
+> [0, 1, 2, 3, 4, 5]
+> >>> lst = []
+> >>> lst
+> []
+> ```
+>
+> </details>
+
+Possiamo inoltre aggiungere degli elementi in coda ad una lista col metodo
+`.append()`, ad esempio:
+
+```pycon
+>>> lst.append(6)
+>>> lst
+[0, 1, 2, [3, '4', 5], 6]
+```
+
+Possiamo ovviamente aggiungere anche una lista, ad esempio:
+
+```pycon
+>>> lst.append([7, 8])
+>>> lst
+[0, 1, 2, [3, '4', 5], 6, [7, 8]]
+```
+
+## Le liste sono eterogenee
+
+Una lista può contenere elementi tra lista eterogenei, ad esempio:
+
+```pycon
+>>> lst = [0, 1, 2, '3']
+>>> lst
+[0, 1, 2, '3']
+```
+
+Essa può contenere anche degli iterabili, come altre liste. Questo permette di
+avere delle _liste di liste_, ad esempio:
+
+```pycon
+>>> lst = [0, 1, 2, [3, '4', 5]]
+>>> lst
+[0, 1, 2, [3, '4', 5]]
+```
+
+Se volessimo accedere alla lista più interna, scriveremo:
+
+```pycon
+>>> lst[3]
+[3, '4', 5]
+```
+
+Per accedere ad un elemento della lista più interna, scriveremo:
+
+```pycon
+>>> lst[3][1]
+'4'
+```
+
+Se provassimo ad accedere ad un elemento della lista interna che non esiste,
+otterremmo il seguente errore:
+
+```pycon
+>>> lst = [0, 1, 2, [3, '4', 5]]
+>>> lst[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
 ```
