@@ -22,7 +22,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
    1. [Stringhe in righe multiple](#stringhe-in-righe-multiple)
    2. [Concatenazione di Stringhe](#concatenazione-di-stringhe)
       1. [Concatenazione con l'operatore `+`](#concatenazione-con-loperatore-)
-      2. [Concatenazione di stringhe letterali](#concatenazione-di-stringhe-letterali)
+      2. [Concatenazione di stringhe _literal_](#concatenazione-di-stringhe-literal)
       3. [Concatenazione con l'operatore `+=`](#concatenazione-con-loperatore--1)
       4. [Concatenazione col metodo `.join()`](#concatenazione-col-metodo-join)
       5. [Concatenazione con il `%`-formatting](#concatenazione-con-il--formatting)
@@ -396,16 +396,16 @@ Python permette di concatenare le stringhe in vari modi. Vediamoli.
 
 ### Concatenazione con l'operatore `+`
 
-Il metodo più semplice per concatenare molteplici stringhe in una è quello di
-usare l'operatore `+`:
+Il metodo più semplice per concatenare molteplici stringhe è quello di usare
+l'operatore `+`:
 
 ```pycon
->>> str = "concatenazione" + " col +"
->>> str
+>>> strg = "concatenazione" + " col +"
+>>> strg
 'concatenazione col +'
 ```
 
-L'operatore `+` funziona sia per le stringhe letterali che per le variabili. Ad
+L'operatore `+` funziona sia per le stringhe _literal_ che per le variabili. Ad
 esempio:
 
 ```pycon
@@ -415,14 +415,14 @@ esempio:
 'stringa concatenata col +'
 ```
 
-### Concatenazione di stringhe letterali
+### Concatenazione di stringhe _literal_
 
 Per concatenare due o più stringhe _literal_, basta piazzarle una dopo l'altra.
 Per esempio:
 
 ```pycon
->>> str = "Stringa" " concatenata"
->>> str
+>>> strg = "Stringa" " concatenata"
+>>> strg
 'Stringa concatenata'
 ```
 
@@ -437,15 +437,15 @@ Per esempio:
 > seguente errore:
 >
 > ```pycon
-> >>> str = "str"
-> >>> str "inga"
+> >>> strg = "str"
+> >>> strg "inga"
 >   File "<stdin>", line 1
->     str "inga"
+>     strg "inga"
 >         ^
 > SyntaxError: invalid syntax
 > ```
 >
-> Lo stesso errore si presenterebbe se al posto della variabile `str` usassimo
+> Lo stesso errore si presenterebbe se al posto della variabile `strg` usassimo
 > il risultato di una operazione di concatenazione:
 >
 > ```pycon
@@ -466,11 +466,18 @@ Simile all'operatore `+`, può essere usato per concatenare più stringhe. Ad
 esempio:
 
 ```pycon
->>> str = "stringa"
->>> str += " concatenata"
->>> str
+>>> strg = "stringa"
+>>> strg += " concatenata"
+>>> strg
 'stringa concatenata'
 ```
+
+> <details>
+> <summary>✏️ <strong>Nota</strong></summary>
+>
+> Scrivere `strg += "..."` equivale a scrivere `strg = strg + "..."`
+>
+> </details>
 
 ### Concatenazione col metodo `.join()`
 
@@ -484,7 +491,7 @@ singola stringa:
 'stringaconcatenata'
 ```
 
-il metodo `.join()` ci consente di definire il delimitatore tra le stringhe. Ad esempio:
+Esso ci consente di definire il delimitatore tra le stringhe. Ad esempio:
 
 ```pycon
 >>> str1 = "stringa"
@@ -518,7 +525,8 @@ stringhe:
 ```
 
 In questo esempio, Python sostituisce il `%s` nel _literal_ con la variabile
-di tipo stringa corrispondente nella _tuple_ che segue l'operatore `%`.
+di tipo stringa corrispondente nelle parentesi tonde che seguono l'operatore
+`%`.
 
 ### Concatenazione con il metodo `.format()`
 
@@ -553,8 +561,8 @@ Vediamo come:
 ### Che metodo usare?
 
 Nonostante sono presenti molteplici modi per concatenare stringhe in Python, è
-raccomandato usare o l'operatore standard `+` o il metodo `.join()` o le
-_f_-strings.
+raccomandato usare o l'operatore standard `+` o il metodo `.join()` o il metodo
+`.format()` o le _f_-strings.
 
 ## Indicizzazione delle stringhe
 
@@ -562,8 +570,8 @@ Python definisce le stringhe come degli _array di caratteri_, dunque è possibil
 indicizzarli. Ad esempio:
 
 ```pycon
->>> str = "Python"
->>> str[0]
+>>> strg = "Python"
+>>> strg[0]
 'P'
 ```
 
@@ -585,17 +593,17 @@ Python dunque considererà gli elementi che vanno da destra verso sinistra.
 Ad esempio:
 
 ```pycon
->>> str[-1]
+>>> strg[-1]
 'n'
 ```
 
 ## Slicing su stringhe
 
-L'operazione detta di _slicing_ permette di estrarre una determinata parte di
+L'operazione, detta di _slicing_, permette di estrarre una determinata parte di
 una stringa. In generale, il comando, assume il seguente aspetto:
 
 ```python
-str[<inizio>:<fine>:<step>]
+strg[<inizio>:<fine>:<step>]
 ```
 
 sono tutti e tre dei valori numerici interi, per la precisione:
@@ -607,12 +615,12 @@ sono tutti e tre dei valori numerici interi, per la precisione:
 Ad esempio:
 
 ```pycon
->>> str = "slicing"
->>> str[0:2]   # è come scrivere str[0:2:1]
+>>> strg = "slicing"
+>>> strg[0:2]   # è come scrivere strg[0:2:1]
 'sl'
->>> str[2:5]
+>>> strg[2:5]
 'ici'
->>> str[0:6:2]
+>>> strg[0:6:2]
 'sii'
 ```
 
@@ -625,7 +633,7 @@ Dunque lo `<step>` è di default pari a `1` e quindi può essere omesso.
 > contrario, l'elemento di indice `<fine>` verrà **escluso**, infatti:
 >
 > ```pycon
-> >>> str[0:2]
+> >>> strg[0:2]
 > 'sl'   # s ha indice 0, l ha indice 1
 > ```
 >
@@ -635,7 +643,7 @@ Per stampare tutti i caratteri che precedono `<fine>` (escluso) possiamo usare
 `[:<fine>]`. Ad esempio:
 
 ```pycon
->>> str[:5]
+>>> strg[:5]
 'slici'
 ```
 
@@ -643,7 +651,7 @@ Per stampare tutti i caratteri che seguono `<inizio>` (incluso) possiamo usare
 `[<inizio>:]`. Ad esempio:
 
 ```pycon
->>> str[2:]
+>>> strg[2:]
 'icing'
 ```
 
@@ -651,7 +659,7 @@ Anche le stringe supportano gli indici negativi. Ad esempio se volessimo
 stampare tutti i caratteri dalla terzultima lettera in poi, possiamo scrivere:
 
 ```pycon
->>> str[-3:]
+>>> strg[-3:]
 'ing'
 ```
 
@@ -659,7 +667,7 @@ Se invece volessimo stampare tutti fino alla terzultima lettera (esclusa),
 possiamo scrivere:
 
 ```pycon
->>> str[:-3]
+>>> strg[:-3]
 'slic'
 ```
 
@@ -670,7 +678,7 @@ possiamo scrivere:
 > né `<inizio>` né `<fine>` né `<step>`. Ad esempio:
 >
 > ```pycon
-> >>> str[:]
+> >>> strg[:]
 > 'slicing'
 > ```
 >
@@ -681,8 +689,8 @@ possiamo scrivere:
 Per ottenere la lunghezza di una stringa possiamo usare la funzione `len()`:
 
 ```pycon
->>> str = "stringa"
->>> len(str)
+>>> strg = "stringa"
+>>> len(strg)
 7
 ```
 
@@ -693,8 +701,8 @@ possono essere modificate. Se, ad esempio, provassimo a ridefinire uno o più
 elementi a cui accediamo mediante indice, otterremo un errore:
 
 ```pycon
->>> str = "stringa"
->>> str[0] = "t"
+>>> strg = "stringa"
+>>> strg[0] = "t"
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'str' object does not support item assignment
@@ -706,8 +714,8 @@ TypeError: 'str' object does not support item assignment
 > Possiamo assegnare alla variabile la stringa modificata:
 >
 > ```pycon
-> >>> str = "ttringa"
-> >>> str
+> >>> strg = "ttringa"
+> >>> strg
 > 'ttringa'
 > ```
 >
