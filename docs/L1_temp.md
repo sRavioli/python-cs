@@ -200,96 +200,11 @@ usiamo le parentesi tonde per contraddistinguere i paramentri delle funzioni
 
 La funzione `append()` permette di concatenare le stringhe
 
-
-~~~py
+```py
 >>> l = [1, 2, 3]
 >>> l.append(5)
 >>> l
 [1, 2, 3, 5]
-~~~
+```
 
 `#!py len()` accetta sia stringa che lista. len è una funzione definita in maniera esterna ad una classe, come se fosse statica circa. .append() è definita sull'oggetto lista, sull'istanza. per questo si usa l'operatore `#!py .`. ricordiamo la funzione `#!py type()`. è una funzione usata per le liste, in questo caso la stiamo chiamando specificatamente per la lista `#!py l2`
-
-
----
-***
----
-
-# 02 – Concetti sintattici fondamentali
-
-
-
-
-{[ ((
-## la programmazione strutturata (non la chiede all'esame).
-
-~~~
-10 int 1 = 0
-20 i = i + 1
-30 i = i + 2
-40 if i <= 10 then goto 70
-50 print "Programma terminato"
-60 end
-70 print i & " al quadrato = " & i * i
-80 goto 70
-~~~
-
-NON si usa il goto. è fortemente criticato
-
-teorema di Bohm-Jacopini afferma che
-Ogni algoritmo può essere costruito a partire da tre strutture di controllo fonamentali: sequenza, controllo e iterazione.
-
-La sequenza è una lista di cose
-
-
-~~~
-distanza_x =
-distanza_y =
-????
-~~~
-
-
-selezione
-
-
-
-~~~
-a = 1
-b = 2
-if (a > b):
-    then scrivi 'a è minore di b'
-else:
-    scrivi 'a è minore di b'
-~~~
-)) ]}
-
-
-python non usa le graffe per le strutture di controllo, le usa per i dizionari.
-
-l'ambito è delimitato dall'indentazione
-
-
-~~~py
->>> a = 5
->>> b = 6
->>> if a > b:
-...     a = a * 2
-...     print(a)
-... elif a == b:
-...     print("sonon uguali")
-... else:
-...     print("non saprei")
-...
-non saprei
->>> a = 8
->>> if a > b:
-...     a = a * 2
-... print(a)
-  File "<stdin>", line 3
-    print(a)
-    ^
-SyntaxError: invalid syntax
-~~~
-
-
-mantenere stesso livello di indentazione
