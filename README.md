@@ -34,11 +34,12 @@ stato assegnato. Per facilitarne la navigazione saranno indicizzati nel seguente
 modo:
 
 - un numero, corrispondente all'argomento/capitolo del file degli appunti;
+- un ulteriore numero, corrispondente al numero dell'esercizio;
 - una lettera maiuscola indicante se l'esercizio è stato svolto a lezione (`L`)
   oppure a casa (`H`);
 - un nome, che è un breve riassunto della traccia.
 
-Ad esempio: `00_L_conta_dieci.py`.
+Ad esempio: `02-1_L_itera_while`.
 
 Nelle prime righe di ogni file di esercizi sarà riportata la traccia dello
 stesso.
