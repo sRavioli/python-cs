@@ -30,17 +30,16 @@ quando verranno rielaborati.
 ### `📁 py`
 
 Ogni file Python corrisponde ad un esercizio svolto a lezione, oppure che è
-stato assegnato. Per facilitarne la navigazione saranno indicizzati nel seguente
-modo:
+stato assegnato. Per facilitarne la navigazione, sono divisi a seconda
+dell'argomento o del capitolo, inoltre presenteranno il seguente formato:
 
-- un numero, corrispondente all'argomento/capitolo del file degli appunti;
-- un ulteriore numero, corrispondente al numero dell'esercizio;
+- un numero, corrispondente al numero dell'esercizio;
 - una lettera maiuscola indicante se l'esercizio è stato svolto a lezione (`L`)
   oppure a casa (`H`);
 - un nome, che è un breve riassunto della traccia.
 
-Dunque i file saranno del tipo `<num>-<num>_<L/H>_<nome_breve>.py`,
-ad esempio: `02-1_L_itera_while.py`.
+Dunque i file saranno del tipo `<num>_<L/H>_<nome_breve>.py`,
+ad esempio: `01_L_itera_while.py`.
 
 Nelle prime righe di ogni file di esercizi sarà riportata la traccia dello
 stesso.
