@@ -684,6 +684,24 @@ possiamo scrivere:
 >
 > </details>
 
+Un modo per ricordarsi il funzionamento dello slicing consiste nel pensare che
+gli indici siano compresi tra i caratteri della stringa. L'estremo sinistro del
+primo carattere avrà indice `0`, l'estremo destro dell'ultimo carattere di una
+stringa di `n` caratteri avrà indice `n`. Ad esempio:
+
+```txt
+ +---+---+---+---+---+---+
+ | P | y | t | h | o | n |
+ +---+---+---+---+---+---+
+ 0   1   2   3   4   5   6
+-6  -5  -4  -3  -2  -1
+```
+
+Nella prima riga di numeri sono presenti gli indici delle posizioni `0...6`
+nella stringa; nella seconda riga sono presenti gli indici negativi
+corrispondenti. Lo slicing da `i` a `j` consisterà di tutti i caratteri compresi
+tra gli estremi di indice rispettivamente `i` e `j`.
+
 ## Lunghezza di una stringa
 
 Per ottenere la lunghezza di una stringa possiamo usare la funzione `len()`:
