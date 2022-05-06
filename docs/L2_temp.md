@@ -1,4 +1,4 @@
-# 02 – Concetti sintattici fondamentali
+    # 02 – Concetti sintattici fondamentali
 
 {[ ((
 
@@ -18,7 +18,7 @@
 NON si usa il goto. è fortemente criticato
 
 teorema di Bohm-Jacopini afferma che
-Ogni algoritmo può essere costruito a partire da tre strutture di controllo fonamentali: sequenza, controllo e iterazione.
+Ogni algoritmo può essere costruito a partire da tre strutture di controllo fondamentali: sequenza, controllo e iterazione.
 
 La sequenza è una lista di cose
 
