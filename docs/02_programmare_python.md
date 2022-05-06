@@ -15,6 +15,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 2. [Alcuni concetti sintattici fondamentali](#alcuni-concetti-sintattici-fondamentali)
    1. [Uso delle parentesi](#uso-delle-parentesi)
    2. [Ambito e termine di un'istruzione](#ambito-e-termine-di-unistruzione)
+3. [Programmazione strutturata](#programmazione-strutturata)
 
 <!-- /TOC -->
 </details>
@@ -102,3 +103,42 @@ a = 1
 ```
 
 è un'istruzione. Dunque possiamo omettere il punto e virgola.
+
+Per quanto riguarda la definizione di un ambito (ad esempio locale all'interno
+di una funzione), Python utilizza i _due punti_, che sostituiscono le parentesi
+graffe di apertura, e il numero di _indentazioni_.
+
+> <details>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> In generale possiamo dire che le istruzioni allo stesso livello di
+> indentazione sono considerate dall'interprete Python come istruzioni
+> appartenenti al medesimo ambito.
+>
+> </details>
+
+Dunque, per dichiarare una funzione, scriveremo:
+
+```python
+# L'inizio della funzione, dunque dell'ambito che questa delimita,
+# è contrassegnato dai due punti `:`
+def funzione(): # <- inizio dell'ambito
+   # il codice deve mantenere lo stesso livello di indentazione
+   a = 1
+   a + 1
+   # ...
+   return 0
+
+# <- fine dell'ambito
+```
+
+> <details>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> Per ottenere l'indentazione occorre usare il tasto <kbd>Tab</kbd> della
+> tastiera, oppure quattro <kbd>Space</kbd>. È **fondamentale** non mischiare
+> le due tecniche.
+>
+> </details>
+
+# Programmazione strutturata
