@@ -1,4 +1,4 @@
-# Python per il calcolo scientifico
+# ![Python](./docs/img/py.png) Python per il calcolo scientifico
 
 > Al momento il progetto è in fase di sviluppo
 
