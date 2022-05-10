@@ -12,27 +12,21 @@ WARNING='\033[1;33m!\033[0m'
 ADD_MARK='\033[0;34m+\033[0m'
 COMMIT_MARK='\033[1;35m→\033[0m'
 
-# Check activation of the environment
-check_environment() {
-  if ! [ $CONDA_SHLVL = 1 ]; then
-    # Activate the environment since it is deactivated, print status
-    printf "Activating ${ENVIRONMENT}...\n" &&
-      conda activate ./noodles &&
-      printf "${OVERWRITE}${CHECK_MARK} Activated\n"
-  else
-    # Pass, print status
-    printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
-  fi
-
-  return
-}
-
-# Invoke conda to export environment to environment.yaml
+# Invoke conda to export environment to .yaml file
 call_conda() {
-  # take environment name as arguments
+  # take environment name as argument
   ENVIRONMENT="$1"
 
-  check_environment
+  if [ $CONDA_SHLVL = 1 ]; then
+    # print status
+    printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
+    return
+  fi
+
+  # Activate the environment, print status
+  printf "Activating ${ENVIRONMENT}...\n" &&
+    conda activate ./noodles &&
+    printf "${OVERWRITE}${CHECK_MARK} Activated\n"
 
   # Export environment to .yaml
   printf "Exporting to ${ENVIRONMENT}_temp.yaml...\n" &&
@@ -47,19 +41,13 @@ call_conda() {
   return
 }
 
-# Exporting environment to same file will always results in a true if(changed)
+# When exporting the conda environment to the same .yaml file, git will always
+# think that the environment has been changed.
 # Workaround: export to temp file, compare files then act accordingly
 check_diff() {
-  # Add empty line, acts as a separator
   printf "\n"
 
-  if cmp -s "./${ENVIRONMENT}.yaml" "./${ENVIRONMENT}_temp.yaml"; then
-    # File unchanged, allow push
-    printf "${CHECK_MARK} Environment unchanged\n"
-
-    printf "${CHECK_MARK} Allowing push\n" &&
-      rm ./${ENVIRONMENT}_temp.yaml # Remove temp file
-  else
+  if ! cmp -s "./${ENVIRONMENT}.yaml" "./${ENVIRONMENT}_temp.yaml"; then
     # File changed, replace and deny push
     printf "${WARNING} Environment changed\n"
 
@@ -74,18 +62,21 @@ check_diff() {
     printf "${COMMIT_MARK} Committing changes (edit: git commit --amend)\n" &&
       git commit -m "feat(env): auto-updated"
 
-    # Add empty line, acts as a separator
-    printf "\n"
-
     # Deny push, make user push again
     # TODO: Add the possibility to push even if files differ
     printf "${CROSS_MARK} Denying push\n"
 
     # Push denied => 126: "command not executable"
     exit 126
+    return
   fi
 
-  return
+  printf "${CHECK_MARK} Environment unchanged\n"
+
+  # File unchanged, allow push
+  printf "${CHECK_MARK} Allowing push\n" &&
+    rm ./${ENVIRONMENT}_temp.yaml # Remove temp file
+
 }
 
 main() {
