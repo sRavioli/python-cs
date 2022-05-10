@@ -156,12 +156,31 @@ _Locale_ della funzione in cui sono contenute
 Per quanto riguarda la definizione di un ambito (ad esempio locale all'interno
 di una funzione), Python utilizza i _due punti_ e il numero di _indentazioni_.
 
-> <details>
+> <details open>
 > <summary>💡 <em>Suggerimento</em></summary>
 >
 > In generale possiamo dire che le istruzioni allo stesso livello di
 > indentazione sono considerate dall'interprete Python come istruzioni
 > appartenenti al medesimo ambito.
+>
+> <details>
+> <summary><em>Infatti...</em></summary>
+>
+> ...se non rispettassimo la corretta indentazione, l'interprete ci restituirà un
+> errore
+>
+> ```pycon
+> >>> a, b = 8, 6
+> >>> if a > b:
+> ...     a *= 2
+> ... print(a)
+>   File "<stdin>", line 3
+>     print(a)
+>     ^
+> SyntaxError: invalid syntax
+> ```
+>
+> </details>
 >
 > </details>
 
@@ -185,7 +204,7 @@ print(a)   # l'interprete restituirà un errore
 > <summary>💡 <em>Suggerimento</em></summary>
 >
 > Per ottenere l'indentazione occorre usare il tasto <kbd>Tab</kbd> della
-> tastiera, oppure quattro <kbd>Space</kbd>. È **fondamentale** non mischiare
+> tastiera, oppure quattro <kbd>Space</kbd>. È **_fondamentale_** non mischiare
 > le due tecniche.
 >
 > </details>
@@ -436,7 +455,7 @@ for item in range(len(lst)):
 >    print(item)
 > ```
 >
-> e avremmo ricevuto lo stesso output, però bisogna esercitarci con `range()`.
+> e avremmo ricevuto lo stesso output, però bisogna esercitarsi con `range()`.
 >
 > </details>
 
@@ -505,8 +524,6 @@ raddoppia_lista(lista)
 # Output: [1, 2, 3, 4]
 ```
 
-<!-- TODO: MODIFICARE PLACEHOLDER! -->
-
 **Esercizio:** creiamo una funzione che restituisca una lista di numeri
 generati casualmente tra `0` e `10` (escluso). Usiamo un parametro opzionale per
 specificarne la lunghezza.
@@ -521,6 +538,7 @@ def genera_lista_casuale(lunghezza=5):
    for i in range(lunghezza):
       lst.append(rnd.randint(0, 10))
    return print(lst)
+
 
 genera_lista_casuale()     # Possibile output: [3, 9, 7, 2, 3]
 genera_lista_casuale(10)   # Possibile output: [2, 4, 8, 1, 5, 3, 1, 3, 0, 9]
