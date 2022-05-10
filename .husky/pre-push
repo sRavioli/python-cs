@@ -72,12 +72,12 @@ check_diff() {
 
     # Commit changes, can edit with `git commit --amend`
     printf "${COMMIT_MARK} Committing changes (edit: git commit --amend)\n" &&
-      git commit -m "feat(env): auto-updated \`${ENVIRONMENT}.yaml\`"
+      git commit -m "feat(env): auto-updated"
 
     # Add empty line, acts as a separator
     printf "\n"
-    # Deny push, make user push again
 
+    # Deny push, make user push again
     # TODO: Add the possibility to push even if files differ
     printf "${CROSS_MARK} Denying push\n"
 
