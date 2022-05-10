@@ -37,8 +37,6 @@ call_conda() {
   printf "Deactivating ${ENVIRONMENT}...\n" &&
     conda deactivate &&
     printf "${OVERWRITE}${CHECK_MARK} Deactivated\n"
-
-  return
 }
 
 # When exporting the conda environment to the same .yaml file, git will always
@@ -76,7 +74,6 @@ check_diff() {
   # File unchanged, allow push
   printf "${CHECK_MARK} Allowing push\n" &&
     rm ./${ENVIRONMENT}_temp.yaml # Remove temp file
-
 }
 
 main() {
