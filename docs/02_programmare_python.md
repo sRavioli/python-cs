@@ -320,8 +320,8 @@ n
 > Come ci ricorda il _no free lunches theorem_, non esistono pasti gratuiti!
 > Infatti, la maggiore semplicità sintattica offerta da Python non è indolore.
 > Uno script Python, per quanto ottimizzato, non potrà quasi mai offrire
-> performance paragonabili ad un codice ottimizzato in C o > C++, a meno di non
-> usare particolari (ed avanzati) accorgimenti.
+> performance paragonabili ad un codice ottimizzato in C o C++, a meno di non usare
+> particolari (ed avanzati) accorgimenti.
 >
 > </details>
 
