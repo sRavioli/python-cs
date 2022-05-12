@@ -17,16 +17,15 @@ call_conda() {
   # take environment name as argument
   ENVIRONMENT="$1"
 
-  if [ $CONDA_SHLVL = 1 ]; then
-    # print status
-    printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
-    return
+  if ! [ $CONDA_SHLVL = 1 ]; then
+    # Activate the environment, print status
+    printf "Activating ${ENVIRONMENT}...\n" &&
+      conda activate ./noodles &&
+      printf "${OVERWRITE}${CHECK_MARK} Activated\n"
   fi
 
-  # Activate the environment, print status
-  printf "Activating ${ENVIRONMENT}...\n" &&
-    conda activate ./noodles &&
-    printf "${OVERWRITE}${CHECK_MARK} Activated\n"
+  # print status
+  printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
 
   # Export environment to .yaml
   printf "Exporting to ${ENVIRONMENT}_temp.yaml...\n" &&
@@ -37,6 +36,7 @@ call_conda() {
   printf "Deactivating ${ENVIRONMENT}...\n" &&
     conda deactivate &&
     printf "${OVERWRITE}${CHECK_MARK} Deactivated\n"
+
 }
 
 # get user input to decide whether to push even if file differs
