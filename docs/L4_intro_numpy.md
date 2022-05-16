@@ -16,4 +16,3 @@ l'accesso avviene tramite indicizzazione, come per le liste. si possono anche
 usare delle maschere booleane, si possono sommare gli array, moltiplicazione etc.
 
 esiste il metodo `.dot()` per moltiplicazione tra matrici.
-
