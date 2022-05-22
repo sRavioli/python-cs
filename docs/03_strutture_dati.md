@@ -20,6 +20,14 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
       1. [Perché usare le _list comprehension_?](#perché-usare-le-list-comprehension)
 4. [Le _assignment expressions_](#le-assignment-expressions)
 5. [Tuple](#tuple)
+6. [Insiemi](#insiemi)
+7. [Dizionari](#dizionari)
+   1. [Chiavi e valori](#chiavi-e-valori)
+   2. [Creazione di un dizionario non vuoto](#creazione-di-un-dizionario-non-vuoto)
+      1. [Uso dell'operatore `{}`](#uso-delloperatore-)
+      2. [Uso del costruttore `dict()`](#uso-del-costruttore-dict)
+      3. [Uso della funzione `zip()`](#uso-della-funzione-zip)
+      4. [Dict comprehension](#dict-comprehension)
 
 <!-- /TOC -->
 
@@ -241,3 +249,230 @@ concatenare i risultati:
 ```
 
 # Tuple
+
+Le tuple permettono di rappresentare un insieme di valori di eterogenei,
+separati da una virgola. Ad esempio:
+
+```python
+tpl = ("hello", "world", 12)
+```
+
+Come avviene per le liste, uno dei valori della tupla può essere un'altra tupla.
+Ad esempio:
+
+```python
+tpl = ("hello", "world", (1, 2))
+```
+
+A differenza delle liste, le tuple sono immutabili. Questo però non implica che
+non possano contenere al loro interno degli oggetti mutabili. Ad esempio:
+
+```python
+tpl = ("hello", "world", [1, 2, 3])
+```
+
+La tupla ha al suo interno due stringhe (immutabili) ed una lista (mutabile).
+Modifichiamo la lista:
+
+```python
+tpl[2] = [2, 2, 3]
+```
+
+Otterremo un errore del genere:
+
+```pycon
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+```
+
+Prevedibilmente, otteniamo un errore di assegnazione legato all'immutabilità
+della tupla. Modifichiamo ora la lista:
+
+```python
+tpl[2][0] = 2   # `tpl` sarà `("hello", "world", [2, 2, 3])`
+```
+
+L'operazione è accettata e il risultato è quello atteso.
+
+> <details>
+> <summary>ℹ️ <em>Tuple e Liste</em></summary>
+>
+> All'osservatore attento non sfuggirà il fatto che le tuple e le liste siano
+> simili dal punto di vista sintattico e differiscano sostanzialmente per la
+> mutabilità. Da questo discende che le tuple sono estremamente efficaci nel
+> caso in cui sia necessario **_solo_** accedere agli elementi contenuti, mentre
+> le liste le usiamo se è necessario anche modificare gli elementi.
+>
+> </details>
+
+# Insiemi
+
+Anche gli insiemi (in inglese _set_) sono sintatticamente molto simili alle
+liste, ma offrono una significativa differenza: _non ci possono essere elementi_
+_ripetuti_.
+
+> <details>
+> <summary>✏️ <strong>Nota</strong></summary>
+>
+> L'analogia col concetto matematico di insieme è evidente.
+>
+> </details>
+
+La sintassi per creare un insieme è la seguente:
+
+```python
+insm = {1, "stringa", 2}
+```
+
+L'insieme ammette al suo interno dati eterogenei, tuttavia non può contenere
+liste o dizionari. Questo è legato al fatto che gli insiemi (ma anche i
+dizionari) sono delle [hash table](https://it.wikipedia.org/wiki/Hash_table),
+dunque sfruttano il concetto di _hash_ per rappresentare i dati contenuti in
+maniera compatta ed efficiente. Poiché sia le liste che i dizionari non possono
+essere rappresentati in questo modo, non possono essere racchiusi in un insieme.
+
+Un'altra considerazione riguardante gli insiemi è che questi non sono ordinati:
+questo rende impossibile accedere (e modificare) un elemento del set mediante il
+suo indice, al contrario di liste e tuple.
+
+> <details open>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> Gli insiemi possono essere usati per isolare gli elementi univoci presenti in
+> una lista. Per farlo, basta convertire la lista in insieme:
+>
+> ```python
+> lst = [1, 2, 2, 3]
+> insm = set(lst)    # l'insieme sarà `{1, 2, 3}`
+> ```
+>
+> </details>
+
+# Dizionari
+
+Il quarto ed ultimo tipo di struttura dati per sequenze degli stessi è il
+_dizionario_, presente in altri linguaggi di programmazione sotto il nome di
+_array associativo_ oppure _hash map_.
+
+La base di un dizionario è la coppia _chiave_-_valore_ (spesso _key_-_val_),
+nella quale un certo valore (di qualsiasi tipo) viene associato ad una
+determinata chiave (immutabile).
+
+I dizionari hanno diverse caratteristiche comuni ai set, dall'inutilizzabilità
+delle liste come chiavi, al non permettere la ripetizione delle chiavi. Per
+accedere alle coppie _key_-_val_ è necessario utilizzare l'opportuna chiave, e
+non l'ordine delle coppie.
+
+> <details>
+> <summary>✏️ <strong>Nota</strong></summary>
+>
+> Una differenza tra insiemi e dizionari sta nel fatto che quest'ultimi sono
+> _ordinati_ a partire da Python 3.7.
+>
+> </details>
+
+Per creare un dizionario, possiamo usare una sintassi simile a quella degli
+insiemi. Ad esempio, per creare un dizionario vuoto:
+
+```python
+dct = {}
+```
+
+Possiamo ora inserire delle coppie _key-val_ in questo modo:
+
+```python
+dct["key"] = "val"
+dct[1] = "n"   # `dct` sarà `{"key": "val", 1, "n"}`
+```
+
+Per accedere al valore associato ad una determinata chiave:
+
+```python
+dct[1]   # otterremo "n"
+```
+
+## Chiavi e valori
+
+È possibile recuperare la lista di tutte la chiavi presenti in un dizionario
+usando il metodo `keys()`, che restituisce un oggetto di tipo `dict_keys()`, che
+può essere convertito in lista:
+
+```python
+keys = dct.keys()     # restituisce `dict_keys(['key', 1])`. Non è una lista!
+print(list(chiavi))   # restituisce `['key', 1]`. È una lista
+```
+
+Analogamente, si può accedere a tutti i valori presenti nel dizionario mediante
+il metodo `values()`, che restituisce un oggetto di tipo `dict_values()`
+anch'esso da convertire in lista:
+
+```python
+vals = dct.values()   # restituisce `dict_values(['val', 'n'])`. Non è una lista!
+print(list(vals)) # restituisce `['val', 'n']`. È una lista
+```
+
+Possiamo accedere anche a tutte le coppie _key-val_ mediante il metodo
+`items()`, che restituisce un oggetto di tipo `dict_items()` che può essere
+convertito in una lista di tuple:
+
+```python
+pairs = dct.items() # restituisce `dict_items([('key', 'val'), (1, 'n')])`
+print(list(pairs))   # restituisce `['key', 'val']`. È una lista di tuple
+```
+
+## Creazione di un dizionario non vuoto
+
+Sono presenti diversi modi per creare un dizionario non vuoto.
+
+### Uso dell'operatore `{}`
+
+Il metodo più semplice, che è anche quello che useremo più spesso, consiste nel
+dichiarare nell'operatore `{}` le coppie _key-val_ iniziali:
+
+```pycon
+>>> dct = {"key1": 1, "key2": 2}
+>>> dct
+{'key1': 1, 'key2': 2}
+```
+
+### Uso del costruttore `dict()`
+
+Un altro metodo consiste nell'usare il costruttore `dict()`:
+
+```pycon
+>>> dct = dict(key1=1, key2=2)
+>>> dct
+{'key1': 1, 'key2': 2}
+```
+
+### Uso della funzione `zip()`
+
+Possiamo usare la funzione `zip()` per creare un dizionario a partire da due
+liste:
+
+```pycon
+>>> keys = ["key1", "key2"]
+>>> vals = [1, 2]
+>>> dct = dict(zip(keys, vals))
+>>> dct
+{'key1': 1, 'key2': 2}
+```
+
+### Dict comprehension
+
+Un modo per ottenere un dizionario a partire da un altro oggetto iterabile è la
+_dict comprehension_, che è una forma del tipo:
+
+```python
+dct_out = {key: val for val in iterabile}
+```
+
+Ad esempio, possiamo creare un dizionario contenente come chiave i numeri da `1`
+a `9` e come valori corrispondenti i quadrati degli stessi:
+
+```pycon
+>>> sqrs = {str(i): i**2 for i in range(1, 10)}
+>>> print(sqrs)
+{'1': 1, '2': 4, '3': 9, '4': 16, '5': 25, '6': 36, '7': 49, '8': 64, '9': 81}
+```
