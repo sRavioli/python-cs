@@ -22,10 +22,10 @@ call_conda() {
     printf "Activating ${ENVIRONMENT}...\n" &&
       conda activate ./noodles &&
       printf "${OVERWRITE}${CHECK_MARK} Activated\n"
+  else
+    # print status
+    printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
   fi
-
-  # print status
-  printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
 
   # Export environment to .yaml
   printf "Exporting to ${ENVIRONMENT}_temp.yaml...\n" &&
