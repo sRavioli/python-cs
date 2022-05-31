@@ -18,7 +18,11 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 2. [Classi in Python](#classi-in-python)
    1. [Il metodo `__init__()`](#il-metodo-__init__)
    2. [Modificatori di accesso](#modificatori-di-accesso)
-   3. [Metodi](#metodi)
+3. [Metodi](#metodi)
+   1. [Metodi di classe](#metodi-di-classe)
+   2. [Metodi statici](#metodi-statici)
+   3. [Metodi astratti](#metodi-astratti)
+4. [Le proprietà](#le-proprietà)
 
 <!-- /TOC -->
 
@@ -110,6 +114,7 @@ class NomeClasse(ClasseMadre):
     def __init__(self, *args, **kwargs):
         self.arg_1 = arg_1
         # ...
+        pass
 ```
 
 > <details open>
@@ -186,7 +191,7 @@ class Persona(object):
 Questa sintassi può ovviamente essere usata per definire dei metodi protetti
 oppure privati.
 
-## Metodi
+# Metodi
 
 La sintassi per definire un metodo di classe è analoga a quella usata per
 definire una funzione:
@@ -208,3 +213,198 @@ p.metodo(parametro)              # richiamo il metodo dall'istanza
 
 Usiamo l'operatore `.` per accedere ai metodi definiti all'interno delle classi,
 in questo caso accediamo a `metodo` della classe `Persona`.
+
+## Metodi di classe
+
+Il _decorator_ `@classmethod` ci permette di definire i _metodi di classe_:
+
+```python
+@classmethod
+def builder_stringa(cls, strg: str):
+    nome, cognome, eta = strg.split(" ")
+    return Persona(nome, cognome, eta)
+```
+
+A differenza dei metodi standard, i metodi di classe hanno un riferimento alla
+classe (`cls`) e non all'istanza (`self`). Questo significa che sono dei metodi
+che si applicano all'intera classe e non alle singole istanze. Un tipico esempio
+di utilizzato di metodo di classe è mostrato nel codice precedente, dove creiamo
+un oggetto di classe `Persona` a partire da una stringa.
+
+> <details>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> Il metodo precedente è, di fatto, un'implementazioni del design pattern
+> Builder.
+>
+> </details>
+
+Per richiamare un metodo di classe occorre riferirsi al nome della classe
+stessa e non alla singola istanza:
+
+```pycon
+>>> persona = Persona.builder_stringa("Bobby Munson 58")
+>>> print(f"{persona.nome}, {persona._cognome}")
+Bobby, Munson
+```
+
+## Metodi statici
+
+Mediante il decoratore `@staticmethod` possiamo definire un metodo _statico_. In
+Python il funzionamento di un metodo di questo tipo è assimilabile al
+comportamento di una funzione "semplice", definita però all'interno di una
+classe e richiamabile su istanze della stessa. Ad esempio:
+
+```python
+@staticmethod
+def nome_valido(nome):
+    if len(nome) < 2:
+        return False
+    else:
+        return True
+```
+
+È dunque possibile richiamare liberamente questo metodo con l'operatore `.` da
+una singola istanza:
+
+```pycon
+>>> print(persona.nome_valido("Li"))
+True
+```
+
+È possibile richiamarlo sulla classe stessa:
+
+```pycon
+>>> print(Persona.nome_valido("X"))
+False
+```
+
+## Metodi astratti
+
+Possiamo definire dei metodi astratti mediante il decorator `@abstractmethod`.
+Per farlo, la nostra classe deve ereditare metodi e attributi dalla classe `ABC`
+(Abstract Base Class), contenuta nel package `abc`:
+
+```python
+from abc import ABC
+
+class ClasseMadre(ABC):
+    # ...
+
+    @abstractmethod
+    def metodo_da_sovrascrivere(self):
+        pass
+```
+
+I metodi contrassegnati dal decorator `@staticmethod` dovranno essere
+implementati nelle classi derivate (ovvero ne dovranno fare l'_override_):
+
+```python
+class ClasseFiglia(ClasseMadre):
+    # ...
+
+    def metodo_da_sovrascrivere(self):
+        pass
+```
+
+# Le proprietà
+
+In molti linguaggi di programmazione si utilizzano dei metodi accessori
+(_getter_) e modificatori (_setter_) rispettivamente per accedere e modificare
+gli attributi delle istanze di una classe. Python non vieta di farlo: potremmo,
+ad esempio scrivere un metodo `get_nome(self)` per accedere al nome di una
+persona e un metodo `set_nome(self, nome)` per impostare la proprietà.
+
+Tuttavia è presente una sintassi più compatta (e più _pythonic_) che fa uso del
+decorator `@property`. Questo rappresenta una funzione a quattro parametri:
+
+```python
+property(fget=None, fset=None, fdel=None, doc=None)
+```
+
+In particolare:
+
+- `fget` è la funzione usata per **recuperare** il valore dell'attributo;
+- `fset` è la funzione usata per **impostare** il valore dell'attributo;
+- `fdel` è la funzione per **rimuovere** l'attributo;
+- `doc` è la funzione per **documentare** e **descrivere** l'attributo.
+
+Utilizzando `@property`, possiamo seguire le "best practices" della OOP,
+rendendo privati gli attributi della classe e accedendovi mediante gli opportuni
+metodi:
+
+```python
+class Persona():
+
+    def __init__(self, nome, cognome, eta):
+        self.nome = nome
+        self.cognome = cognome
+        self.eta = eta
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @nome.setter
+    def nome(self, value):
+        if len(value) < 2:
+            raise ValueError(
+                    "La lunghezza del nome non può essere inferiore ai 2 caratteri"
+                )
+        else:
+            self.__nome = value
+
+    @property
+    def cognome(self):
+        return self.__cognome
+
+    @cognome.setter
+    def cognome(self, value):
+        if len(value) < 2:
+            raise ValueError(
+                    "La lunghezza del cognome non può essere inferiore ai 2 caratteri"
+                )
+        else:
+            self.__cognome = value
+
+    @property
+    def eta(self):
+        return self.__eta
+
+    @eta.setter
+    def eta(self, value):
+        if value < 0:
+            raise ValueError("L'età non può essere negativa")
+        else:
+            self.__eta = value
+```
+
+Alcune note:
+
+- abbiamo riscritto la classe `Persona` in modo da trasformare tutti gli
+  attributi in proprietà;
+- per ogni proprietà, abbiamo specificato un _getter_ che restituisce il valore
+  della stessa;
+- abbiamo specificato un _setter_, nel quale vi è anche una forma di validazione
+  del valore di input.
+
+Vediamo come usare la nostra nuova classe:
+
+```pycon
+>>> draco = Persona("Draco", "Malfoy", 12)
+>>> print(draco.nome)
+Draco
+>>> print(draco.eta)
+12
+>>> hermione = Persona("", "Granger", 18)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in __init__
+  File "<stdin>", line 12, in nome
+ValueError: La lunghezza del nome non può essere inferiore ai 2 caratteri
+```
+
+Notiamo che dal punto di vista dello script che richiama la classe, non sono
+presenti grandi differenze. Tuttavia la validazione ci permette di evitare
+errori e situazioni incoerenti, sfruttando inoltre le proprietà per accedere
+agli attributi privati della classe.
