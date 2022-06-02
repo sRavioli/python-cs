@@ -1,85 +1,115 @@
-# scrivere una classe "Persona" applicando i concetti visti durante la lezione
+# Scrivere una classe `Persona` applicando i concetti visti durante la lezione.
 
-import argparse
+
+# import argparse
 
 
 class Persona:
+    # utilizziamo il type hinting: `var: type`
+    # `-> None` suggeriamo che la funzione non abbia un valore di return
+    def __init__(self, nome: str, cognome: str, età: int = 18) -> None:
+        # il metodo `__init__()` è usato per inizializzare i vari parametri
+        # della classe
+        #
+        # nel caso in cui scrivessimo `cog: str` nell'argomento di `__init__()`
+        # anziché `cognome: str` e non modificassimo `self.cognome = cognome`
+        # in `self.cognome = cog`, l'interprete ci restituirà un errore.
 
-    # il valore che mi aspetto è "None"
-    def __init__(self, nome: str, cognome: str, eta: int = 18) -> None:
         self.nome = nome
         self.cognome = cognome
-        self.eta = eta
-        # questi sono i parametri del metodo __init__. se chiamassimo cognome
-        # `cog`, e lasciassimo invariato `self.cognome = cognome`, python
-        # restituirà un errore
+        self.età = età
 
-    # per modificare nome, cognome e età devo per forza accedervi
-    # mettiamo che voglio ringiovanire tutte le persone di default
-    # usiamo un modificatore. altri linguaggi avrebbero
-
-    # def get_eta(self):
-    #     return self.eta
-
-    # def set_eta(self, value):
-    #     self.eta = value
-
-    # per ringiovanire di default basta fare `self.eta = value - 1`. python ci
-    # permette di evitare questa notazione con le proprietà
+    # per modificare i valori delle variabili devo accedervi. Vogliamo, ad
+    # esempio "ringiovanire" di default tutte le persone. Usiamo un
+    # modificatore. Altri linguaggi utilizzerebbero una sintassi del genere:
+    #
+    # def get_età(self):
+    #    return self.età
+    #
+    # def set_età(self, età):
+    #   self.età = value
+    #
+    # per "ringiovanire" di default scriveremo `self.età = value - 1`. Python
+    # permette di non utilizzare questa sintassi facendo uso delle `@property`
 
     @property
-    def eta(self):
-        return self.__eta
+    def età(self):
+        return self.__età
 
-    # così recupero il valore dell'istanza. per inserire un setter faccio:
+    # con la sintassi precedente recuperiamo il valore dell'istanza. Per
+    # inserire un setter scriviamo:
 
-    @eta.setter
-    def eta(self, value):
+    @età.setter
+    def età(self, value):
         if value < 0:
-            raise ValueError("Vedi che l'eta è negativa")
-        self.__eta = value - 1
+            raise ValueError("L'età non può essere negativa")
 
+        self.__età = value  # per ringiovanire `value - 1`
+
+    # creiamo il metodo `ringiovanisci()`
     def ringiovanisci(self):
-        self.eta = self.eta - 1
+        self.età = self.età - 1
 
-    # usiamo `@staticmethod` per creare il CF, procedimento uguale ma CF diverso
+    # vogliamo, ad esempio, creare un codice fiscale (CF). Il procedimento per
+    # creare il CF è sempre lo stesso, ma il risultato è differente. Possiamo
+    # usare uno `@staticmethod`:
+
     @staticmethod
-    def calcola_codice_fiscale(nome, cognome, eta):
-        return nome + cognome + str(eta)
+    def calcola_codice_fiscale(nome, cognome, età):
+        return nome + cognome + str(età)  # non creiamo un vero CF, ovviamente
 
-    def __str__(self) -> str:
-        return f"{self.nome} - {self.cognome}"
+    # il metodo `__str__()` viene chiamato quando stampiamo la singola istanza
+    def __str__(self):
+        return f"{self.nome} – {self.cognome}"
 
 
-# per usare `argparse`
-def crea_persona(args):
-    p = Persona(args.nome, args.cognome)
+def main():
+    p = Persona("Ciccio", "Cappuccio")
+    cf = Persona.calcola_codice_fiscale("Ciccio", "Cappuccio", 18)
+    print(f"codice fiscale: {cf}")
+
+    print(f"pre-ringiovanimento: {p.età}")
+    p.ringiovanisci()
+    print(f"post-ringiovanimento: {p.età}")
+
     print(p)
+
+    # p.età = -5  # otterremo un errore, l'età è negativa
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-n", "--nome", help="Nome della persona", default="Ciccio")
-    parser.add_argument(
-        "-c", "--cognome", help="Cognome della persona", default="Cappuccio"
-    )
-    args = parser.parse_args()
-    crea_persona(args)
-
-    p = Persona("Ciccio", "Cappuccio")
-    cf = Persona.calcola_codice_fiscale("Ciccio", "Cappuccio", 18)
-    print(cf)
-
-    # p.ringiovanisci()
-    print(p.eta)
-    print(p)
-
-    # p.eta = -5 # throws an error, eta negativa
-
-# gli argomenti opzionali vanno sempre in coda
+    main()
 
 
-# python ha script, moduli e package
-# - script si eseguono
-# - moduli si importano
-# - package sono cartelle di moduli
+# # per usare `argparse`
+# def crea_persona(args):
+#     p = Persona(args.nome, args.cognome)
+#     print(p)
+
+
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument("-n", "--nome", help="Nome della persona", default="Ciccio")
+#     parser.add_argument(
+#         "-c", "--cognome", help="Cognome della persona", default="Cappuccio"
+#     )
+#     args = parser.parse_args()
+#     crea_persona(args)
+
+#     p = Persona("Ciccio", "Cappuccio")
+#     cf = Persona.calcola_codice_fiscale("Ciccio", "Cappuccio", 18)
+#     print(cf)
+
+#     # p.ringiovanisci()
+#     print(p.eta)
+#     print(p)
+
+#     # p.eta = -5 # throws an error, eta negativa
+
+# # gli argomenti opzionali vanno sempre in coda
+
+
+# # python ha script, moduli e package
+# # - script si eseguono
+# # - moduli si importano
+# # - package sono cartelle di moduli
