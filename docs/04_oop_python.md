@@ -392,8 +392,8 @@ Alcune note:
   attributi in proprietà;
 - per ogni proprietà, abbiamo specificato un _getter_ che restituisce il valore
   della stessa;
-- abbiamo specificato un _setter_, nel quale vi è anche una forma di validazione
-  del valore di input.
+- per ogni proprietà, abbiamo specificato un _setter_, nel quale vi è anche una
+  forma di validazione del valore di input.
 
 Vediamo come usare la nostra nuova classe:
 
