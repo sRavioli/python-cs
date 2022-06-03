@@ -379,6 +379,13 @@ class Persona():
             self.__eta = value
 ```
 
+> <details open>
+> <summary>💡 <em>Suggerimento</em></summary>
+>
+> Vedi l'esercizio sulle classi per ulteriori spiegazioni.
+>
+> </details>
+
 Alcune note:
 
 - abbiamo riscritto la classe `Persona` in modo da trasformare tutti gli
