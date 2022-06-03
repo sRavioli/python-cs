@@ -1,12 +1,11 @@
 # Scrivere una classe `Persona` applicando i concetti visti durante la lezione.
 
-
-# import argparse
+import argparse
 
 
 class Persona:
     # utilizziamo il type hinting: `var: type`
-    # `-> None` suggeriamo che la funzione non abbia un valore di return
+    # con `-> None` suggeriamo che la funzione non abbia un valore di return
     def __init__(self, nome: str, cognome: str, età: int = 18) -> None:
         # il metodo `__init__()` è usato per inizializzare i vari parametri
         # della classe
@@ -30,15 +29,13 @@ class Persona:
     #   self.età = value
     #
     # per "ringiovanire" di default scriveremo `self.età = value - 1`. Python
-    # permette di non utilizzare questa sintassi facendo uso delle `@property`
-
+    # permette di non utilizzare questa sintassi facendo uso delle `@property`:
     @property
     def età(self):
         return self.__età
 
     # con la sintassi precedente recuperiamo il valore dell'istanza. Per
     # inserire un setter scriviamo:
-
     @età.setter
     def età(self, value):
         if value < 0:
@@ -53,7 +50,6 @@ class Persona:
     # vogliamo, ad esempio, creare un codice fiscale (CF). Il procedimento per
     # creare il CF è sempre lo stesso, ma il risultato è differente. Possiamo
     # usare uno `@staticmethod`:
-
     @staticmethod
     def calcola_codice_fiscale(nome, cognome, età):
         return nome + cognome + str(età)  # non creiamo un vero CF, ovviamente
@@ -63,7 +59,32 @@ class Persona:
         return f"{self.nome} – {self.cognome}"
 
 
+# possiamo usare il pacchetto `argparse` per inserire i dati quando eseguiamo
+# lo script da riga di comando:
+def crea_persona(args):
+    p = Persona(args.nome, args.cognome)
+    print(p)  # stampiamo l'istanza
+
+
+# creiamo una funzione da richiamare in main per creare il parser di argomenti:
+def my_parser():
+    parser = argparse.ArgumentParser()  # creiamo il parser
+
+    # aggiungiamo argomenti
+    parser.add_argument("-n", "--nome", help="Nome", default="Ciccio")
+    parser.add_argument("-c", "--cognome", help="Cognome", default="Cappuccio")
+
+    # facciamo il parse degli argomenti
+    args = parser.parse_args()
+
+    # li consegniamo alla funzione creata in precedenza
+    crea_persona(args)
+
+
+# creiamo la funzione principale, `main()`, che è quella che eseguiremo
 def main():
+    my_parser()
+
     p = Persona("Ciccio", "Cappuccio")
     cf = Persona.calcola_codice_fiscale("Ciccio", "Cappuccio", 18)
     print(f"codice fiscale: {cf}")
@@ -74,42 +95,16 @@ def main():
 
     print(p)
 
-    # p.età = -5  # otterremo un errore, l'età è negativa
+    # p.età = -5  # otterremo un errore dato che l'età è negativa
 
 
+# Python fa uso di script, moduli e packages:
+# - SCRIPT: sono i file .py che eseguiamo;
+# - MODULI: sono i file .py che importiamo in altri file .py;
+# - PACKAGES: sono delle cartelle di moduli.
+
+# controlliamo che il nome del file sia "__main__". In questo modo la funzione
+# `main()` verrà eseguita solo se il file viene eseguito direttamente (script)
+# e non quando verrà importato come modulo in un altro file .py
 if __name__ == "__main__":
     main()
-
-
-# # per usare `argparse`
-# def crea_persona(args):
-#     p = Persona(args.nome, args.cognome)
-#     print(p)
-
-
-# if __name__ == "__main__":
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("-n", "--nome", help="Nome della persona", default="Ciccio")
-#     parser.add_argument(
-#         "-c", "--cognome", help="Cognome della persona", default="Cappuccio"
-#     )
-#     args = parser.parse_args()
-#     crea_persona(args)
-
-#     p = Persona("Ciccio", "Cappuccio")
-#     cf = Persona.calcola_codice_fiscale("Ciccio", "Cappuccio", 18)
-#     print(cf)
-
-#     # p.ringiovanisci()
-#     print(p.eta)
-#     print(p)
-
-#     # p.eta = -5 # throws an error, eta negativa
-
-# # gli argomenti opzionali vanno sempre in coda
-
-
-# # python ha script, moduli e package
-# # - script si eseguono
-# # - moduli si importano
-# # - package sono cartelle di moduli
