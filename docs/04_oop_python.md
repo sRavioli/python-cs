@@ -68,6 +68,9 @@ chiamato **istanza**. Ad esempio:
 - l'auto "Opel Corsa", targata "AA 123 CC" è un'altra istanza della classe
   `Auto`;
 
+Sostanzialmente creiamo una struttura dati che raggruppi le caratteristiche
+generali di una classe. Quest'ultima è un'astrazione.
+
 ### Metodi e attributi
 
 Ogni classe ha dei _metodi_, che caratterizzano le azioni le quali possono
