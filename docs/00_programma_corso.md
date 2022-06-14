@@ -35,6 +35,8 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 > Parte 1 (Fondamentali)
 
+<!-- markdownlint-disable MD013 -->
+
 | Data e Ora (16:00 - 19:00) | Argomenti Trattati                                       |
 | :------------------------- | :------------------------------------------------------- |
 | 21/04/2022                 | Introduzione al Corso <br/>Introduzione a Python         |
@@ -67,6 +69,8 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 | 30/06/2022                 | Es. 3: analisi di immagini con TensorFlow e Keras                                       |
 | 04/07/2022                 | Seminario didattico – Vito Renò, Ph.D., CNR – STIIMA                                    |
 | 05/07/2022                 | Seminario didattico – Angela Lombardi, Ph.D., Dipartimento Interateneo di Fisica, UniBa |
+
+<!-- markdown-lint enable MD013 -->
 
 # Metodo di Valutazione
 
