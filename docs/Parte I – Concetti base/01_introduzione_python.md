@@ -97,6 +97,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 > <details>
 >     <summary>Se scaricato tramite Anaconda</summary>
 >
+> <!-- markdownlint-disable MD013 -->
+>
 > ```pycon
 > $ python
 > Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
@@ -104,6 +106,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 > >>>
 > ```
 >
+> <!-- markdownlint-enable MD013 -->
 > </details>
 
 Possiamo ora chiuderlo, lo useremo in seguito:
@@ -205,12 +208,16 @@ installare Python, in modo da avere un ambiente di lavoro accessibile da riga di
 comando. Apriamo una shell (Powershell, bash, etc.) e invochiamo l'interprete
 usando il seguente comando:
 
+<!-- markdownlint-disable MD013 -->
+
 ```pycon
 $ python
 Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 Possiamo ora utilizzare Python in maniera interattiva.
 

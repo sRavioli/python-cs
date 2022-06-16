@@ -252,10 +252,14 @@ print(trig.calc_tangente(math.pi))
 La funzione `dir()` restituisce una lista con tutti i nomi (sia di funzione, che
 di classe) definiti da un modulo. Ad esempio:
 
+<!-- markdownlint-disable MD013-->
+
 ```pycon
 >>> dir(geometria)
 ['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'calc_area_quadrato', 'calc_area_rettangolo', 'calc_area_triangolo']
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 È interessante notare che, oltre alle funzioni, classi e variabili da noi
 definite, nel modulo geometria siano automaticamente definite altre variabili,
