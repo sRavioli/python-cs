@@ -88,7 +88,7 @@ plt.show()
 Se tutto è andato per il verso giusto, dovremmo vedere a schermo questa
 immagine:
 
-![Primo grafico matplotlib](img/first_plot.jpg)
+![Primo grafico in matplotlib (plt)](../img/matplotlib/first_plot.png)
 
 > <details open>
 > <summary>💡 <em>Suggerimento</em></summary>
@@ -170,8 +170,8 @@ ed effettuiamo il plot di entrambe le funzioni.
 
 ```python
 figure, axes = plt.subplots()
-axes.plot(x, y_1, label='Retta')
-axes.plot(x, y_2, label='Funzione sinusoidale')
+axes.plot(x, y_1, label="Retta")
+axes.plot(x, y_2, label="Funzione sinusoidale")
 ```
 
 Abbiamo impostato un parametro `label` che indica l'etichetta assegnata ai due
@@ -180,9 +180,9 @@ titolo e le label sugli assi _x_ ed _y_ usando rispettivamente le funzioni
 `set_title()`, `set_xlabel()` e `set_ylabel()`:
 
 ```python
-axes.set_title('Plot di due funzioni matematiche')
-axes.set_xlabel('Asse x')
-axes.set_ylabel('Asse y')
+axes.set_title("Plot di due funzioni matematiche")
+axes.set_xlabel("Asse x")
+axes.set_ylabel("Asse y")
 ```
 
 Usiamo la funzione `grid()` per mostrare una griglia sulla figura, e la
@@ -202,7 +202,7 @@ plt.show()
 
 Il risultato ottenuto è il seguente:
 
-![Plot della funzione seno e retta, stesso `axes`](img/double_plot.jpg)
+![Due funzioni nello stesso grafico (plt)](../img/matplotlib/two_func_in_one.png)
 
 ## Subplot
 
@@ -220,7 +220,7 @@ Possiamo poi usare la funzione `suptitle()` per dare un titolo all'intera
 figura:
 
 ```python
-figure.suptitle('Due subplot di più funzioni matematiche')
+figure.suptitle("Due subplot di più funzioni matematiche")
 ```
 
 A questo punto, procediamo ad effettuare i plot sui relativi assi nella solita
@@ -228,15 +228,15 @@ maniera:
 
 ```python
 # Primo subplot
-axes_1.plot(x, y_1, label='Retta')
-axes_1.set_ylabel('Asse y')
+axes_1.plot(x, y_1, label="Retta")
+axes_1.set_ylabel("Asse y")
 axes_1.legend()
 axes_1.grid()
 
 # Secondo subplot
-axes_2.plot(x, y_2, label='Funzione sinusoidale')
-axes_2.set_xlabel('Asse x')
-axes_2.set_ylabel('Asse y')
+axes_2.plot(x, y_2, label="Funzione sinusoidale")
+axes_2.set_xlabel("Asse x")
+axes_2.set_ylabel("Asse y")
 axes_2.legend()
 axes_2.grid()
 
@@ -246,7 +246,7 @@ plt.show()
 
 Il risultato sarà simile a quello mostrato in figura:
 
-![Due subplots, uno sopra l'altro](img/multi_subplots.png)
+![Due funzioni, ognuna nel singolo subplot (plt)](../img/matplotlib/subplot.png)
 
 ## Rappresentazione di un istogramma
 
@@ -267,7 +267,7 @@ singoli _bin_ sia esattamente pari ad 1).
 
 ```python
 figure, axes = plt.subplots()
-axes.hist(x, edgecolor='black', linewidth=1.2, density=True)
+axes.hist(x, edgecolor="black", linewidth=1.2, density=True)
 ```
 
 Notiamo anche l'uso dei parametri `edgecolor` e `linewidth` che,
@@ -278,13 +278,13 @@ Usiamo i metodi opportuni per impostare titolo e label degli assi, e mostriamo
 la figura.
 
 ```python
-axes.set_xlabel('Bin')
-axes.set_ylabel('Conteggio dei singoli elementi')
-axes.set_title('Esempio di istogramma')
+axes.set_xlabel("Bin")
+axes.set_ylabel("Conteggio dei singoli elementi")
+axes.set_title("Esempio di istogramma")
 
 plt.show()
 ```
 
 Il risultato sarà simile a questo:
 
-![Esempio istogramma](img/hist.png)
+![Esempio di istogramma](../img/matplotlib/histogram.png)
