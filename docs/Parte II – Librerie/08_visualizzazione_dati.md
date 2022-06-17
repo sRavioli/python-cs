@@ -56,7 +56,7 @@ import matplotlib.pyplot as plt
 ```
 
 > <details open>
-> <summary>ℹ️ <em>L'API `pyplot`</em></summary>
+> <summary>ℹ️ <em>L'API <code>pyplot</code></em></summary>
 >
 > Sottolineamo l'uso dell'API [`pyplot`](https://matplotlib.org/stable/tutorials/introductory/pyplot.html)
 > per Matplotlib al posto dell'API "standard". In tal modo, avremo a
