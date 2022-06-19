@@ -98,9 +98,9 @@ def calc_area_rettangolo(base, altezza):
 def calc_area_triangolo(base, altezza):
     return (base * altezza) / 2
 
-area_quadrato = calcola_area_quadrato(4)
-area_rettangolo = calcola_area_rettangolo(2, 3)
-area_triangolo = calcola_area_triangolo(2, 3)
+area_quadrato = calc_area_quadrato(4)
+area_rettangolo = calc_area_rettangolo(2, 3)
+area_triangolo = calc_area_triangolo(2, 3)
 ```
 
 Vogliamo adesso una funzione di calcolo trigonometrico:
