@@ -1,4 +1,4 @@
-# 6 – Jupyter
+# 06 – Jupyter
 
 > Corso di Python per il Calcolo Scientifico
 >
@@ -11,7 +11,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <!-- TOC -->
 
-1. [6 – Jupyter](#6--jupyter)
+1. [06 – Jupyter](#06--jupyter)
 2. [iPython e Jupyter Lab](#ipython-e-jupyter-lab)
 3. [Anatomia di un Notebook](#anatomia-di-un-notebook)
 4. [Installazione e lancio di Jupyter](#installazione-e-lancio-di-jupyter)
@@ -94,7 +94,7 @@ genere:
 
 ![Jupyter-lab homepage](./img/jupyter-lab.jpg)
 
-Creiamo il nostro primo notebook cliccando sul pulsante "Python 3 (ipykernel)"
+Creiamo il nostro primo notebook cliccando sul pulsante "Python $3$ (ipykernel)"
 nella sezione Notebook. Una volta terminata la procedura possiamo interagire con
 l'ambiente. Prima di procedere diamo un nome al notebook dal menù a sinistra.
 

@@ -27,7 +27,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
       4. [Concatenazione col metodo `.join()`](#concatenazione-col-metodo-join)
       5. [Concatenazione con il `%`-formatting](#concatenazione-con-il--formatting)
       6. [Concatenazione con il metodo `.format()`](#concatenazione-con-il-metodo-format)
-      7. [Concatenazione con le _f_-strings](#concatenazione-con-le-f-strings)
+      7. [Concatenazione con le $f$-strings](#concatenazione-con-le-f-strings)
       8. [Che metodo usare?](#che-metodo-usare)
    3. [Indicizzazione delle stringhe](#indicizzazione-delle-stringhe)
    4. [Slicing su stringhe](#slicing-su-stringhe)
@@ -55,7 +55,7 @@ Python 3.9.7
 ```
 
 > Il simbolo `$` indica l'input in bash. È importante che la versione di Python
-> sia `3.9.n`.
+> sia $3.9.n$.
 >
 > <details>
 >     <summary>Per i curiosi</summary>
@@ -133,7 +133,7 @@ int var = 0;
 ```
 
 Abbiamo dichiarato che `var` è un intero e gli abbiamo assegnato il valore di
-`0`. In Python sarà sufficiente scrivere
+$0$. In Python sarà sufficiente scrivere
 
 ```python
 var = 0
@@ -170,11 +170,11 @@ che in italiano sarebbe "Se cammina come un papero, e starnazza come un papero,
 allora dev'essere un papero". Ma che significa?
 
 Immaginiamo, tramite l'interprete Python, di assegnare alla nostra variabile
-`var` il valore di `1`. Per l'interprete `var` si _comporta_ come un numero
+`var` il valore di $1$. Per l'interprete `var` si _comporta_ come un numero
 intero e quindi stabilisce che lo sia.
 
-Proviamo a sommare a `var` il valore `1.1`, il risultato sarà un numero
-decimale, `2.1`, quindi l'interprete "cambierà idea" poiché i comportamenti
+Proviamo a sommare a `var` il valore $1.1$, il risultato sarà un numero
+decimale, $2.1$, quindi l'interprete "cambierà idea" poiché i comportamenti
 assunti da `var` sono assimilabili ad una variabile di tipo `float`.
 
 <!-- Possiamo verificarlo con l'interprete
@@ -290,7 +290,7 @@ potenza.
 >
 > Finora abbiamo parlato soltanto di numeri interi o decimali. Python supporta
 > anche altri tipi, ad esempio `Decimal` e `Fraction`. È inoltre presente un
-> supporto nativo per i numeri complessi, `j` indica la parte immaginaria:
+> supporto nativo per i numeri complessi, $j$ indica la parte immaginaria:
 >
 > ```pycon
 > >>> 1j + 3j
@@ -551,10 +551,10 @@ In questo esempio, utilizziamo le parentesi graffe `{}` nel _literal_ e passiamo
 la stringa da concatenare al metodo `.format()`. Quest'ultimo sostituisce le
 parentesi graffe `{}` con la stringa corrispondente nell'argomento del metodo.
 
-### Concatenazione con le _f_-strings
+### Concatenazione con le $f$-strings
 
-Python 3.6 introduce le _f_-strings per formattare l'output in maniera più
-elegante e concisa. Possiamo usare le _f_-strings per concatenare le stringhe.
+Python 3.6 introduce le $f$-strings per formattare l'output in maniera più
+elegante e concisa. Possiamo usare le $f$-strings per concatenare le stringhe.
 Vediamo come:
 
 ```pycon
@@ -569,7 +569,7 @@ Vediamo come:
 
 Nonostante sono presenti molteplici modi per concatenare stringhe in Python, è
 raccomandato usare o l'operatore standard `+` o il metodo `.join()` o il metodo
-`.format()` o le _f_-strings.
+`.format()` o le $f$-strings.
 
 ## Indicizzazione delle stringhe
 
@@ -582,9 +582,9 @@ indicizzarli. Ad esempio:
 'P'
 ```
 
-Notiamo che Python (e molti altri linguaggi) hanno come primo indice lo `0`.
-Dunque per accedere al primo carattere, useremo l'indice `0` e **non**
-l'indice `1`.
+Notiamo che Python (e molti altri linguaggi) hanno come primo indice lo $0$.
+Dunque per accedere al primo carattere, useremo l'indice $0$ e **non**
+l'indice $1$.
 
 Anche i singoli caratteri sono considerati come delle stringhe ma di lunghezza
 unitaria:
@@ -631,7 +631,7 @@ Ad esempio:
 'sii'
 ```
 
-Dunque lo `<step>` è di default pari a `1` e quindi può essere omesso.
+Dunque lo `<step>` è di default pari a $1$ e quindi può essere omesso.
 
 > <details>
 > <summary>✏️ <strong>Nota</strong></summary>
@@ -693,8 +693,8 @@ possiamo scrivere:
 
 Un modo per ricordarsi il funzionamento dello slicing consiste nel pensare che
 gli indici siano compresi tra i caratteri della stringa. L'estremo sinistro del
-primo carattere avrà indice `0`, l'estremo destro dell'ultimo carattere di una
-stringa di `n` caratteri avrà indice `n`. Ad esempio:
+primo carattere avrà indice $0$, l'estremo destro dell'ultimo carattere di una
+stringa di $n$ caratteri avrà indice $n$. Ad esempio:
 
 ```txt
  +---+---+---+---+---+---+
@@ -704,10 +704,10 @@ stringa di `n` caratteri avrà indice `n`. Ad esempio:
 -6  -5  -4  -3  -2  -1
 ```
 
-Nella prima riga di numeri sono presenti gli indici delle posizioni `0...6`
+Nella prima riga di numeri sono presenti gli indici delle posizioni $0...6$
 nella stringa; nella seconda riga sono presenti gli indici negativi
-corrispondenti. Lo slicing da `i` a `j` consisterà di tutti i caratteri compresi
-tra gli estremi di indice rispettivamente `i` e `j`.
+corrispondenti. Lo slicing da $i$ a $j$ consisterà di tutti i caratteri compresi
+tra gli estremi di indice rispettivamente $i$ e $j$.
 
 ## Lunghezza di una stringa
 

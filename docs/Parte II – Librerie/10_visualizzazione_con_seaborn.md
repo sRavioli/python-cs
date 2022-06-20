@@ -212,7 +212,7 @@ parametri indicati in modo da passare un array (o similari) come primo
 argomento, seguito da una `colormap` (`cmap`), ovvero i colori da utilizzare.
 Specifichiamo inoltre che vogliamo inserire i valori dell'array su ciascuna
 delle celle dell'heatmap (mediante il parametro `annot`) e che non vogliamo
-visualizzare i label sugli assi _x_ e _y_ (`xticklabels` e `yticklabels`
+visualizzare i label sugli assi $x$ e $y$ (`xticklabels` e `yticklabels`
 rispettivamente). Otterremo questo risultato:
 
 ![Heatmap di un array (sns, `heatmap()`)](../img/seaborn/array_heatmap.png)

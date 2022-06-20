@@ -165,7 +165,7 @@ noisy = np.random.normal(0, 1, size=(100,))
 ```
 
 Filtriamo questo segnale usando un filtro di Savitzky-Golay con finestra di
-lunghezza pari a 7 campioni e mediante un polinomio approssimante di secondo
+lunghezza pari a $7$ campioni e mediante un polinomio approssimante di secondo
 grado:
 
 ```python

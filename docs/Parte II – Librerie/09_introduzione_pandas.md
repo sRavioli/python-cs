@@ -450,7 +450,7 @@ una concatenazione per colonne, avremmo un risultato del tipo:
 0    6    7  6.0  7.0
 ```
 
-I valori relativi alle righe con indice che va da 1 a 4, che ovviamente non
+I valori relativi alle righe con indice che va da $1$ a $4$, che ovviamente non
 saranno presenti, saranno automaticamente impostati a `NaN`, acronimo di _Not a_
 _Number_.
 

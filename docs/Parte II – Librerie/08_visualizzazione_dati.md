@@ -113,8 +113,8 @@ Alla base del funzionamento di Matplotlib abbiamo quattro classi fondamentali.
    tra `Figure` ed `Axes` è strettamente gerarchica: una `Figure` può avere
    diversi `Axes`, ma ogni `Axes` appartiene esclusivamente ad una `Figure`;
 3. All'interno di un oggetto `Axes` troviamo due o tre oggetti di tipo `Axis`,
-   ognuno dei quali rappresenta l'asse vero e proprio (in altri termini _x_ e
-   _y_, per le figure tridimensionali anche _z_). Gli oggetti `Axis` ci
+   ognuno dei quali rappresenta l'asse vero e proprio (in altri termini $x$ e
+   $y$, per le figure tridimensionali anche $z$). Gli oggetti `Axis` ci
    permettono quindi di definire gli intervalli dati, l'eventuale griglia, e
    via discorrendo;
 4. In ultimo, abbiamo gli _artist_, che rappresentano tutto quello che è
@@ -137,7 +137,7 @@ necessari e aver creato un vettore di numeri interi casuali, abbiamo creato una
 figure, axes = plt.subplots()
 ```
 
-A quel punto, abbiamo effettuato il plot dei valori di _x_ ed _y_ su nostro
+A quel punto, abbiamo effettuato il plot dei valori di $x$ ed $y$ su nostro
 oggetto `Axes`:
 
 ```python
@@ -176,7 +176,7 @@ axes.plot(x, y_2, label="Funzione sinusoidale")
 
 Abbiamo impostato un parametro `label` che indica l'etichetta assegnata ai due
 plot, questa sarà utilizzata più tardi per generare la legenda. Impostiamo il
-titolo e le label sugli assi _x_ ed _y_ usando rispettivamente le funzioni
+titolo e le label sugli assi $x$ ed $y$ usando rispettivamente le funzioni
 `set_title()`, `set_xlabel()` e `set_ylabel()`:
 
 ```python
@@ -208,7 +208,7 @@ Il risultato ottenuto è il seguente:
 
 Possiamo definire più `Axes` per un'unica `Figure`. Per farlo, possiamo
 parametrizzare la funzione `subplots(i, j)`, in maniera tale che vengano
-creati _i × j_ plot all'interno della stessa figura.
+creati $i \times j$ plot all'interno della stessa figura.
 
 Per creare due subplot, uno sopra l'altro, usiamo questa istruzione:
 
@@ -263,7 +263,7 @@ x = rng.integers(low=0, high=100, size=1000)
 Creiamo la figura, usiamo la funzione `hist()` passandogli il vettore `x`
 creato in precedenza e il parametro `density`, che ci permetterà di
 normalizzare l'istogramma (ovvero, fare in modo che la sommatoria dei
-singoli _bin_ sia esattamente pari ad 1).
+singoli _bin_ sia esattamente pari ad $1$).
 
 ```python
 figure, axes = plt.subplots()

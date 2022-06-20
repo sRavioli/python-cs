@@ -59,11 +59,11 @@ viene aggiunto alla pila è il **_primo_** ad uscire dalla pila.
 Per implementare una pila a partire da una lista possiamo usare due metodi:
 
 - il metodo `.append()` che ci permette di inserire un nuovo elemento in cima
-  alla pila (ovvero la posizione con indice `n - 1`, dove `n` è il numero di
+  alla pila (ovvero la posizione con indice $n - 1$, dove $n$ è il numero di
   componenti);
 - il metodo `.pop(pos)` che ci permette di estrarre un elemento in posizione
   `pos`. Se il valore di posizione `pos` non viene specificato, verrà estratto
-  l'elemento in posizione `n - 1`.
+  l'elemento in posizione $n - 1$.
 
 Ad esempio:
 
@@ -89,7 +89,7 @@ presente da più tempo in coda.
 > </details>
 
 Per implementare una coda a partire da una lista possiamo comunque usare i
-metodi visti in precedenza con valore `pos` pari a `0`. Ad esempio:
+metodi visti in precedenza con valore `pos` pari a $0$. Ad esempio:
 
 ```python
 q = [1, 2, 3]
@@ -212,8 +212,8 @@ Definiamo i valori iniziali della [successione di Fibonacci](https://it.wikipedi
 ```
 
 Usiamo una _assignment expression_ per ottenere una lista che come primo
-elemento abbia il secondo elemento della lista precedente (quindi `1`) e come
-secondo elemento la somma di tutti gli elementi della lista (quindi `0 + 1`):
+elemento abbia il secondo elemento della lista precedente (quindi $1$) e come
+secondo elemento la somma di tutti gli elementi della lista (quindi $0 + 1$):
 
 ```pycon
 >>> (fib := [fib[1], fib[0] + fib[1]])
@@ -233,7 +233,7 @@ secondo valore ottenuto. Per isolarlo, possiamo usare l'operatore booleano
 > <details>
 > <summary>✏️ <strong>Nota</strong></summary>
 >
-> Otteniamo `2` perché ogni volta che viene usata la _assignment expression_,
+> Otteniamo $2$ perché ogni volta che viene usata la _assignment expression_,
 > i valori di `fib` vengono aggiornati.
 >
 > </details>
@@ -468,8 +468,8 @@ _dict comprehension_, che è una forma del tipo:
 dct_out = {key: val for val in iterabile}
 ```
 
-Ad esempio, possiamo creare un dizionario contenente come chiave i numeri da `1`
-a `9` e come valori corrispondenti i quadrati degli stessi:
+Ad esempio, possiamo creare un dizionario contenente come chiave i numeri da $1$
+a $9$ e come valori corrispondenti i quadrati degli stessi:
 
 ```pycon
 >>> sqrs = {str(i): i**2 for i in range(1, 10)}

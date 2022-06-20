@@ -275,7 +275,7 @@ for elemento in sequenza:
    istruzioni()
 ```
 
-Ad esempio, stampiamo i numeri che vanno da `0` a `4`:
+Ad esempio, stampiamo i numeri che vanno da $0$ a $4$:
 
 ```python
 numbers = [0, 1, 2, 3, 4]
@@ -351,8 +351,8 @@ while condition:
 ```
 
 Il codice precedente non fa altro che generare un valore numerico intero in
-maniera casuale nell'intervallo `[-5, 5]` mediante il metodo `randint()`, della
-libreria `random`. Se tale valore è superiore a `0`, il ciclo continua,
+maniera casuale nell'intervallo $[-5, 5]$ mediante il metodo `randint()`, della
+libreria `random`. Se tale valore è superiore a $0$, il ciclo continua,
 altrimenti viene interrotto.
 
 Otterremo, ad esempio:
@@ -402,8 +402,8 @@ range(<inizio>, <fine>, <step>)
 Questa funzione genera automaticamente una sequenza di numeri compresi tra
 `<inizio>` (incluso) e `<fine>` (escluso) con incremento `<step>`.
 L'unico valore che va inserito obbligatoriamente è `<fine>`, `<inizio>` è di
-default `0`, `<step>` è di default `1`. Generiamo, ad esempio, i numeri compresi
-tra `0` e `4`:
+default $0$, `<step>` è di default $1$. Generiamo, ad esempio, i numeri compresi
+tra $0$ e $4$:
 
 ```pycon
 >>> rng = range(0, 5, 1)
@@ -419,7 +419,7 @@ tra `0` e `4`:
 >
 > </details>
 
-Dunque nell'esempio precedente potremmo omettere tutti i valori tranne `5`:
+Dunque nell'esempio precedente potremmo omettere tutti i valori tranne $5$:
 
 ```pycon
 >>> rng = range(5)
@@ -460,7 +460,7 @@ for item in range(len(lst)):
 > </details>
 
 Poiché `len(lst)` ci restituisce il numero di elementi presenti nella lista
-(ovvero 4), definiamo un `range` che va da `0` a `3`. Dopodiché stampiamo
+(ovvero $4$), definiamo un `range` che va da $0$ a $3$. Dopodiché stampiamo
 elemento per elemento i valori contenuti all'interno della lista e otterremo il
 risultato desiderato.
 
@@ -525,7 +525,7 @@ raddoppia_lista(lista)
 ```
 
 **Esercizio:** creiamo una funzione che restituisca una lista di numeri
-generati casualmente tra `0` e `10` (escluso). Usiamo un parametro opzionale per
+generati casualmente tra $0$ e $10$ (escluso). Usiamo un parametro opzionale per
 specificarne la lunghezza.
 
 **Soluzione:** usiamo i metodi `append()` e `randint()` della libreria `random`.
@@ -637,3 +637,5 @@ che definiremo per qualche motivo in seguito:
 > situazioni in cui l'istruzione `pass` risulta essere estremamente utile.
 >
 > </details>
+
+
