@@ -4,20 +4,32 @@ import argparse
 
 
 class Persona:
-    # utilizziamo il type hinting: `var: type`
-    # con `-> None` suggeriamo che la funzione non abbia un valore di return
+    # il type hinting (`variabile: tipo`) suggerisce all'utente che tipo di
+    # variabile inserire nella funzione. Con `...) -> None:` si suggerisce che
+    # la funzione non abbia alcun valore di `return`.
+    #
+    # Attraverso il metodo `__init__()`, le variabile inserire nella funzione
+    # vengono inizializzate, diventando i parametri della classe
     def __init__(self, nome: str, cognome: str, età: int = 18) -> None:
-        # il metodo `__init__()` è usato per inizializzare i vari parametri
-        # della classe
+        #              ^^^^^^^^^
         #
-        # nel caso in cui scrivessimo `cog: str` nell'argomento di `__init__()`
-        # anziché `cognome: str` e non modificassimo `self.cognome = cognome`
-        # in `self.cognome = cog`, l'interprete ci restituirà un errore.
+        # se cambiassimo il nome della variabile evidenziata, dovremmo cambiare
+        # anche il nome nell'istruzione `self.nome = ...` sostituendo a `...`
+        # il nuovo nome della variabile.
 
-        self.nome = nome
+        self.nome = nome  # <- dovremmo cambiare qui
         self.cognome = cognome
         self.età = età
 
+    # per modificare il valore di una variabile, è necessario accedervi. Altri
+    # linguaggi utilizzerebbero una sintassi di questo tipo:
+    #
+    # def get_età(self):
+    #    return self.età
+    #
+    # def set_età(self, età):
+    #     self.età = value
+    #
     # per modificare i valori delle variabili devo accedervi. Vogliamo, ad
     # esempio "ringiovanire" di default tutte le persone. Usiamo un
     # modificatore. Altri linguaggi utilizzerebbero una sintassi del genere:
@@ -28,31 +40,30 @@ class Persona:
     # def set_età(self, età):
     #   self.età = value
     #
-    # per "ringiovanire" di default scriveremo `self.età = value - 1`. Python
-    # permette di non utilizzare questa sintassi facendo uso delle `@property`:
+    # Python invece utilizza le `@property`. Per recuperare il valore
+    # dell'istanza:
     @property
     def età(self):
         return self.__età
 
-    # con la sintassi precedente recuperiamo il valore dell'istanza. Per
-    # inserire un setter scriviamo:
+    # Per inserire un setter scriviamo:
     @età.setter
     def età(self, value):
         if value < 0:
+            # "solleva" un errore nel caso l'età sia negativa
             raise ValueError("L'età non può essere negativa")
-
-        self.__età = value  # per ringiovanire `value - 1`
+        self.__età = value  # per "ringiovanire" `value - 1`
 
     # creiamo il metodo `ringiovanisci()`
     def ringiovanisci(self):
         self.età = self.età - 1
 
-    # vogliamo, ad esempio, creare un codice fiscale (CF). Il procedimento per
-    # creare il CF è sempre lo stesso, ma il risultato è differente. Possiamo
-    # usare uno `@staticmethod`:
+    # creiamo un (finto) codice fiscale (CF). Il procedimento per creare un CF
+    # è sempre lo stesso, ma il risultato è differente. Possiamo usare uno
+    # `@staticmethod`:
     @staticmethod
     def calcola_codice_fiscale(nome, cognome, età):
-        return nome + cognome + str(età)  # non creiamo un vero CF, ovviamente
+        return nome + cognome + str(età)
 
     # il metodo `__str__()` viene chiamato quando stampiamo la singola istanza
     def __str__(self):
@@ -166,14 +177,19 @@ if __name__ == "__main__":
 #   forma di validazione del valore passato in input.
 #
 # Vediamo come usare la nostra nuova classe:
+#
 # ```
-# >>> draco = Persona('Draco', 'Malfoy', 12)
+# >>> draco = Persona("Draco", "Malfoy", 12)
 # >>> print(draco.nome)
 # Draco
 # >>> print(draco.eta)
 # 12
-# >>> hermione = PersonProperty('', 'Granger', 18)
-# ValueError: La lunghezza del nome non può essere inferiore a due caratteri.
+# >>> hermione = Persona("", "Granger", 18)
+# Traceback (most recent call last):
+#   File "<stdin>", line 1, in <module>
+#   File "<stdin>", line 3, in __init__
+#   File "<stdin>", line 12, in nome
+# ValueError: La lunghezza del nome non può essere inferiore ai 2 caratteri
 # ```
 #
 # Notiamo che, dal punto di vista dello script che richiama la classe, non ci
