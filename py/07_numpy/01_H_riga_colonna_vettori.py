@@ -18,14 +18,16 @@ def row_col_product(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     # `barry` riga/colonna)
     if (min(a.shape) or min(b.shape)) != 1:
         raise ValueError(
-            f"One (or both) vector has too many rows/columns (a: {min(a.shape)}, b: {min(b.shape)})"
+            "One (or both) vector has too many rows/columns "
+            f"(a: {min(a.shape)}, b: {min(b.shape)})"
         )
 
     result = []  # lista nulla da convertire in array
+
     # le `barry.shape` sono `(1, n)` o viceversa. L'indice `m` è la
     # `barry.ndim` minore dei due array, utile per selezionare correttamente
     # gli elementi dell'array
-    for m in range(1):
+    for m in range(1):  # equivalente a `min(range(barry.shape))`
         for i in range(max(a.shape)):
             partial = []  # lista nulla che funge da riga (da riempire)
 
@@ -47,10 +49,23 @@ a = np.array([[1, 2, 3]])
 b = np.array([[4], [5], [6]])
 
 start = time()
-print(row_col_product(a, b))
-print(row_col_product(b, a))  # otterremo lo stesso risultato
+print(
+    row_col_product(a, b),
+    # row_col_product(b, a) # stesso risultato
+)
 stop = time()
-print(stop - start)
+print("time:", stop - start, "s")
+
+# con una list comprehension
+result = [
+    [
+        a[m][j] * b[i][m] if a.shape[0] == 1 else a[i][m] * b[m][j]
+        for j in range(max(b.shape))
+    ]
+    for i in range(max(a.shape))
+    for m in range(1)
+]
+print(np.array(result))
 
 # tutta questa operazione la si può effettuare tramite numpy:
 # print(a * b)
@@ -84,4 +99,4 @@ print(stop - start)
 # res = riga_per_colonna(np.array([[1]]), v2)
 #
 # L'equivalente operazione in NumPy è data da:
-# res = v1 * v2 # in realtà è data da np.dot(v1, v2)
+# res = v1 * v2 # dovrebbe essere np.dot(v1, v2) (??)
