@@ -94,8 +94,8 @@ immagine:
 > <summary>💡 <em>Suggerimento</em></summary>
 >
 > Dovreste vedere a schermo esattamente questa immagine perché nella
-> generazione dei numeri casuali, che avviene alla riga 1, viene usato il seed
-> `42`. Se provate ad usarne un altro, vedrete un'altra immagine.
+> generazione dei numeri casuali, viene usato il seed `42`. Se provate ad usarne
+> un altro, vedrete un'altra immagine.
 >
 > </details>
 
@@ -137,7 +137,7 @@ necessari e aver creato un vettore di numeri interi casuali, abbiamo creato una
 figure, axes = plt.subplots()
 ```
 
-A quel punto, abbiamo effettuato il plot dei valori di $x$ ed $y$ su nostro
+A quel punto, abbiamo effettuato il plot dei valori di $x$ ed $y$ sul nostro
 oggetto `Axes`:
 
 ```python
@@ -146,7 +146,7 @@ axes.plot(x, y)
 
 In ultimo, abbiamo mostrato a schermo la figura usando la funzione `plt.show()`.
 
-Vediamo ora altri esempi.
+Vediamo altri esempi.
 
 # Esempi con Matplotlib
 
@@ -154,7 +154,7 @@ Vediamo ora altri esempi.
 
 Vogliamo mostrare sullo stesso `Axes` il plot di due diverse funzioni, in
 particolare una retta e un seno. Questo è possibile grazie al fatto che i plot
-vengono "gestiti" degli artist, e quindi è possibile inserirne un numero arbitrario.
+vengono "gestiti" degli artist e quindi possiamo inserirne un numero arbitrario.
 
 Per prima cosa, definiamo i nostri dati:
 
