@@ -32,9 +32,9 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 Pandas è una delle librerie più importanti dell'ecosistema SciPy e viene usata
 per lettura e elaborazione di dati provenienti da sorgenti di vario tipo, come
-ad esempio file `CSV` o Excel, ma anche file `txt` e database.
-Vediamo brevemente il funzionamento della libreria, ricordando che
-approfondiremo l'utilizzo nelle lezioni successive.
+ad esempio file `CSV` o Excel, ma anche file `txt` e database. Vediamo brevemente
+il funzionamento della libreria, ricordando che approfondiremo l'utilizzo nelle
+lezioni successive.
 
 ## Installazione e configurazione di Pandas
 
@@ -67,9 +67,9 @@ i fogli di calcolo e i database.
 campioni del dataset, mentre alle colonne sono associati i valori assunti dalle
 diverse caratteristiche (o feature) di ciascun campione.
 
-Facciamo un esempio usando il dataset Titanic, uno tra i più utilizzati a scopi
-di sperimentazione. Per prima cosa, generiamo un dataframe rappresentativo dei
-dati contenuti nel dataset:
+Facciamo un esempio usando il dataset [Titanic](../../docs/data/titanic.csv),
+uno tra i più utilizzati a scopi di sperimentazione. Per prima cosa, generiamo un
+dataframe rappresentativo dei dati contenuti nel dataset:
 
 ```python
 df = pd.read_csv("titanic.csv")

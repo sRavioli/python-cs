@@ -96,8 +96,6 @@ verificare che segua la distribuzione di probabilità `pdf(x)` per ciascuno dei
 due tipi di distribuzione. Ricordiamo di inserire il valore `density=True` per
 normalizzare l'istogramma.
 
-Il risultato dovrebbe essere simile a quello mostrato in figura:
-
 Per la distribuzione normale:
 
 ```python
