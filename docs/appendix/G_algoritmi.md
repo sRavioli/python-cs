@@ -15,7 +15,8 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 2. [G.1 – Decomposizione ai valori singolari](#g1--decomposizione-ai-valori-singolari)
    1. [G1.2 – Trasformazione 1: rescaling di matrice](#g12--trasformazione-1-rescaling-di-matrice)
    2. [G.1.3 – Trasformazione 2: rotazione di matrice](#g13--trasformazione-2-rotazione-di-matrice)
-   3. [G.1.4 – Interpretazione della SVD](#g14--interpretazione-della-svd)
+3. [\end{bmatrix}](#endbmatrix)
+   1. [G.1.4 – Interpretazione della SVD](#g14--interpretazione-della-svd)
 
 <!-- /TOC -->
 
@@ -55,22 +56,42 @@ Applichiamo al vettore $v$ una trasformazione lineare definita da una matrice
 diagonale $d$:
 
 $$
-\newcommand{\mtrx}[2]{\begin{bmatrix}#1 \\ #2\end{bmatrix}}
-
 \begin{align*}
-    v &= \mtrx{x}{y} \\
-    d &= \mtrx{3 & 0}{0 & 3} \\
+    v &= \begin{bmatrix}
+            x            \\
+            y
+         \end{bmatrix}   \\
+    d &= \begin{bmatrix}
+            3 & 0        \\
+            0 & 3
+         \end{bmatrix}
 \end{align*}
 $$
 
 Se moltiplichiamo $d$ per $v$, abbiamo:
 
 $$
-\newcommand{\mtrx}[2]{\begin{bmatrix}#1 \\ #2\end{bmatrix}}
-
-\mtrx{x'}{y'} = \mtrx{3 & 0}{0 & 3} \times \mtrx{x}{y}
-              = \mtrx{3x + 0}{0 + 3y}
-              = \mtrx{3x}{3y}
+\begin{bmatrix}
+    x'              \\
+    y'
+\end{bmatrix}
+= \begin{bmatrix}
+      3 & 0         \\
+      0 & 3
+  \end{bmatrix}
+  \times
+  \begin{bmatrix}
+      x             \\
+      y
+  \end{bmatrix}
+= \begin{bmatrix}
+      3x + 0        \\
+      0 + 3y
+  \end{bmatrix}
+= \begin{bmatrix}
+      3x            \\
+      3y
+  \end{bmatrix}
 $$
 
 In pratica, abbiamo triplicato il nostro vettore!
@@ -93,8 +114,10 @@ Se applicata ad un vettore, questa matrice applicherà una certa rotazione a $\v
 
 $$
 \begin{bmatrix}
-    y' \\ y'
-\end{bmatrix} =
+    x'                                  \\
+    y'
+\end{bmatrix}
+=
 \begin{bmatrix}
     x\cos{\vartheta} + y\sin{\vartheta} \\
     x\sin{\vartheta} + y\cos{\vartheta}
@@ -105,13 +128,13 @@ Se consideriamo un vettore a coordinate $x = 1, y = 0$, e un valore di
 $\vartheta$ pari a $45^\circ$, allora
 
 $$
-    x' = 1 \cdot \cos(45) + 0 \cdot \sin(45) = \cos(45)
+x' = 1 \cdot \cos(45) + 0 \cdot \sin(45) = \cos(45)
 $$
 
 e
 
 $$
-    y' = 1 \cdot \sin(45) + 0 \cdot \cos(45) = \sin(45)
+y' = 1 \cdot \sin(45) + 0 \cdot \cos(45) = \sin(45)
 $$
 
 In questo caso specifico, i nuovi valori di $(x', y')$ saranno pari a
