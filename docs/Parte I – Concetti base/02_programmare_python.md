@@ -14,7 +14,6 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 1. [02 – Programmare in Python](#02--programmare-in-python)
 2. [Alcuni concetti sintattici fondamentali](#alcuni-concetti-sintattici-fondamentali)
    1. [Uso delle parentesi](#uso-delle-parentesi)
-   2. [Istruzioni e ambito](#istruzioni-e-ambito)
 3. [Programmazione strutturata](#programmazione-strutturata)
    1. [Istruzioni condizionali (`if`)](#istruzioni-condizionali-if)
    2. [Pattern matching](#pattern-matching)
@@ -101,113 +100,6 @@ Le **parentesi graffe** si usano per:
    insieme = {1, 2, 3, 4, 1}
    print(insieme[1])   # errore! non si può accedere tramite indice
    ```
-
-## Istruzioni e ambito
-
-In C, ad esempio, per terminare un'istruzione si usa il punto e virgola `;`.
-In Python questo non è necessario poiché l'interprete prevede che un'istruzione
-termini quando si va a capo. Questo significa che
-
-```python
-a = 1
-```
-
-è un'istruzione. Insomma, in Python è possibile omettere il punto e virgola.
-Questo però non vuol dire che non lo si possa usare, infatti:
-
-```python
-a = 1; b = 2; c = 3;
-```
-
-sono istruzioni valide in Python. In ogni caso è sconsigliato l'utilizzo del
-punto e virgola.
-
-In Python il codice e quindi anche le variabili, possono essere salvati in due
-ambienti diversi, l'_Ambito Locale_ e l'_Ambito Globale_, chiamati in inglese
-_Global Scope_ e _Local Scope_.
-
-Possiamo pensare che questi due ambienti siano dei contenitori distinti in cui
-vengono definite e assegnate le variabili, un contenitore **Globale** e un
-contenitore **Locale**. Quando uno di questi contenitori viene distrutto, quindi
-quando uno di questi ambiti viene distrutto, lo stesso accade per i valori delle
-variabili in esso salvate, che vengono quindi dimenticati.
-
-Un ambito _Locale_ viene creato ogni volta che una funzione viene chiamata e
-viene distrutto dopo che la funzione restituisce un valore con `return`.
-Potremmo semplificare il concetto pensando che ogni volta che la funzione viene
-processata, Python le fornisse un contenitore nel quale riporre tutte le sue
-variabili e tutto il codice. Le variabili dichiarate all'interno di qualsiasi
-funzione, quindi nell'ambito _Locale_ della funzione, sono chiamate
-_Variabili Locali_.
-
-Possono dunque esistere tanti _Local scopes_ (ambiti locali), tante quante
-sono le funzioni in esecuzione.
-
-Al contrario, esiste un unico _ambito Globale_, che viene creato automaticamente
-da Python all'avvio del programma e distrutto alla chiusura del programma.
-Questo è l'ambito principale: tutte le variabili che vengono dichiarate
-all'esterno di una funzione sono chiamate proprio _Variabili Globali_, e restano
-pertanto in vita dall'avvio alla chiusura del programma principale.
-
-Mentre possiamo accedere alle _Variabili Globali_ in qualsiasi punto del
-programma, possiamo accedere alle _Variabili Locali_ solamente nell'_Ambito_
-_Locale_ della funzione in cui sono contenute
-
-Per quanto riguarda la definizione di un ambito (ad esempio locale all'interno
-di una funzione), Python utilizza i _due punti_ e il numero di _indentazioni_.
-
-> <details open>
-> <summary>💡 <em>Suggerimento</em></summary>
->
-> In generale possiamo dire che le istruzioni allo stesso livello di
-> indentazione sono considerate dall'interprete Python come istruzioni
-> appartenenti al medesimo ambito.
->
-> <details>
-> <summary><em>Infatti...</em></summary>
->
-> ...se non rispettassimo la corretta indentazione, l'interprete ci restituirà un
-> errore
->
-> ```pycon
-> >>> a, b = 8, 6
-> >>> if a > b:
-> ...     a *= 2
-> ... print(a)
->   File "<stdin>", line 3
->     print(a)
->     ^
-> SyntaxError: invalid syntax
-> ```
->
-> </details>
->
-> </details>
-
-Dunque, per dichiarare una funzione, scriveremo:
-
-```python
-# l'inizio dell'ambito Locale è contrassegnato dai due punti `:`
-def funzione(): # <- inizio del Local Scope
-   # tutto ciò che appartiene alla funzione, deve mantenere lo stesso livello
-   # di indentazione
-   a = 1
-   return a
-
-
-# <- fine del Local Scope
-# secondo le convenzioni, dopo una funzione seguono due linee vuote
-print(a)   # l'interprete restituirà un errore
-```
-
-> <details>
-> <summary>💡 <em>Suggerimento</em></summary>
->
-> Per ottenere l'indentazione occorre usare il tasto <kbd>Tab</kbd> della
-> tastiera, oppure quattro <kbd>Space</kbd>. È **_fondamentale_** non mischiare
-> le due tecniche.
->
-> </details>
 
 # Programmazione strutturata
 
@@ -637,5 +529,3 @@ che definiremo per qualche motivo in seguito:
 > situazioni in cui l'istruzione `pass` risulta essere estremamente utile.
 >
 > </details>
-
-
