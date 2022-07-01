@@ -91,10 +91,9 @@ $$
 
 Se applicata ad un vettore, questa matrice applicherà una certa rotazione a $\vartheta$:
 
-$$
-\newcommand{\mtrx}[2]{\begin{bmatrix}#1 \\ #2\end{bmatrix}}
-\mtrx{x'}{y'} = \mtrx{x\cos{\vartheta} + y\sin{\vartheta}}{x\sin{\vartheta} + y\cos{\vartheta}}
-$$
+$\newcommand{\mtrx}[2]{\begin{bmatrix}#1 \\ #2\end{bmatrix}}
+\displaystyle
+\mtrx{x'}{y'} = \mtrx{x\cos{\vartheta} + y\sin{\vartheta}}{x\sin{\vartheta} + y\cos{\vartheta}}$
 
 Se consideriamo un vettore a coordinate $x = 1, y = 0$, e un valore di
 $\vartheta$ pari a $45^\circ$, allora
