@@ -1,6 +1,6 @@
-# Appendice A – Configurazione dell'ambiente di sviluppo Python
+<a name="top">
 
-<a name="title">
+# Appendice A – Configurazione dell'ambiente di sviluppo Python
 
 > Corso di Python per il Calcolo Scientifico
 >
@@ -14,14 +14,14 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [Appendice A – Configurazione dell'ambiente di sviluppo Python](#appendice-a--configurazione-dellambiente-di-sviluppo-python)
-   1. [A.1 – Installazione di Python (to top)](#a1--installazione-di-python-to-top)
+   1. [A.1 – Installazione di Python (<g-emoji>↩️</g-emoji>)](#a1--installazione-di-python-g-emoji️g-emoji)
    2. [A.2 – Installazione di Visual Studio Code](#a2--installazione-di-visual-studio-code)
 
 <!-- /TOC -->
 
 </details>
 
-## A.1 – Installazione di Python [(to top)](#title)
+## A.1 – Installazione di Python ([<g-emoji>↩️</g-emoji>](#top))
 
 1. Andare sul [sito di python](https://www.python.org/downloads/);
 2. Scaricare una versione di python inferiore alla $3.10.n$ (alcune librerie
