@@ -12,17 +12,14 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [Appendice D – Principi di Programmazione orientata agli oggetti](#appendice-d--principi-di-programmazione-orientata-agli-oggetti)
-2. [La programmazione orientata agli oggetti](#la-programmazione-orientata-agli-oggetti)
-   1. [La classe `Persona`](#la-classe-persona)
-      1. [Ereditarietà](#ereditarietà)
-      2. [Incapsulamento](#incapsulamento)
-      3. [Polimorfismo](#polimorfismo)
+   1. [D.1 – La classe `Persona`](#d1--la-classe-persona)
+      1. [D.1.1 – Ereditarietà](#d11--ereditarietà)
+      2. [D.1.2 – Incapsulamento](#d12--incapsulamento)
+      3. [D.1.3 – Polimorfismo](#d13--polimorfismo)
 
 <!-- /TOC -->
 
 </details>
-
-# La programmazione orientata agli oggetti
 
 La programmazione orientata agli oggetti (_object-oriented programming_, OOP) è
 un paradigma di programmazione che sposta il _focus_ dalle funzioni ai **dati**.
@@ -32,7 +29,7 @@ oggetto e in alcuni linguaggi perfino le funzioni.
 Questo viene ovviamente esteso anche ai tipi definiti dall'utente, che assumono
 il nome di _classi_. Facciamo un esempio.
 
-## La classe `Persona`
+## D.1 – La classe `Persona`
 
 Immaginiamo di voler definire una struttura dati che contenga al suo interno
 delle informazioni utili a definire una persona, ad esempio: nome, cognome,
@@ -43,10 +40,10 @@ Possiamo creare quindi la classe `Persona` che avrà quattro attributi:
 
 | Attributo | Tipo            |
 | :-------- | :-------------- |
-| `nome`    | stringa (`str`) |
-| `cognome` | stringa (`str`) |
-| `genere`  | stringa (`str`) |
-| `età`     | intero (`int`)  |
+| `nome`    | stringa – `str` |
+| `cognome` | stringa – `str` |
+| `genere`  | stringa – `str` |
+| `età`     | intero – `int`  |
 
 Sottolineamo che questa classe rappresenta tutte le possibili persone: infatti,
 si cerca di creare delle strutture dati generiche, che abbiano degli attributi
@@ -71,7 +68,7 @@ una singola istanza.
 
 Oltre il concetto di classe, la OOP definisce altri tre concetti. Vediamoli.
 
-### Ereditarietà
+### D.1.1 – Ereditarietà
 
 Per **_ereditarietà_** si intende la capacità di una classe di "discendere" da
 un'altra. Una classe figlia eredita **tutte** le caratteristiche della classe
@@ -82,8 +79,8 @@ Possiamo, ad esempio, definire la classe `Studente` come figlia della classe
 
 | Attributo   | Tipo            |
 | :---------- | :-------------- |
-| `matricola` | stringa (`str`) |
-| `libretto`  | stringa (`str`) |
+| `matricola` | stringa – `str` |
+| `libretto`  | stringa – `str` |
 
 Possiamo visualizzare questa relazione in ordine gerarchico come segue:
 
@@ -138,7 +135,7 @@ graph TD
 >
 > </details>
 
-### Incapsulamento
+### D.1.2 – Incapsulamento
 
 Il concetto di _incapsulamento_ prevede che sia possibile accedere ad un metodo
 (o un attributo) di una classe esclusivamente mediante la sua interfaccia.
@@ -161,7 +158,7 @@ che usa la classe avrà sempre un punto di accesso ben definito e, nel caso in c
 sia necessario modificare dei comportamenti interni alla classe, questo non verrà
 influenzato dalle modifiche. Ad esempio, se per qualche motivo si decidesse di
 invertire l'ordine di nome e cognome all'interno del codice fiscale, basterebbe
-modificare il metodo `calcola_nc` e il resto dell'implementazione (sia della
+modificare il metodo `calcola_nc()` e il resto dell'implementazione (sia della
 classe che del codice chiamante) non ne sarebbe influenzata.
 
 ```mermaid
@@ -172,7 +169,7 @@ graph LR
 
 Dove "INT "sta per interno e "EXT" per esterno.
 
-### Polimorfismo
+### D.1.3 – Polimorfismo
 
 Il concetto di polimorfismo prevede che sia possibile modificare il comportamento
 associato ad un metodo a seconda della classe che lo utilizza.
