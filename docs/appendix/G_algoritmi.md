@@ -14,8 +14,8 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 1. [Appendice G – Algoritmi](#appendice-g--algoritmi)
 2. [G.1 – Decomposizione ai valori singolari](#g1--decomposizione-ai-valori-singolari)
    1. [G1.2 – Trasformazione 1: rescaling di matrice](#g12--trasformazione-1-rescaling-di-matrice)
-   2. [G.1.2 – Trasformazione 2: rotazione di matrice](#g12--trasformazione-2-rotazione-di-matrice)
-   3. [Interpretazione della SVD](#interpretazione-della-svd)
+   2. [G.1.3 – Trasformazione 2: rotazione di matrice](#g13--trasformazione-2-rotazione-di-matrice)
+   3. [G.1.4 – Interpretazione della SVD](#g14--interpretazione-della-svd)
 
 <!-- /TOC -->
 
@@ -75,7 +75,7 @@ $$
 
 In pratica, abbiamo triplicato il nostro vettore!
 
-## G.1.2 – Trasformazione 2: rotazione di matrice
+## G.1.3 – Trasformazione 2: rotazione di matrice
 
 Laddove le matrici diagonali sono normalmente utilizzate per effettuare un
 rescaling, le matrici non diagonali possono essere usate per indurre una
@@ -113,7 +113,7 @@ $$
 In questo caso specifico, i nuovi valori di $(x', y')$ saranno pari a
 $\sqrt{2}/2$, per cui avremo ruotato il nostro punto originario di $45^\circ$.
 
-## Interpretazione della SVD
+## G.1.4 – Interpretazione della SVD
 
 Possiamo quindi adesso applicare le nozioni viste in precedenza per
 "comprendere" la SVD, che può essere vista come una serie di _trasformazioni_
