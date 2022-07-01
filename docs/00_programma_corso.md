@@ -1,5 +1,3 @@
-<a name="top"></a>
-
 # 00 – Programma e obiettivi del corso
 
 > Corso di Python per il calcolo scientifico
@@ -10,6 +8,8 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <details>
     <summary>Outline</summary>
+
+<a name="top"></a>
 
 <!-- TOC -->
 

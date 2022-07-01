@@ -7,7 +7,7 @@
 Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <details>
-<summary>Outline</summary>
+    <summary>Outline</summary>
 
 <a name="top"></a>
 

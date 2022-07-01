@@ -1,5 +1,3 @@
-<a name="top"></a>
-
 # 10 – Visualizzazione di dati in Seaborn
 
 > Corso di Python per il Calcolo Scientifico
@@ -9,17 +7,19 @@
 Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <details>
-<summary>Outline</summary>
+    <summary>Outline</summary>
+
+<a name="top"></a>
 
 <!-- TOC -->
 
 1. [10 – Visualizzazione di dati in Seaborn](#10--visualizzazione-di-dati-in-seaborn)
    1. [Installazione di Seaborn (⮨)](#installazione-di-seaborn-)
-   1. [Lettura dei dati (⮨)](#lettura-dei-dati-)
+   2. [Lettura dei dati (⮨)](#lettura-dei-dati-)
       1. [Visualizzare le relazioni tra dati (⮨)](#visualizzare-le-relazioni-tra-dati-)
-   1. [Analisi della distribuzione dati](#analisi-della-distribuzione-dati)
+   3. [Analisi della distribuzione dati](#analisi-della-distribuzione-dati)
       1. [Plot di dati categorici (⮨)](#plot-di-dati-categorici-)
-   1. [Heatmap](#heatmap)
+   4. [Heatmap](#heatmap)
 
 <!-- /TOC -->
 
@@ -31,7 +31,7 @@ sulla scia di quello che abbiamo presentato in Pandas nella lezione precedente.
 Ciò permette di mantenere un'interfaccia molto simile a quella di Matplotlib,
 estendendone al contempo le possibilità. Vediamo qualche esempio.
 
-### Installazione di Seaborn ([⮨](#top))
+## Installazione di Seaborn ([⮨](#top))
 
 Come sempre, installiamo la libreria:
 

@@ -1,5 +1,3 @@
-<a name="top"></a>
-
 # 01 – Introduzione a Python
 
 > Corso di Python per il Calcolo Scientifico
@@ -10,6 +8,8 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <details>
     <summary>Outline</summary>
+
+<a name="top"></a>
 
 <!-- TOC -->
 

@@ -1,5 +1,3 @@
-<a name="top"></a>
-
 # 06 – Jupyter
 
 > Corso di Python per il Calcolo Scientifico
@@ -9,7 +7,9 @@
 Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <details>
-<summary>Outline</summary>
+    <summary>Outline</summary>
+
+<a name="top"></a>
 
 <!-- TOC -->
 

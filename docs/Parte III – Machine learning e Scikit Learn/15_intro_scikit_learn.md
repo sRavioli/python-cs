@@ -1,5 +1,3 @@
-<a name="top"></a>
-
 # 15 – Introduzione (breve) a Scikit Learn
 
 > Corso di Python per il Calcolo Scientifico
@@ -9,13 +7,15 @@
 Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <details>
-<summary>Outline</summary>
+    <summary>Outline</summary>
+
+<a name="top"></a>
 
 <!-- TOC -->
 
 1. [15 – Introduzione (breve) a Scikit Learn](#15--introduzione-breve-a-scikit-learn)
-   1. [15.1 - Stimatori e transformer](#151---stimatori-e-transformer)
-   2. [Preprocessing](#preprocessing)
+   1. [15.1 - Stimatori e transformer (⮨)](#151---stimatori-e-transformer-)
+   2. [Preprocessing (⮨)](#preprocessing-)
 
 <!-- /TOC -->
 
