@@ -93,7 +93,6 @@ Se applicata ad un vettore, questa matrice applicherà una certa rotazione a $\v
 
 $$
 \newcommand{\mtrx}[2]{\begin{bmatrix}#1 \\ #2\end{bmatrix}}
-
 \mtrx{x'}{y'} = \mtrx{x\cos{\vartheta} + y\sin{\vartheta}}{x\sin{\vartheta} + y\cos{\vartheta}}
 $$
 
