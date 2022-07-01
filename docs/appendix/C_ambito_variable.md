@@ -1,4 +1,4 @@
-# Appendice D – Ambito di una Variabile
+# Appendice C – Ambito di una Variabile
 
 > Corso di Python per il Calcolo Scientifico
 >
@@ -11,7 +11,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <!-- TOC -->
 
-1. [Appendice D – Ambito di una Variabile](#appendice-d--ambito-di-una-variabile)
+1. [Appendice C – Ambito di una Variabile](#appendice-c--ambito-di-una-variabile)
    1. [C.1 – Istruzioni e ambito](#c1--istruzioni-e-ambito)
    2. [C.2 – Prima modifica](#c2--prima-modifica)
    3. [C.3 – Seconda modifica](#c3--seconda-modifica)

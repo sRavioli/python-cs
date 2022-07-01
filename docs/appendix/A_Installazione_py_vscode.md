@@ -12,16 +12,16 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [Appendice A – Configurazione dell'ambiente di sviluppo Python](#appendice-a--configurazione-dellambiente-di-sviluppo-python)
-   1. [A.1 – sInstallazione di Python](#a1--sinstallazione-di-python)
+   1. [A.1 – Installazione di Python (↩)](#a1--installazione-di-python-)
    2. [A.2 – Installazione di Visual Studio Code](#a2--installazione-di-visual-studio-code)
 
 <!-- /TOC -->
 
 </details>
 
-## A.1 – sInstallazione di Python
+## A.1 – Installazione di Python [(↩)](#appendice-a--configurazione-dellambiente-di-sviluppo-python)
 
-1. Andare sul [sito di python](https://www.python.org/downloads/)
+1. Andare sul [sito di python](https://www.python.org/downloads/);
 2. Scaricare una versione di python inferiore alla $3.10.n$ (alcune librerie
    non sono ancora state aggiornate per supportare Python $3.10.n$)
    compatibile col proprio sistema operativo;
@@ -29,7 +29,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 4. È **_fortemente consigliato_** aggiungere Python al **PATH** spuntando la
    relativa _checkbox_;
 5. Riavviare il dispositivo;
-6. Aprire il terminale (Powershell, bash, etc.) e digitare
+6. Aprire il terminale (Powershell, bash, etc.) e digitare:
 
    ```sh
    $ python --version
