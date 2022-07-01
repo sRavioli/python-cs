@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 06 – Jupyter
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,17 +14,17 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [06 – Jupyter](#06--jupyter)
-2. [iPython e Jupyter Lab](#ipython-e-jupyter-lab)
-3. [Anatomia di un Notebook](#anatomia-di-un-notebook)
-4. [Installazione e lancio di Jupyter](#installazione-e-lancio-di-jupyter)
-5. [Il primo notebook](#il-primo-notebook)
-6. [Altre operazioni utili](#altre-operazioni-utili)
+   1. [iPython e Jupyter Lab (⮨)](#ipython-e-jupyter-lab-)
+   2. [Anatomia di un Notebook (⮨)](#anatomia-di-un-notebook-)
+   3. [Installazione e lancio di Jupyter (⮨)](#installazione-e-lancio-di-jupyter-)
+   4. [Il primo notebook (⮨)](#il-primo-notebook-)
+   5. [Altre operazioni utili (⮨)](#altre-operazioni-utili-)
 
 <!-- /TOC -->
 
 </details>
 
-# iPython e Jupyter Lab
+## iPython e Jupyter Lab ([⮨](#top))
 
 Fino ad ora ci siamo limitati a lanciare script Python direttamente da riga di
 comando. Tuttavia è evidente come questo approccio sia limitato, specialmente in
@@ -32,7 +34,7 @@ Per ovviare a queste problematiche, all'interno del framework `SciPy` viene
 proposto [Jupyter Lab](https://jupyter.org), che introduce uno tra gli strumenti
 più utilizzati dai data analyst al giorno d'oggi, ovvero i _notebook_.
 
-# Anatomia di un Notebook
+## Anatomia di un Notebook ([⮨](#top))
 
 Un notebook è un ambiente interattivo che permette di scrivere e testare il
 nostro codice. In particolare, potremo scrivere una o più istruzioni, e
@@ -50,7 +52,7 @@ Queste non sono altro che dei singoli "blocchi" di codice.
 
 Vediamo come creare e utilizzare il primo notebook.
 
-# Installazione e lancio di Jupyter
+## Installazione e lancio di Jupyter ([⮨](#top))
 
 > <details open>
 > <summary>ℹ️ <em>Installazione di una libreria</em></summary>
@@ -87,7 +89,7 @@ $ jupyter-lab
 >
 > </details>
 
-# Il primo notebook
+## Il primo notebook ([⮨](#top))
 
 Dopo aver lanciato Jupyter Lab, ci troveremo di fronte ad una schermata del
 genere:
@@ -120,7 +122,7 @@ somma(5, 7)
 
 Eseguiamo l'istruzione. Subito sotto la cella apparirà il risultato.
 
-# Altre operazioni utili
+## Altre operazioni utili ([⮨](#top))
 
 Jupyter ci permette di effettuare varie operazioni utili, tra cui:
 

@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # Appendice C – Ambito di una Variabile
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,9 +14,9 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [Appendice C – Ambito di una Variabile](#appendice-c--ambito-di-una-variabile)
-   1. [C.1 – Istruzioni e ambito](#c1--istruzioni-e-ambito)
-   2. [C.2 – Prima modifica](#c2--prima-modifica)
-   3. [C.3 – Seconda modifica](#c3--seconda-modifica)
+   1. [C.1 – Istruzioni e ambito (⮨)](#c1--istruzioni-e-ambito-)
+   2. [C.2 – Prima modifica (⮨)](#c2--prima-modifica-)
+   3. [C.3 – Seconda modifica (⮨)](#c3--seconda-modifica-)
 
 <!-- /TOC -->
 
@@ -23,7 +25,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 All'interno di un programma ogni variabile ha una sorta di _ciclo di vita_, che
 ne prevede la creazione, utilizzo e distruzione.
 
-## C.1 – Istruzioni e ambito
+## C.1 – Istruzioni e ambito ([⮨](#top))
 
 In C, ad esempio, per terminare un'istruzione si usa il punto e virgola `;`.
 In Python questo non è necessario poiché l'interprete prevede che un'istruzione
@@ -151,7 +153,7 @@ Proviamo a chiamarla.
 Il voto di accesso è:  86.16666666666666
 ```
 
-## C.2 – Prima modifica
+## C.2 – Prima modifica ([⮨](#top))
 
 Facciamo una prima modifica:
 
@@ -173,7 +175,7 @@ Il voto di accesso è:  86.16666666666666
 
 Otterremo due valori in output.
 
-## C.3 – Seconda modifica
+## C.3 – Seconda modifica ([⮨](#top))
 
 Proviamo a modificare ancora il codice:
 

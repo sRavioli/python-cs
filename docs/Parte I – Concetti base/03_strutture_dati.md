@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 03 – Strutture dati in Python
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,28 +14,28 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [03 – Strutture dati in Python](#03--strutture-dati-in-python)
-2. [Liste, pile e code](#liste-pile-e-code)
-   1. [Pila](#pila)
-   2. [Coda](#coda)
-3. [List comprehension](#list-comprehension)
-   1. [Forma estesa con `if` e `else`](#forma-estesa-con-if-e-else)
-      1. [Perché usare le _list comprehension_?](#perché-usare-le-list-comprehension)
-4. [Le _assignment expressions_](#le-assignment-expressions)
-5. [Tuple](#tuple)
-6. [Insiemi](#insiemi)
-7. [Dizionari](#dizionari)
-   1. [Chiavi e valori](#chiavi-e-valori)
-   2. [Creazione di un dizionario non vuoto](#creazione-di-un-dizionario-non-vuoto)
-      1. [Uso dell'operatore `{}`](#uso-delloperatore-)
-      2. [Uso del costruttore `dict()`](#uso-del-costruttore-dict)
-      3. [Uso della funzione `zip()`](#uso-della-funzione-zip)
-      4. [Dict comprehension](#dict-comprehension)
+   1. [Liste, pile e code (⮨)](#liste-pile-e-code-)
+      1. [Pila (⮨)](#pila-)
+      2. [Coda (⮨)](#coda-)
+   2. [List comprehension (⮨)](#list-comprehension-)
+      1. [Forma estesa con `if` e `else` (⮨)](#forma-estesa-con-if-e-else-)
+         1. [Perché usare le _list comprehension_? (⮨)](#perché-usare-le-list-comprehension-)
+   3. [Le _assignment expressions_ (⮨)](#le-assignment-expressions-)
+   4. [Tuple (⮨)](#tuple-)
+   5. [Insiemi (⮨)](#insiemi-)
+   6. [Dizionari (⮨)](#dizionari-)
+      1. [Chiavi e valori (⮨)](#chiavi-e-valori-)
+      2. [Creazione di un dizionario non vuoto (⮨)](#creazione-di-un-dizionario-non-vuoto-)
+         1. [Uso dell'operatore `{}` (⮨)](#uso-delloperatore--)
+         2. [Uso del costruttore `dict()` (⮨)](#uso-del-costruttore-dict-)
+         3. [Uso della funzione `zip()` (⮨)](#uso-della-funzione-zip-)
+         4. [Dict comprehension (⮨)](#dict-comprehension-)
 
 <!-- /TOC -->
 
 </details>
 
-# Liste, pile e code
+## Liste, pile e code ([⮨](#top))
 
 Python ci offre una grande varietà di metodi per gestire le liste; troviamo un
 elenco esaustivo nella [documentazione ufficiale](https://docs.python.org/3.9/tutorial/datastructures.html#more-on-lists).
@@ -41,7 +43,7 @@ elenco esaustivo nella [documentazione ufficiale](https://docs.python.org/3.9/tu
 Grazie a questi metodi, è possibile costruire una pila o una coda in modo molto
 più semplice rispetto ad altri linguaggi.
 
-## Pila
+### Pila ([⮨](#top))
 
 Una pila (_stack_ in inglese) adotta una strategia di accesso ai dati del tipo
 _Last-In_, _First-Out_ (LIFO). Questo significa che l'**_ultimo_** elemento che
@@ -73,7 +75,7 @@ pl.append(4)  # `pl` sarà pari a [1, 2, 3, 4]
 rmvd = pl.pop(1)  # `rmvd` sarà pari a 4, `pl` sarà [1, 2, 3]
 ```
 
-## Coda
+### Coda ([⮨](#top))
 
 Una coda (_queue_ in inglese) adotta una strategia di accesso ai dati del tipo
 _First-In_, _First-Out_ (FIFO). In questo caso il primo elemento a uscire è
@@ -121,7 +123,7 @@ rmvd = d.popleft()   # `rmvd` sarà pari a 4, `d` sarà pari a [1, 2, 3]
 >
 > </details>
 
-# List comprehension
+## List comprehension ([⮨](#top))
 
 Una delle tecniche più usare per effettuare delle operazioni sugli elementi di
 una lista è la **_list comprehension_**. Questa permette di sostituire quasi
@@ -143,7 +145,7 @@ elemento della lista lista originaria, `lst_in`, la funzione `func()`.
 >
 > </details>
 
-## Forma estesa con `if` e `else`
+### Forma estesa con `if` e `else` ([⮨](#top))
 
 Le _list comprehension_ possono anche includere delle istruzioni condizionali.
 Un primo esempio è il seguente:
@@ -162,7 +164,7 @@ lst_out_if_else = [f(elemento) if condizione else g(elemento) for elemento lst_i
 la funzione `f()` sarebbe invocata su tutti gli elementi che soddisfano la
 `condizione`, mentre la funzione `g()` su tutti quelli che non la soddisfano.
 
-### Perché usare le _list comprehension_?
+#### Perché usare le _list comprehension_? ([⮨](#top))
 
 Le _list comprehension_ sono utili e versatili. In molti casi, permettono di
 sostituire i classici cicli con una sintassi più snella. Tuttavia, bisogna fare
@@ -172,7 +174,7 @@ ricordiamo il **rasoio di Occam**: scegliere, tra più soluzioni possibili di un
 problema, quella più semplice. Anche se è facile innamorarsi delle list
 comprehension, è bene ricordarsi che anche i cicli sono leciti e funzionali.
 
-# Le _assignment expressions_
+## Le _assignment expressions_ ([⮨](#top))
 
 Le list comprehension sono state pensate per approcci puramente iterativi. Di
 conseguenza, risulta complesso implementare forme di ricorsione. Per ovviare a
@@ -248,7 +250,7 @@ concatenare i risultati:
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 ```
 
-# Tuple
+## Tuple ([⮨](#top))
 
 Le tuple permettono di rappresentare un insieme di valori di eterogenei,
 separati da una virgola. Ad esempio:
@@ -306,7 +308,7 @@ L'operazione è accettata e il risultato è quello atteso.
 >
 > </details>
 
-# Insiemi
+## Insiemi ([⮨](#top))
 
 Anche gli insiemi (in inglese _set_) sono sintatticamente molto simili alle
 liste, ma offrono una significativa differenza: _non ci possono essere elementi_
@@ -349,7 +351,7 @@ suo indice, al contrario di liste e tuple.
 >
 > </details>
 
-# Dizionari
+## Dizionari ([⮨](#top))
 
 Il quarto ed ultimo tipo di struttura dati per sequenze degli stessi è il
 _dizionario_, presente in altri linguaggi di programmazione sotto il nome di
@@ -392,7 +394,7 @@ Per accedere al valore associato ad una determinata chiave:
 dct[1]   # otterremo "n"
 ```
 
-## Chiavi e valori
+### Chiavi e valori ([⮨](#top))
 
 È possibile recuperare la lista di tutte la chiavi presenti in un dizionario
 usando il metodo `keys()`, che restituisce un oggetto di tipo `dict_keys()`, che
@@ -421,11 +423,11 @@ pairs = dct.items() # restituisce `dict_items([('key', 'val'), (1, 'n')])`
 print(list(pairs))   # restituisce `['key', 'val']`. È una lista di tuple
 ```
 
-## Creazione di un dizionario non vuoto
+### Creazione di un dizionario non vuoto ([⮨](#top))
 
 Sono presenti diversi modi per creare un dizionario non vuoto.
 
-### Uso dell'operatore `{}`
+#### Uso dell'operatore `{}` ([⮨](#top))
 
 Il metodo più semplice, che è anche quello che useremo più spesso, consiste nel
 dichiarare nell'operatore `{}` le coppie _key-val_ iniziali:
@@ -436,7 +438,7 @@ dichiarare nell'operatore `{}` le coppie _key-val_ iniziali:
 {'key1': 1, 'key2': 2}
 ```
 
-### Uso del costruttore `dict()`
+#### Uso del costruttore `dict()` ([⮨](#top))
 
 Un altro metodo consiste nell'usare il costruttore `dict()`:
 
@@ -446,7 +448,7 @@ Un altro metodo consiste nell'usare il costruttore `dict()`:
 {'key1': 1, 'key2': 2}
 ```
 
-### Uso della funzione `zip()`
+#### Uso della funzione `zip()` ([⮨](#top))
 
 Possiamo usare la funzione `zip()` per creare un dizionario a partire da due
 liste:
@@ -459,7 +461,7 @@ liste:
 {'key1': 1, 'key2': 2}
 ```
 
-### Dict comprehension
+#### Dict comprehension ([⮨](#top))
 
 Un modo per ottenere un dizionario a partire da un altro oggetto iterabile è la
 _dict comprehension_, che è una forma del tipo:

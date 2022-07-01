@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # Appendice B – Installazione di una libreria Python
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,10 +14,10 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [Appendice B – Installazione di una libreria Python](#appendice-b--installazione-di-una-libreria-python)
-   1. [B.1 – Opzione A: il _package-manager_ `pip`](#b1--opzione-a-il-package-manager-pip)
-   2. [B.2 – Opzione B: un ambiente virtuale](#b2--opzione-b-un-ambiente-virtuale)
-   3. [B.3 – Opzione C: una distribuzione per il calcolo scientifico](#b3--opzione-c-una-distribuzione-per-il-calcolo-scientifico)
-   4. [B.4 – Opzione D: un package manager come `pipenv`](#b4--opzione-d-un-package-manager-come-pipenv)
+   1. [B.1 – Opzione A: il _package-manager_ `pip` (⮨)](#b1--opzione-a-il-package-manager-pip-)
+   2. [B.2 – Opzione B: un ambiente virtuale (⮨)](#b2--opzione-b-un-ambiente-virtuale-)
+   3. [B.3 – Opzione C: una distribuzione per il calcolo scientifico (⮨)](#b3--opzione-c-una-distribuzione-per-il-calcolo-scientifico-)
+   4. [B.4 – Opzione D: un package manager come `pipenv` (⮨)](#b4--opzione-d-un-package-manager-come-pipenv-)
 
 <!-- /TOC -->
 
@@ -24,7 +26,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 Per installazione una libreria Python, ci sono varie opzioni. Vediamole nel
 dettaglio e immaginiamo di voler installare NumPy.
 
-## B.1 – Opzione A: il _package-manager_ `pip`
+## B.1 – Opzione A: il _package-manager_ `pip` ([⮨](#top))
 
 La prima opzione, probabilmente quella maggiormente utilizzata, è `pip`. Questo
 è il _package-manager_ (gestore di pacchetti) di Python.
@@ -47,7 +49,7 @@ installata. Questo potrebbe essere un grosso vincolo poiché delle versioni
 di un pacchetto potrebbero richiedere determinate versioni di un altro
 pacchetto; lavorando su diversi progetti andremmo a creare dei conflitti.
 
-## B.2 – Opzione B: un ambiente virtuale
+## B.2 – Opzione B: un ambiente virtuale ([⮨](#top))
 
 La seconda opzione è quella di utilizzare un _ambiente virtuale_ (sempre usando
 `pip`).
@@ -124,7 +126,7 @@ relative versioni.
 >
 > </details>
 
-## B.3 – Opzione C: una distribuzione per il calcolo scientifico
+## B.3 – Opzione C: una distribuzione per il calcolo scientifico ([⮨](#top))
 
 La terza opzione è quella di utilizzare una distribuzione Python pensata
 proprio per il calcolo scientifico. Un esempio è [Anaconda](https://www.anaconda.com/products/distribution).
@@ -145,7 +147,7 @@ scopi.
 >
 > </details>
 
-## B.4 – Opzione D: un package manager come `pipenv`
+## B.4 – Opzione D: un package manager come `pipenv` ([⮨](#top))
 
 L'ultima opzione, che è quella suggerita per l'utilizzo professionale e
 eterogeneo di Python, è quella di usare `pipenv`.

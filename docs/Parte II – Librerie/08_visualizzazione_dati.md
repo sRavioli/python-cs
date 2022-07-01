@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 08 – Visualizzazione di dati
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,20 +14,20 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [08 – Visualizzazione di dati](#08--visualizzazione-di-dati)
-2. [Visualizzare i dati in Python](#visualizzare-i-dati-in-python)
-   1. [Installazione della libreria](#installazione-della-libreria)
-3. [Il primo plot](#il-primo-plot)
-4. [Figure ed assi](#figure-ed-assi)
-5. [Esempi con Matplotlib](#esempi-con-matplotlib)
-   1. [Plot di più Funzioni](#plot-di-più-funzioni)
-   2. [Subplot](#subplot)
-   3. [Rappresentazione di un istogramma](#rappresentazione-di-un-istogramma)
+   1. [Visualizzare i dati in Python (⮨)](#visualizzare-i-dati-in-python-)
+      1. [Installazione della libreria (⮨)](#installazione-della-libreria-)
+   2. [Il primo plot (⮨)](#il-primo-plot-)
+   3. [Figure ed assi](#figure-ed-assi)
+   4. [Esempi con Matplotlib (⮨)](#esempi-con-matplotlib-)
+      1. [Plot di più Funzioni (⮨)](#plot-di-più-funzioni-)
+      2. [Subplot (⮨)](#subplot-)
+      3. [Rappresentazione di un istogramma (⮨)](#rappresentazione-di-un-istogramma-)
 
 <!-- /TOC -->
 
 </details>
 
-# Visualizzare i dati in Python
+## Visualizzare i dati in Python ([⮨](#top))
 
 Finora ci siamo limitati a visualizzare dati e risultati ottenuti usando prima
 la riga di comando, e poi i metodi forniti dai notebook Jupyter. Tuttavia, è
@@ -39,7 +41,7 @@ importante ed utilizzata è senza ombra di dubbio
 [Seaborn](https://seaborn.pydata.org), che tratteremo in una delle prossime
 lezioni.
 
-## Installazione della libreria
+### Installazione della libreria ([⮨](#top))
 
 Per prima cosa, installiamo le libreria. È possibile consultare le diverse
 opzioni in appendice; qui riportiamo l'opzione di installazione mediante `pip`:
@@ -65,7 +67,7 @@ import matplotlib.pyplot as plt
 >
 > </details>
 
-# Il primo plot
+## Il primo plot ([⮨](#top))
 
 Dopo aver installato la libreria, proviamo a creare il nostro primo plot. Per
 farlo, possiamo usare uno script, un terminale o un notebook, ed inserire il
@@ -101,7 +103,7 @@ immagine:
 
 Cerchiamo adesso di approfondire i concetti di funzionamento di Matplotlib.
 
-# Figure ed assi
+## Figure ed assi
 
 Alla base del funzionamento di Matplotlib abbiamo quattro classi fondamentali.
 
@@ -148,9 +150,9 @@ In ultimo, abbiamo mostrato a schermo la figura usando la funzione `plt.show()`.
 
 Vediamo altri esempi.
 
-# Esempi con Matplotlib
+## Esempi con Matplotlib ([⮨](#top))
 
-## Plot di più Funzioni
+### Plot di più Funzioni ([⮨](#top))
 
 Vogliamo mostrare sullo stesso `Axes` il plot di due diverse funzioni, in
 particolare una retta e un seno. Questo è possibile grazie al fatto che i plot
@@ -204,7 +206,7 @@ Il risultato ottenuto è il seguente:
 
 ![Due funzioni nello stesso grafico (plt)](../img/matplotlib/two_func_in_one.png)
 
-## Subplot
+### Subplot ([⮨](#top))
 
 Possiamo definire più `Axes` per un'unica `Figure`. Per farlo, possiamo
 parametrizzare la funzione `subplots(i, j)`, in maniera tale che vengano
@@ -248,7 +250,7 @@ Il risultato sarà simile a quello mostrato in figura:
 
 ![Due funzioni, ognuna nel singolo subplot (plt)](../img/matplotlib/subplot.png)
 
-## Rappresentazione di un istogramma
+### Rappresentazione di un istogramma ([⮨](#top))
 
 Abbiamo già parlato degli istogrammi in precedenza. La loro vera potenza sta
 nella rappresentazione visiva che offrono, in tal senso Matplotlib ci viene in

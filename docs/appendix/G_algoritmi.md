@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # Appendice G – Algoritmi
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,17 +14,16 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [Appendice G – Algoritmi](#appendice-g--algoritmi)
-2. [G.1 – Decomposizione ai valori singolari](#g1--decomposizione-ai-valori-singolari)
-   1. [G1.2 – Trasformazione 1: rescaling di matrice](#g12--trasformazione-1-rescaling-di-matrice)
-   2. [G.1.3 – Trasformazione 2: rotazione di matrice](#g13--trasformazione-2-rotazione-di-matrice)
-3. [\end{bmatrix}](#endbmatrix)
-   1. [G.1.4 – Interpretazione della SVD](#g14--interpretazione-della-svd)
+2. [G.1 – Decomposizione ai valori singolari (⮨)](#g1--decomposizione-ai-valori-singolari-)
+   1. [G.1.1 – Trasformazione 1: rescaling di matrice (⮨)](#g11--trasformazione-1-rescaling-di-matrice-)
+   2. [G.1.2 – Trasformazione 2: rotazione di matrice (⮨)](#g12--trasformazione-2-rotazione-di-matrice-)
+   3. [G.1.3 – Interpretazione della SVD (⮨)](#g13--interpretazione-della-svd-)
 
 <!-- /TOC -->
 
 </details>
 
-# G.1 – Decomposizione ai valori singolari
+# G.1 – Decomposizione ai valori singolari ([⮨](#top))
 
 La **decomposizione ai valori singolari** (_singular value decomposition_, SVD)
 è una tecnica di _decomposizione matriciale_ che permette di trovare un
@@ -50,7 +51,7 @@ Inoltre:
 Prima di dare una definizione intuitiva di SVD, però, è opportuno introdurre il
 concetto di trasformazione lineare.
 
-## G1.2 – Trasformazione 1: rescaling di matrice
+## G.1.1 – Trasformazione 1: rescaling di matrice ([⮨](#top))
 
 Applichiamo al vettore $v$ una trasformazione lineare definita da una matrice
 diagonale $d$:
@@ -74,29 +75,28 @@ $$
 \begin{bmatrix}
     x'              \\
     y'
-\end{bmatrix}
-= \begin{bmatrix}
-      3 & 0         \\
-      0 & 3
-  \end{bmatrix}
-  \times
-  \begin{bmatrix}
-      x             \\
-      y
-  \end{bmatrix}
-= \begin{bmatrix}
-      3x + 0        \\
-      0 + 3y
-  \end{bmatrix}
-= \begin{bmatrix}
-      3x            \\
-      3y
-  \end{bmatrix}
+\end{bmatrix} = \begin{bmatrix}
+                    3 & 0         \\
+                    0 & 3
+                \end{bmatrix}
+                \times
+                \begin{bmatrix}
+                    x             \\
+                    y
+                \end{bmatrix}
+              = \begin{bmatrix}
+                    3x + 0        \\
+                    0 + 3y
+                \end{bmatrix}
+              = \begin{bmatrix}
+                    3x            \\
+                    3y
+                \end{bmatrix}
 $$
 
 In pratica, abbiamo triplicato il nostro vettore!
 
-## G.1.3 – Trasformazione 2: rotazione di matrice
+## G.1.2 – Trasformazione 2: rotazione di matrice ([⮨](#top))
 
 Laddove le matrici diagonali sono normalmente utilizzate per effettuare un
 rescaling, le matrici non diagonali possono essere usate per indurre una
@@ -116,12 +116,10 @@ $$
 \begin{bmatrix}
     x'                                  \\
     y'
-\end{bmatrix}
-=
-\begin{bmatrix}
-    x\cos{\vartheta} + y\sin{\vartheta} \\
-    x\sin{\vartheta} + y\cos{\vartheta}
-\end{bmatrix}
+\end{bmatrix} = \begin{bmatrix}
+                    x\cos{\vartheta} + y\sin{\vartheta} \\
+                    x\sin{\vartheta} + y\cos{\vartheta}
+                \end{bmatrix}
 $$
 
 Se consideriamo un vettore a coordinate $x = 1, y = 0$, e un valore di
@@ -140,7 +138,7 @@ $$
 In questo caso specifico, i nuovi valori di $(x', y')$ saranno pari a
 $\sqrt{2}/2$, per cui avremo ruotato il nostro punto originario di $45^\circ$.
 
-## G.1.4 – Interpretazione della SVD
+## G.1.3 – Interpretazione della SVD ([⮨](#top))
 
 Possiamo quindi adesso applicare le nozioni viste in precedenza per
 "comprendere" la SVD, che può essere vista come una serie di _trasformazioni_

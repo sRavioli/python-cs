@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 05 – Moduli
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,21 +14,21 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [05 – Moduli](#05--moduli)
-2. [Script e Moduli](#script-e-moduli)
-3. [Primo script](#primo-script)
-   1. [I moduli](#i-moduli)
-      1. [I moduli `geometria` e `trigonometria`](#i-moduli-geometria-e-trigonometria)
-   2. [Utilizzare gli `import`](#utilizzare-gli-import)
-   3. [Alias](#alias)
-4. [La funzione `dir()`](#la-funzione-dir)
-   1. [Moduli della libreria standard](#moduli-della-libreria-standard)
-5. [Packages](#packages)
+   1. [Script e Moduli (⮨)](#script-e-moduli-)
+   2. [Primo script (⮨)](#primo-script-)
+      1. [I moduli (⮨)](#i-moduli-)
+         1. [I moduli `geometria` e `trigonometria` (⮨)](#i-moduli-geometria-e-trigonometria-)
+      2. [Utilizzare gli `import` (⮨)](#utilizzare-gli-import-)
+      3. [Alias (⮨)](#alias-)
+   3. [La funzione `dir()` (⮨)](#la-funzione-dir-)
+      1. [Moduli della libreria standard (⮨)](#moduli-della-libreria-standard-)
+   4. [Packages](#packages)
 
 <!-- /TOC -->
 
 </details>
 
-# Script e Moduli
+## Script e Moduli ([⮨](#top))
 
 Usando Python, la tentazione è quella di interagire direttamente con
 l'interprete, lanciandolo da terminale e eseguendo volta per volta, riga per
@@ -44,7 +46,7 @@ riferimento, degli script che saranno salvati sotto forma di file con estensione
 `.py`. Ognuno dei quali conterrà una serie di istruzioni necessarie
 all'esecuzione del programma.
 
-# Primo script
+## Primo script ([⮨](#top))
 
 Proviamo a creare il primo script in Python. Per farlo, apriamo una IDE come
 Visual Studio Code e creiamo un file chiamato `main.py`. All'interno del file
@@ -76,7 +78,7 @@ Le istruzioni precedenti servono a:
 
 L'ultima riga è l'output dello script Python che abbiamo eseguito.
 
-## I moduli
+### I moduli ([⮨](#top))
 
 Quando le dimensioni della _code base_ (ovvero la quantità di codice presente
 nel programma) iniziano ad essere particolarmente grandi, sarebbe opportuno
@@ -150,7 +152,7 @@ solo), sono chiamati moduli.
 >
 > </details>
 
-### I moduli `geometria` e `trigonometria`
+#### I moduli `geometria` e `trigonometria` ([⮨](#top))
 
 Creiamo il file `geometria.py`, all'interno del quale spostiamo le funzioni
 definite in precedenza per il calcolo geometrico:
@@ -215,7 +217,7 @@ $ python main.py
 0
 ```
 
-## Utilizzare gli `import`
+### Utilizzare gli `import` ([⮨](#top))
 
 Abbiamo usato una sola funzione del modulo `geometria`, `calc_area_quadrato()` e
 abbiamo trascurato le altre due funzioni presenti nel modulo. In queste
@@ -236,7 +238,7 @@ In questo modo, importiamo soltanto quello che ci serve. Questo risulta essere
 particolarmente utile a migliorare l'efficienza del nostro codice. Il perché
 sarà chiaro a breve.
 
-## Alias
+### Alias ([⮨](#top))
 
 La direttiva `import` ci permette di definire degli alias, utili nel caso in cui
 si usino dei package con nomi complessi. Ad esempio:
@@ -247,7 +249,7 @@ import trigonometria as trig
 print(trig.calc_tangente(math.pi))
 ```
 
-# La funzione `dir()`
+## La funzione `dir()` ([⮨](#top))
 
 La funzione `dir()` restituisce una lista con tutti i nomi (sia di funzione, che
 di classe) definiti da un modulo. Ad esempio:
@@ -276,7 +278,7 @@ che indica il percorso del modulo all'interno dal file system. Ovviamente,
 questa variabile non è quasi mai utile, ma comporta un ulteriore carico sul
 codice, per questo è importante l'uso della direttiva `from`.
 
-## Moduli della libreria standard
+### Moduli della libreria standard ([⮨](#top))
 
 Python ha diversi moduli che appartengono ad una libreria standard, questi sono
 automaticamente disponibili dal momento dell'installazione dell'interprete.
@@ -293,7 +295,7 @@ Alcuni tra i più utilizzati sono:
 Per una lista esaustiva, si rimanda alla
 [Python Library Reference](https://docs.python.org/3/library/).
 
-# Packages
+## Packages
 
 Facciamo un brevissimo accenno ai packages, ovvero delle vere e proprie
 "collezioni" che raggruppano moduli tra loro coerenti, in modo da facilitarne

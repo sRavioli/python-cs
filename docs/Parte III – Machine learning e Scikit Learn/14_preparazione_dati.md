@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 14 – Preparazione dei dati
 
 > Corso di Python per il Calcolo Scientifico
@@ -24,13 +26,13 @@ _dataset_, ed eventualmente effettuare delle opportune _trasformazioni_ sui
 dati. Queste operazioni sono normalmente riassumibili nei concetti di
 _campionamento_ e _preparazione dei dati_.
 
-## Il campionamento
+## Il campionamento ([⮨](#top))
 
 Il primo problema da affrontare è la raccolta dei dati, che servirà ovviamente
 a generare il nostro dataset. In questa fase, dovremo partire affrontando due
 aspetti: la _dimensione_ e la _qualità_ dei dati che abbiamo raccolto.
 
-### Dimensione del dataset
+### Dimensione del dataset ([⮨](#top))
 
 Non vi è una regola vera e propria per determinare il quantitativo di dati
 _sufficiente_ per addestrare adeguatamente un modello. In generale, tuttavia,
@@ -40,7 +42,7 @@ parametri dello stesso. A scopo puramente esemplificativo, usando una rete
 neurale con $100$ neuroni dovremmo indicativamente avere almeno $1000$ campioni
 a disposizione.
 
-### Qualità del dataset
+### Qualità del dataset ([⮨](#top))
 
 Parafrasando un vecchio adagio, _la quantità è niente senza qualità_.
 Nell'ambito della data science, ciò implica che avere a disposizione grandi
@@ -60,7 +62,7 @@ migliore rispetto a quella del dataset A: infatti, nonostante quest'ultimo
 abbia quasi il decuplo dei dati, sarà praticamente inutile per la stima delle
 precipitazioni in inverno, primavera o autunno.
 
-## Preparazione dei dati
+## Preparazione dei dati ([⮨](#top))
 
 Una volta completata la procedura di campionamento, dovremo passare ad
 effettuare la preparazione dei dati. Il primo step è in molti casi trascurato,
@@ -73,7 +75,7 @@ informazioni definite come _personally identifiable_ (_PII_).
 Una volta completato questo passaggio, potremo passare alle azioni maggiormente
 rilevanti dal punto di vista scientifico.
 
-### Pulizia dei dati
+### Pulizia dei dati ([⮨](#top))
 
 Abbiamo in precedenza sottolineato come l'affidabilità del dataset sia
 essenziale a garantire performance ottimali del modello addestrato. In tal
@@ -99,7 +101,7 @@ un'operazione di _filling_ a partire dalla restante parte del dataset, o
 ancora, in casi estremi, si potrebbe eliminare _completamente_ la feature
 interessata da rumore.
 
-### Sbilanciamento del dataset
+### Sbilanciamento del dataset ([⮨](#top))
 
 E' possibile che un dataset abbia diverse proporzioni nei raggruppamenti dei
 dati. Anche se questo fenomeno può interessare ogni insieme di dati, è
@@ -121,7 +123,7 @@ tal senso, possiamo rifarci alla seguente tabella:ì
 | moderato                | 1-20 $\%$ del dataset                  |
 | Estremo                 | < 1 $\%$ del dataset                   |
 
-#### Influenza dello sbilanciamento
+#### Influenza dello sbilanciamento ([⮨](#top))
 
 Per capire qual è il problema legato allo sbilanciamento del dataset,
 immaginiamo di dover creare un modello che individui una mail di spam. Per
@@ -139,7 +141,7 @@ nostro cervello, se vedessimo 995 immagini di penne, e solo 5 di matite, è
 probabile che non saremmo in grado di distinguere una matita da una penna
 perché, semplicemente, _non sapremmo come è fatta una matita_.
 
-#### Downsampling ed upweighting
+#### Downsampling ed upweighting ([⮨](#top))
 
 Un modo efficace per gestire situazioni in cui il dataset è sbilanciato è
 quello di utilizzare tecniche di _data balancing_. Ne esistono di diverse, più
@@ -157,7 +159,7 @@ non-spam, usando un fattore tendenzialmente pari a quello che abbiamo usato in
 fase di downsampling. Nella pratica, ogni mail non-spam avrà un peso dieci
 volte superiore a quello che avrebbe avuto se si fosse utilizzato il dataset iniziale.
 
-### Trasformazione dei dati
+### Trasformazione dei dati ([⮨](#top))
 
 Il passo successivo nella preparazione dei dati è quello di _trasformare_
 alcuni valori. In tal senso, possiamo operare per due ragioni principali.
@@ -178,7 +180,7 @@ _normalizzazione_ dei dati numerici, ovvero portarli tutti all'interno di una
 stessa scala di valori, normalmente compresa tra $0$ ed $1$ o tra $-1$ ed $1$.
 Vediamo più nel dettaglio alcune possibilità.
 
-#### Trasformazione dei dati numerici
+#### Trasformazione dei dati numerici ([⮨](#top))
 
 Abbiamo detto in precedenza che potremmo voler applicare delle
 _normalizzazioni_ a dei dati numerici per migliorare le performance del nostro
@@ -195,7 +197,7 @@ necessità di arrivare ad una "base comune" a partire dalla quale operare.
 
 Le principali tecniche di normalizzazione disponibili sono quattro.
 
-##### Scaling
+##### Scaling ([⮨](#top))
 
 Lo **scaling** prevede la conversione dei valori assunti da una feature in un
 range che va di solito tra $[0, 1]$ o $[-1, 1]$. La formula dello scaling è la
@@ -205,7 +207,7 @@ $$
 y = \frac{(x - x_{min})}{(x_{max} - x_{min})}
 $$
 
-##### Clipping
+##### Clipping ([⮨](#top))
 
 Può capitare che il dataset contenga degli _outlier_, ovvero dei campioni che
 divergono notevolmente dalle caratteristiche statistiche del dataset. In questo
@@ -213,7 +215,7 @@ caso, potremmo limitarci a rimuovere completamente tali valori mediante soglie
 statistiche, come i range interquartili in caso di distribuzione parametrica, o
 i classici $3 \sigma$ in caso di distribuzione normale.
 
-##### Trasformazione logaritmica
+##### Trasformazione logaritmica ([⮨](#top))
 
 Un'altra possibilità è quella di convertire i nostri valori in scala
 logaritmica, comprimendo un range ampio in uno più piccolo usando la funzione
@@ -223,7 +225,7 @@ $$
 y = Log(x)
 $$
 
-##### Z-score
+##### Z-score ([⮨](#top))
 
 Un ultimo tipo di trasformazione prevede l'uso dello _z-score_, che prevede una
 riformulazione dei valori assunti dalla feature per fare in modo che questi
@@ -237,7 +239,7 @@ $$
 dove $\mu$ è la media della distribuzione dei nostri dati, mentre $\sigma$ ne è
 chiaramente la varianza.
 
-#### Trasformazione dei dati categorici
+#### Trasformazione dei dati categorici ([⮨](#top))
 
 Alcune delle nostre feature possono assumere esclusivamente valori _discreti_.
 Ad esempio, le nostre immagini potrebbero raffigurare diverse razze di cani,
@@ -303,7 +305,7 @@ mentre quella del giovedì:
 giovedi = np.array([0 0 0 1 0 0 0])
 ```
 
-### Suddivisione dei dati
+### Suddivisione dei dati ([⮨](#top))
 
 L'ultimo passo nella preparazione del dataset è quello della suddivisione dei
 dati. In particolare, si destinano un certo quantitativo di dati per

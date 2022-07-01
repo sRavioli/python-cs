@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 13 – Definire un problema di machine learning
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,9 +14,9 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [13 – Definire un problema di machine learning](#13--definire-un-problema-di-machine-learning)
-   1. [Determinare l'obiettivo](#determinare-lobiettivo)
-   2. [Comprendere i dati](#comprendere-i-dati)
-   3. [13.3 - Scegliere il modello](#133---scegliere-il-modello)
+   1. [Determinare l'obiettivo (⮨)](#determinare-lobiettivo-)
+   2. [Comprendere i dati (⮨)](#comprendere-i-dati-)
+   3. [13.3 - Scegliere il modello (⮨)](#133---scegliere-il-modello-)
 
 <!-- /TOC -->
 
@@ -26,7 +28,7 @@ gli elementi essenziali da utilizzare per la sua risoluzione: determineremo la
 fattibilità del problema, fornendo un insieme chiaro di _obiettivi_ e
 _criteri_ per la sua risoluzione.
 
-## Determinare l'obiettivo
+## Determinare l'obiettivo ([⮨](#top))
 
 Partiamo nella definizione del problema determinando il nostro obiettivo,
 ovvero definendo ciò che si vuole ottenere a valle della risoluzione del
@@ -57,7 +59,7 @@ vogliamo portare avanti. Mantenendoci al caso precedente:
 
 <!-- markdownlint-enable MD013 -->
 
-## Comprendere i dati
+## Comprendere i dati ([⮨](#top))
 
 La disponibilità di dati per l'analisi è alla base del machine learning. Per
 effettuare delle predizioni efficaci, infatti, abbiamo bisogno di usare dati
@@ -84,7 +86,7 @@ dotati di un certo potere predittivo. In particolare, i dati devono essere:
   Utilizzare un dataset non rappresentativo inficerà negativamente le
   performance predittive del modello.
 
-## 13.3 - Scegliere il modello
+## 13.3 - Scegliere il modello ([⮨](#top))
 
 L'ultimo step è la scelta del tipo di modello da utilizzare, valutando ad
 esempio tra classificazione, regressione e clustering.

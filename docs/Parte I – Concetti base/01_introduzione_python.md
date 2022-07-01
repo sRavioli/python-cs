@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 01 – Introduzione a Python
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,38 +14,38 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [01 – Introduzione a Python](#01--introduzione-a-python)
-2. [Introduzione a Python](#introduzione-a-python)
-   1. [Python e la tipizzazione](#python-e-la-tipizzazione)
-      1. [Duck Typing](#duck-typing)
-3. [L'interprete Python](#linterprete-python)
-4. [Operazioni matematiche](#operazioni-matematiche)
-   1. [Tabella riassuntiva](#tabella-riassuntiva)
-5. [Stringhe](#stringhe)
-   1. [Stringhe in righe multiple](#stringhe-in-righe-multiple)
-   2. [Concatenazione di Stringhe](#concatenazione-di-stringhe)
-      1. [Concatenazione con l'operatore `+`](#concatenazione-con-loperatore-)
-      2. [Concatenazione di stringhe _literal_](#concatenazione-di-stringhe-literal)
-      3. [Concatenazione con l'operatore `+=`](#concatenazione-con-loperatore--1)
-      4. [Concatenazione col metodo `.join()`](#concatenazione-col-metodo-join)
-      5. [Concatenazione con il `%`-formatting](#concatenazione-con-il--formatting)
-      6. [Concatenazione con il metodo `.format()`](#concatenazione-con-il-metodo-format)
-      7. [Concatenazione con le $f$-strings](#concatenazione-con-le-f-strings)
-      8. [Che metodo usare?](#che-metodo-usare)
-   3. [Indicizzazione delle stringhe](#indicizzazione-delle-stringhe)
-   4. [Slicing su stringhe](#slicing-su-stringhe)
-   5. [Lunghezza di una stringa](#lunghezza-di-una-stringa)
-   6. [Immutabilità di una stringa](#immutabilità-di-una-stringa)
-6. [Liste](#liste)
-   1. [Concatenazione, indicizzazione e slicing su liste](#concatenazione-indicizzazione-e-slicing-su-liste)
-      1. [Esempi](#esempi)
-   2. [Mutabilità di una lista](#mutabilità-di-una-lista)
-   3. [Operazioni sulle liste](#operazioni-sulle-liste)
-   4. [Le liste sono eterogenee](#le-liste-sono-eterogenee)
+   1. [Introduzione a Python](#introduzione-a-python)
+      1. [Python e la tipizzazione (⮨)](#python-e-la-tipizzazione-)
+         1. [Duck Typing (⮨)](#duck-typing-)
+   2. [L'interprete Python (⮨)](#linterprete-python-)
+   3. [Operazioni matematiche (⮨)](#operazioni-matematiche-)
+      1. [Tabella riassuntiva (⮨)](#tabella-riassuntiva-)
+   4. [Stringhe (⮨)](#stringhe-)
+      1. [Stringhe in righe multiple (⮨)](#stringhe-in-righe-multiple-)
+      2. [Concatenazione di Stringhe (⮨)](#concatenazione-di-stringhe-)
+         1. [Concatenazione con l'operatore `+` (⮨)](#concatenazione-con-loperatore--)
+         2. [Concatenazione di stringhe _literal_ (⮨)](#concatenazione-di-stringhe-literal-)
+         3. [Concatenazione con l'operatore `+=` (⮨)](#concatenazione-con-loperatore---1)
+         4. [Concatenazione col metodo `.join()` (⮨)](#concatenazione-col-metodo-join-)
+         5. [Concatenazione con il `%`-formatting (⮨)](#concatenazione-con-il--formatting-)
+         6. [Concatenazione con il metodo `.format()` (⮨)](#concatenazione-con-il-metodo-format-)
+         7. [Concatenazione con le $f$-strings (⮨)](#concatenazione-con-le-f-strings-)
+         8. [Che metodo usare? (⮨)](#che-metodo-usare-)
+      3. [Indicizzazione delle stringhe (⮨)](#indicizzazione-delle-stringhe-)
+      4. [Slicing su stringhe (⮨)](#slicing-su-stringhe-)
+      5. [Lunghezza di una stringa (⮨)](#lunghezza-di-una-stringa-)
+      6. [Immutabilità di una stringa (⮨)](#immutabilità-di-una-stringa-)
+   5. [Liste (⮨)](#liste-)
+      1. [Concatenazione, indicizzazione e slicing su liste (⮨)](#concatenazione-indicizzazione-e-slicing-su-liste-)
+         1. [Esempi (⮨)](#esempi-)
+      2. [Mutabilità di una lista (⮨)](#mutabilità-di-una-lista-)
+      3. [Operazioni sulle liste (⮨)](#operazioni-sulle-liste-)
+      4. [Le liste sono eterogenee (⮨)](#le-liste-sono-eterogenee-)
 
 <!-- /TOC -->
 </details>
 
-# Introduzione a Python
+## Introduzione a Python
 
 Prima di iniziare a parlare del linguaggio Python, è opportuno verificare che
 l'interprete sia installato nel nostro sistema. Per farlo, apriamo un
@@ -118,7 +120,7 @@ Possiamo ora chiuderlo, lo useremo in seguito:
 > A differenza della shell che usa `$`, indichiamo con `>>>` l'input
 > nell'interprete Python.
 
-## Python e la tipizzazione
+### Python e la tipizzazione ([⮨](#top))
 
 Python è un linguaggio a tipizzazione dinamica. Questo significa che
 l'interprete valuta il tipo di variabile a _runtime_ e, dato che il tipo può
@@ -159,7 +161,7 @@ necessario preoccuparsi del tipo della variabile. Non è però tutto oro ciò
 che luccica: per comprenderlo, infatti è il momento di parlare del (pilatesco)
 principio del _duck typing_.
 
-### Duck Typing
+#### Duck Typing ([⮨](#top))
 
 Il nome del concetto si riferisce al _duck test_ attribuito a James W. Riley che
 afferma:
@@ -201,7 +203,7 @@ in cui si usano classi e oggetti, dato che l'interprete proverà ad inferire
 ed usare automaticamente un tipo in base al contesto in cui viene usata la
 variabile, con le comodità (ma anche i disastri) che questo comporta.
 
-# L'interprete Python
+## L'interprete Python ([⮨](#top))
 
 Nella sezione [introduttiva](#introduzione-a-python) abbiamo visto come
 installare Python, in modo da avere un ambiente di lavoro accessibile da riga di
@@ -221,7 +223,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 Possiamo ora utilizzare Python in maniera interattiva.
 
-# Operazioni matematiche
+## Operazioni matematiche ([⮨](#top))
 
 Possiamo usare l'interprete come se fosse una calcolatrice, semplicemente
 digitiamo le operazioni che vogliamo eseguire e premiamo <kbd>Enter</kbd>.
@@ -301,7 +303,7 @@ potenza.
 
 Abbiamo visto vari operatori matematici, riassumiamoli.
 
-## Tabella riassuntiva
+### Tabella riassuntiva ([⮨](#top))
 
 | Operatore | Descrizione          |
 | --------: | :------------------- |
@@ -313,7 +315,7 @@ Abbiamo visto vari operatori matematici, riassumiamoli.
 |       `%` | Modulo               |
 |      `**` | Elevazione a potenza |
 
-# Stringhe
+## Stringhe ([⮨](#top))
 
 In Python le stringhe possono indifferentemente essere racchiuse tra virgolette
 singole (`'...'`) o doppie (`"..."`).
@@ -357,7 +359,7 @@ SyntaxError: invalid syntax
 >
 > </details>
 
-## Stringhe in righe multiple
+### Stringhe in righe multiple ([⮨](#top))
 
 > <details>
 > <summary>ℹ️ <em>Stringhe e liste</em></summary>
@@ -397,11 +399,11 @@ all'interprete di non inserire il carattere _newline_ (`\n`) al termine della
 riga. Infatti viene stampato `linea` subito dopo `multi\` generando così
 `multilinea`.
 
-## Concatenazione di Stringhe
+### Concatenazione di Stringhe ([⮨](#top))
 
 Python permette di concatenare le stringhe in vari modi. Vediamoli.
 
-### Concatenazione con l'operatore `+`
+#### Concatenazione con l'operatore `+` ([⮨](#top))
 
 Il metodo più semplice per concatenare molteplici stringhe è quello di usare
 l'operatore `+`:
@@ -422,7 +424,7 @@ esempio:
 'stringa concatenata col +'
 ```
 
-### Concatenazione di stringhe _literal_
+#### Concatenazione di stringhe _literal_ ([⮨](#top))
 
 Per concatenare due o più stringhe _literal_, basta piazzarle una dopo l'altra.
 Per esempio:
@@ -467,7 +469,7 @@ Per esempio:
 >
 > </details>
 
-### Concatenazione con l'operatore `+=`
+#### Concatenazione con l'operatore `+=` ([⮨](#top))
 
 Simile all'operatore `+`, può essere usato per concatenare più stringhe. Ad
 esempio:
@@ -486,7 +488,7 @@ esempio:
 >
 > </details>
 
-### Concatenazione col metodo `.join()`
+#### Concatenazione col metodo `.join()` ([⮨](#top))
 
 Il metodo `.join()` ci permette di concatenare una lista di stringhe in una
 singola stringa:
@@ -517,7 +519,7 @@ Possiamo anche usare la virgola:
 'una,stringa,concatenata'
 ```
 
-### Concatenazione con il `%`-formatting
+#### Concatenazione con il `%`-formatting ([⮨](#top))
 
 Gli oggetti di tipo stringa offrono la possibilità di utilizzare l'operatore `%`
 per la formattazione delle stesse. Può essere anche usato per concatenare le
@@ -535,7 +537,7 @@ In questo esempio, Python sostituisce il `%s` nel _literal_ con la variabile
 di tipo stringa corrispondente nelle parentesi tonde che seguono l'operatore
 `%`.
 
-### Concatenazione con il metodo `.format()`
+#### Concatenazione con il metodo `.format()` ([⮨](#top))
 
 È possibile concatenare delle stringhe col metodo `.format()`. Ad esempio:
 
@@ -551,7 +553,7 @@ In questo esempio, utilizziamo le parentesi graffe `{}` nel _literal_ e passiamo
 la stringa da concatenare al metodo `.format()`. Quest'ultimo sostituisce le
 parentesi graffe `{}` con la stringa corrispondente nell'argomento del metodo.
 
-### Concatenazione con le $f$-strings
+#### Concatenazione con le $f$-strings ([⮨](#top))
 
 Python 3.6 introduce le $f$-strings per formattare l'output in maniera più
 elegante e concisa. Possiamo usare le $f$-strings per concatenare le stringhe.
@@ -565,13 +567,13 @@ Vediamo come:
 'concatenazione di stringhe in Python'
 ```
 
-### Che metodo usare?
+#### Che metodo usare? ([⮨](#top))
 
 Nonostante sono presenti molteplici modi per concatenare stringhe in Python, è
 raccomandato usare o l'operatore standard `+` o il metodo `.join()` o il metodo
 `.format()` o le $f$-strings.
 
-## Indicizzazione delle stringhe
+### Indicizzazione delle stringhe ([⮨](#top))
 
 Python definisce le stringhe come degli _array di caratteri_, dunque è possibile
 indicizzarli. Ad esempio:
@@ -604,7 +606,7 @@ Ad esempio:
 'n'
 ```
 
-## Slicing su stringhe
+### Slicing su stringhe ([⮨](#top))
 
 L'operazione, detta di _slicing_, permette di estrarre una determinata parte di
 una stringa. In generale, il comando, assume il seguente aspetto:
@@ -709,7 +711,7 @@ nella stringa; nella seconda riga sono presenti gli indici negativi
 corrispondenti. Lo slicing da $i$ a $j$ consisterà di tutti i caratteri compresi
 tra gli estremi di indice rispettivamente $i$ e $j$.
 
-## Lunghezza di una stringa
+### Lunghezza di una stringa ([⮨](#top))
 
 Per ottenere la lunghezza di una stringa possiamo usare la funzione `len()`:
 
@@ -719,7 +721,7 @@ Per ottenere la lunghezza di una stringa possiamo usare la funzione `len()`:
 7
 ```
 
-## Immutabilità di una stringa
+### Immutabilità di una stringa ([⮨](#top))
 
 In Python le stringhe sono _immutabili_ e come indica la parola stessa, **non**
 possono essere modificate. Se, ad esempio, provassimo a ridefinire uno o più
@@ -761,7 +763,7 @@ TypeError: 'str' object does not support item assignment
 >
 > </details>
 
-# Liste
+## Liste ([⮨](#top))
 
 Come detto precedentemente, le stringhe non sono altro che un caso particolare
 di una lista. Dunque cos'è una lista?
@@ -781,7 +783,7 @@ numeri:
 [0, 1, 2, 3, 4]
 ```
 
-## Concatenazione, indicizzazione e slicing su liste
+### Concatenazione, indicizzazione e slicing su liste ([⮨](#top))
 
 Come per le stringhe anche per le liste è possibile effettuare operazioni di
 indicizzazione, slicing e concatenazione:
@@ -803,7 +805,7 @@ Possiamo dunque accedere ai vari elementi di una lista attraverso l'utilizzo
 degli indici. Questi ultimi si comportano allo stesso modo di quelli delle
 stringhe. D'altronde le stringhe sono un caso particolare di lista.
 
-### Esempi
+#### Esempi ([⮨](#top))
 
 Prendiamo in considerazione la stringa:
 
@@ -862,7 +864,7 @@ Prendiamo gli elementi di indice pari, in ordine inverso:
 [6, 4, 2, 0]
 ```
 
-## Mutabilità di una lista
+### Mutabilità di una lista ([⮨](#top))
 
 Al contrario delle stringhe, le liste sono oggetti _mutabili_, dunque possiamo
 modificarne il contenuto. Ad esempio:
@@ -877,7 +879,7 @@ lst
 Gli elementi che compongono una lista non devono necessariamente essere dei
 numeri.
 
-## Operazioni sulle liste
+### Operazioni sulle liste ([⮨](#top))
 
 Si possono effettuare varie operazioni su una lista. Ad esempio, possiamo
 eliminare degli elementi di una liste con `[]` combinato all'operazione di
@@ -939,7 +941,7 @@ Possiamo ovviamente aggiungere anche una lista, ad esempio:
 [0, 1, 2, [3, '4', 5], 6, [7, 8]]
 ```
 
-## Le liste sono eterogenee
+### Le liste sono eterogenee ([⮨](#top))
 
 Una lista può contenere elementi tra lista eterogenei, ad esempio:
 

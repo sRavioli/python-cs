@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # Appendice E – Consigli Python
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,18 +14,18 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [Appendice E – Consigli Python](#appendice-e--consigli-python)
-   1. [E.1 – Tabella degli operatori booleani](#e1--tabella-degli-operatori-booleani)
-   2. [E.2 – Gestione delle Eccezioni](#e2--gestione-delle-eccezioni)
-      1. [E.2.1 – I decorator](#e21--i-decorator)
-         1. [E.2.1.1 – Funzioni come oggetti](#e211--funzioni-come-oggetti)
-         2. [E.2.1.2 – Funzioni come argomenti di altre funzioni](#e212--funzioni-come-argomenti-di-altre-funzioni)
-         3. [E.2.1.3 – Definizione ed uso di decorator](#e213--definizione-ed-uso-di-decorator)
+   1. [E.1 – Tabella degli operatori booleani (⮨)](#e1--tabella-degli-operatori-booleani-)
+   2. [E.2 – Gestione delle Eccezioni (⮨)](#e2--gestione-delle-eccezioni-)
+      1. [E.2.1 – I decorator (⮨)](#e21--i-decorator-)
+         1. [E.2.1.1 – Funzioni come oggetti (⮨)](#e211--funzioni-come-oggetti-)
+         2. [E.2.1.2 – Funzioni come argomenti di altre funzioni (⮨)](#e212--funzioni-come-argomenti-di-altre-funzioni-)
+         3. [E.2.1.3 – Definizione ed uso di decorator (⮨)](#e213--definizione-ed-uso-di-decorator-)
 
 <!-- /TOC -->
 
 </details>
 
-## E.1 – Tabella degli operatori booleani
+## E.1 – Tabella degli operatori booleani ([⮨](#top))
 
 | Operatore | Operazione logica | Esempio             | Risultato |
 | --------- | ----------------- | ------------------- | --------- |
@@ -31,9 +33,9 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 | `or`      | OR                | `True or False`     | `True`    |
 | `not`     | NOT               | `True is not False` | `True`    |
 
-## E.2 – Gestione delle Eccezioni
+## E.2 – Gestione delle Eccezioni ([⮨](#top))
 
-### E.2.1 – I decorator
+### E.2.1 – I decorator ([⮨](#top))
 
 Prima di continuare a parlare dei metodi che è possibile definire all'interno
 di una classe Python, è necessario introdurre il concetto di _decorator_,
@@ -41,7 +43,7 @@ ovvero una particolare notazione che viene usata in Python (e in altri
 linguaggi di programmazione) per indicare una funzione che "decora" un'altra
 funzione.
 
-#### E.2.1.1 – Funzioni come oggetti
+#### E.2.1.1 – Funzioni come oggetti ([⮨](#top))
 
 Python tratta le funzioni come degli _oggetti_. E' quindi possibile che una
 funzione _restituisca_ una _funzione_:
@@ -82,7 +84,7 @@ Per visualizzare il risultato, trattiamolo come se fosse una chiamata a funzione
 'Sam Winchester'
 ```
 
-#### E.2.1.2 – Funzioni come argomenti di altre funzioni
+#### E.2.1.2 – Funzioni come argomenti di altre funzioni ([⮨](#top))
 
 Possiamo passare una funzione come argomento ad un'altra funzione:
 
@@ -112,7 +114,7 @@ Got it!
 Vediamo quindi come la funzione passata come argomento sarà correttamente
 chiamata internamente al metodo `favorite_series()`.
 
-#### E.2.1.3 – Definizione ed uso di decorator
+#### E.2.1.3 – Definizione ed uso di decorator ([⮨](#top))
 
 La sintassi che abbiamo usato è, per dirla con Manzoni, _ampollosa_. Python
 offre una sintassi equivalente ma più accessibile per usare una funzione come

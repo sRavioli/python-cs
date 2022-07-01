@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 10 – Visualizzazione di dati in Seaborn
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,12 +14,12 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [10 – Visualizzazione di dati in Seaborn](#10--visualizzazione-di-dati-in-seaborn)
-   1. [Installazione di Seaborn](#installazione-di-seaborn)
-2. [Lettura dei dati](#lettura-dei-dati)
-   1. [Visualizzare le relazioni tra dati](#visualizzare-le-relazioni-tra-dati)
-3. [Analisi della distribuzione dati](#analisi-della-distribuzione-dati)
-   1. [Plot di dati categorici](#plot-di-dati-categorici)
-4. [Heatmap](#heatmap)
+   1. [Installazione di Seaborn (⮨)](#installazione-di-seaborn-)
+   1. [Lettura dei dati (⮨)](#lettura-dei-dati-)
+      1. [Visualizzare le relazioni tra dati (⮨)](#visualizzare-le-relazioni-tra-dati-)
+   1. [Analisi della distribuzione dati](#analisi-della-distribuzione-dati)
+      1. [Plot di dati categorici (⮨)](#plot-di-dati-categorici-)
+   1. [Heatmap](#heatmap)
 
 <!-- /TOC -->
 
@@ -29,7 +31,7 @@ sulla scia di quello che abbiamo presentato in Pandas nella lezione precedente.
 Ciò permette di mantenere un'interfaccia molto simile a quella di Matplotlib,
 estendendone al contempo le possibilità. Vediamo qualche esempio.
 
-## Installazione di Seaborn
+### Installazione di Seaborn ([⮨](#top))
 
 Come sempre, installiamo la libreria:
 
@@ -44,7 +46,7 @@ Importiamo la libreria e diamole un alias:
 import seaborn as sns
 ```
 
-# Lettura dei dati
+## Lettura dei dati ([⮨](#top))
 
 Seaborn è utile specialmente nel momento in cui si vogliono valutare
 visivamente le relazioni che intercorrono tra diverse feature presenti
@@ -87,7 +89,7 @@ La struttura della tabella è la seguente:
   (`tip`), sesso (`sex`), fumatore (`smoker`), giorno (`day`), orario (`time`)
   e numero di clienti (`size`).
 
-## Visualizzare le relazioni tra dati
+### Visualizzare le relazioni tra dati ([⮨](#top))
 
 Seaborn ci offre la funzione `relplot()` che ci permette di analizzare
 velocemente diversi aspetti inclusi del dataset. Ad esempio, potremmo vedere
@@ -136,7 +138,7 @@ sns.lmplot(data=tips, x="total_bill", y="tip", col="time", hue="day")
 
 ![Approssimazione ai minimi quadrati dei dati (sns, `lmplot()`)](../img/seaborn/tips_lmplot.png)
 
-# Analisi della distribuzione dati
+## Analisi della distribuzione dati
 
 Possiamo effettuare un'analisi della distribuzione delle variabili all'interno
 del nostro dataset. La funzione `displot()` ci permette di vedere come si vanno
@@ -160,7 +162,7 @@ seguente:
 
 ![Distribuzione dei clienti in base al sesso e orario con kde (sns, `displot()`)](../img/seaborn/client-time-sex_displot_kde.png)
 
-## Plot di dati categorici
+### Plot di dati categorici ([⮨](#top))
 
 Seaborn offre anche dei plot specializzati per la creazione e visualizzazione
 di dati (o feature) di tipo categorico, ovvero dati appartenenti ad una tra le
@@ -193,7 +195,7 @@ mance giorno per giorno al variare del sesso del cliente.
 >
 > </details>
 
-# Heatmap
+## Heatmap
 
 Un'ultima funzione che vale la pena menzionare è quella che ci permette di
 visualizzare le _heatmap_, ovvero delle strutture grafiche che consentono di

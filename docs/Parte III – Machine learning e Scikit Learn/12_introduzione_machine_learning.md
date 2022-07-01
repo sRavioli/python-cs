@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 12 – Introduzione al machine learning
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,12 +14,12 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [12 – Introduzione al machine learning](#12--introduzione-al-machine-learning)
-2. [Tipi di sistemi di machine learning](#tipi-di-sistemi-di-machine-learning)
-   1. [Sistemi ad apprendimento supervisionato](#sistemi-ad-apprendimento-supervisionato)
-      1. [Modelli di regressione](#modelli-di-regressione)
-      2. [Modelli di classificazione](#modelli-di-classificazione)
-   2. [Sistemi ad apprendimento non supervisionato](#sistemi-ad-apprendimento-non-supervisionato)
-   3. [Sistemi di reinforcement learning](#sistemi-di-reinforcement-learning)
+   1. [Tipi di sistemi di machine learning (⮨)](#tipi-di-sistemi-di-machine-learning-)
+   2. [Sistemi ad apprendimento supervisionato (⮨)](#sistemi-ad-apprendimento-supervisionato-)
+      1. [Modelli di regressione (⮨)](#modelli-di-regressione-)
+      2. [Modelli di classificazione (⮨)](#modelli-di-classificazione-)
+   3. [Sistemi ad apprendimento non supervisionato (⮨)](#sistemi-ad-apprendimento-non-supervisionato-)
+   4. [Sistemi di reinforcement learning (⮨)](#sistemi-di-reinforcement-learning-)
 
 <!-- /TOC -->
 
@@ -55,12 +57,12 @@ tradizionale) o l'addestramento (per l'approccio basato su machine learning)
 passeremo al software i dati sulla condizione meteorologica attuale, per poi
 predire il quantitativo di pioggia previsto.
 
-# Tipi di sistemi di machine learning
+## Tipi di sistemi di machine learning ([⮨](#top))
 
 I sistemi di machine learning sono divisi in tre diverse categorie, distinte
 tra loro sulla base del modello di apprendimento di determinate azioni
 
-## Sistemi ad apprendimento supervisionato
+## Sistemi ad apprendimento supervisionato ([⮨](#top))
 
 I sistemi ad apprendimento supervisionato (_supervised learning_) effettuano
 una predizione dopo aver appreso le relazioni intercorrenti tra un numero più
@@ -80,7 +82,7 @@ numero degli stessi, si prepara a sostenere l'esame.
 I più importanti approcci all'apprendimento supervisionato sono la
 _regressione_ e la _classificazione_.
 
-### Modelli di regressione
+### Modelli di regressione ([⮨](#top))
 
 Un _modello di regressione_ predice un valore numerico. Ad esempio, un modello
 meteorologico di regressione potrebbe predire il quantitativo di pioggia in
@@ -89,7 +91,7 @@ l'andamento dei prezzi delle proprietà immobiliari sulla base di dati come i
 metri quadri, la posizione e le caratteristiche della casa, nonché la
 situazione attuale dei mercati finanziario ed immobiliare.
 
-### Modelli di classificazione
+### Modelli di classificazione ([⮨](#top))
 
 A differenza dei modelli di regressione, il cui output è rappresentato da un
 numero, i _modelli di classificazione_ restituiscono in uscita un valore che
@@ -106,7 +108,7 @@ meno. I modelli di classificazione multiclasse invece riescono a distinguere
 tra più classi: ad esempio, il nostro modello di riconoscimento delle foto
 potrebbe riconoscere oggetti di "classe" gatto, cane, gallina ed oca.
 
-## Sistemi ad apprendimento non supervisionato
+## Sistemi ad apprendimento non supervisionato ([⮨](#top))
 
 I _sistemi di apprendimento non supervisionato_ compiono delle predizioni a
 partire da dati che non contengono alcuna informazione sulla classe di
@@ -128,7 +130,7 @@ stagioni, oppure ancora gli orari del giorno. Sarà poi nostro compito
 "provare" a dare un nome a questi cluster sulla base della nostra
 interpretazione del dataset.
 
-## Sistemi di reinforcement learning
+## Sistemi di reinforcement learning ([⮨](#top))
 
 I sistemi di reinforcement learning effettuano delle predizioni a partire da
 ricompense o penalità basate sulle azioni effettuate da un _agente_

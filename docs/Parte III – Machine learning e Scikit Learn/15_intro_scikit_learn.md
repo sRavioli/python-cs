@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 15 – Introduzione (breve) a Scikit Learn
 
 > Corso di Python per il Calcolo Scientifico
@@ -37,7 +39,7 @@ ed usiamo il seguente comando:
 pip install scikit-learn
 ```
 
-## 15.1 - Stimatori e transformer
+## 15.1 - Stimatori e transformer ([⮨](#top))
 
 Scikit Learn si basa su due concetti fondamentali, ovvero quelli di _estimator_
 (stimatore) e di _transformer_ (traducibile maccheronicamente come
@@ -59,7 +61,7 @@ algoritmo, inoltre, andrà verificato secondo delle opportune _metriche_, che
 permettono di definire, in termini percentuali o assoluti, l'accuratezza
 dell'algoritmo utilizzato.
 
-## Preprocessing
+## Preprocessing ([⮨](#top))
 
 Abbiamo visto come spesso sia necessario effettuare delle operazioni di
 preprocessing sui dati. In tal senso, gli strumenti che utilizzeremo

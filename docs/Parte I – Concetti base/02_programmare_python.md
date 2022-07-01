@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 02 – Programmare in Python
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,29 +14,29 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [02 – Programmare in Python](#02--programmare-in-python)
-2. [Alcuni concetti sintattici fondamentali](#alcuni-concetti-sintattici-fondamentali)
-   1. [Uso delle parentesi](#uso-delle-parentesi)
-3. [Programmazione strutturata](#programmazione-strutturata)
-   1. [Istruzioni condizionali (`if`)](#istruzioni-condizionali-if)
-   2. [Pattern matching](#pattern-matching)
-   3. [Cicli](#cicli)
-      1. [Ciclo `for`](#ciclo-for)
-      2. [Ciclo `while`](#ciclo-while)
-4. [La funzione `range()`](#la-funzione-range)
-5. [Istruzioni `break` e `continue`](#istruzioni-break-e-continue)
-6. [Definire una funzione](#definire-una-funzione)
-   1. [Passaggio di parametri ad una funzione](#passaggio-di-parametri-ad-una-funzione)
-   2. [L'istruzione `pass`](#listruzione-pass)
+   1. [Alcuni concetti sintattici fondamentali](#alcuni-concetti-sintattici-fondamentali)
+      1. [Uso delle parentesi (⮨)](#uso-delle-parentesi-)
+   2. [Programmazione strutturata (⮨)](#programmazione-strutturata-)
+      1. [Istruzioni condizionali (`if`) (⮨)](#istruzioni-condizionali-if-)
+      2. [Pattern matching (⮨)](#pattern-matching-)
+      3. [Cicli (⮨)](#cicli-)
+         1. [Ciclo `for` (⮨)](#ciclo-for-)
+         2. [Ciclo `while` (⮨)](#ciclo-while-)
+   3. [La funzione `range()`](#la-funzione-range)
+   4. [Istruzioni `break` e `continue`](#istruzioni-break-e-continue)
+   5. [Definire una funzione](#definire-una-funzione)
+      1. [Passaggio di parametri ad una funzione (⮨)](#passaggio-di-parametri-ad-una-funzione-)
+      2. [L'istruzione `pass` (⮨)](#listruzione-pass-)
 
 <!-- /TOC -->
 </details>
 
-# Alcuni concetti sintattici fondamentali
+## Alcuni concetti sintattici fondamentali
 
 Oltre al _duck typing_, esistono altri concetti che caratterizzano la sintassi
 di Python.
 
-## Uso delle parentesi
+### Uso delle parentesi ([⮨](#top))
 
 Le **parentesi tonde** si usano per:
 
@@ -101,12 +103,12 @@ Le **parentesi graffe** si usano per:
    print(insieme[1])   # errore! non si può accedere tramite indice
    ```
 
-# Programmazione strutturata
+## Programmazione strutturata ([⮨](#top))
 
 Python utilizza una sintassi per le strutture di controllo differente rispetto
 a quelle usate nei tipici linguaggi C-like.
 
-## Istruzioni condizionali (`if`)
+### Istruzioni condizionali (`if`) ([⮨](#top))
 
 In Python, l'istruzione condizionale `if`, ha una sintassi di questo tipo:
 
@@ -139,7 +141,7 @@ L'output sarà il seguente:
 a è uguale a 5
 ```
 
-## Pattern matching
+### Pattern matching ([⮨](#top))
 
 Fino alla versione 3.10, Python non offriva il costrutto `switch/case`. A
 partire da quest'ultima versione il _pattern matching_ è stato implementato con
@@ -155,9 +157,9 @@ match <comando>:
       print("Comando sconosciuto")
 ```
 
-## Cicli
+### Cicli ([⮨](#top))
 
-### Ciclo `for`
+#### Ciclo `for` ([⮨](#top))
 
 Il ciclo `for` itera su una _sequenza_, come una stringa o una lista, e ha una
 sintassi del tipo:
@@ -217,7 +219,7 @@ n
 >
 > </details>
 
-### Ciclo `while`
+#### Ciclo `while` ([⮨](#top))
 
 A differenza del ciclo `for`, il funzionamento del `while` è analogo a quello
 delle controparti degli altri linguaggi di programmazione. La sintassi è la
@@ -273,7 +275,7 @@ mi fermo
 >
 > </details>
 
-# La funzione `range()`
+## La funzione `range()`
 
 Riprendiamo il ciclo `for` visto in precedenza:
 
@@ -356,7 +358,7 @@ Poiché `len(lst)` ci restituisce il numero di elementi presenti nella lista
 elemento per elemento i valori contenuti all'interno della lista e otterremo il
 risultato desiderato.
 
-# Istruzioni `break` e `continue`
+## Istruzioni `break` e `continue`
 
 Le istruzioni `break` e `continue` permettono rispettivamente di
 _uscire dal ciclo_ o di _saltare all'iterazione successiva_. Ad esempio:
@@ -379,7 +381,7 @@ Le istruzioni precedenti usciranno dal ciclo quando viene generato casualmente
 un numero negativo, al contrario continueranno l'iterazione quando verrà
 generato casualmente un numero positivo.
 
-# Definire una funzione
+## Definire una funzione
 
 Possiamo definire una funzione nel seguente modo:
 
@@ -446,7 +448,7 @@ genera_lista_casuale(10)   # Possibile output: [2, 4, 8, 1, 5, 3, 1, 3, 0, 9]
 >
 > </details>
 
-## Passaggio di parametri ad una funzione
+### Passaggio di parametri ad una funzione ([⮨](#top))
 
 Python prevede che i parametri di una funzione le siano passati secondo una
 modalità ibrida chiamata _call-by-assignment_. In sostanza, il passaggio avviene
@@ -509,7 +511,7 @@ funzione `aggiungi_a_lista()` agiranno sulla lista originaria.
 >
 > </details>
 
-## L'istruzione `pass`
+### L'istruzione `pass` ([⮨](#top))
 
 Chiudiamo accennando all'istruzione pass. Questa non fa assolutamente nulla; è
 utile, ad esempio, quando vogliamo inserire una funzione (o una classe) vuota,

@@ -8,7 +8,7 @@ In questa repository sono presenti appunti, esercizi e codice relativi al corso
 Questo progetto propone un ampliamento degli appunti caricati nella repository
 precedente, nonché includere gli esercizi svolti sia a lezione che non.
 
-## Struttura della repository
+## Struttura della repository ([⮨](#top))
 
 La struttura della repository è semplice:
 
@@ -16,7 +16,7 @@ La struttura della repository è semplice:
 - `📁 py` contiene tutti i file `.py` relativi al corso;
 - `📁 .husky` contiene i _Git hooks_.
 
-### `📁 docs`
+### `📁 docs` ([⮨](#top))
 
 Ogni file Markdown ([GitHub Flavoured Markdown](https://github.github.com/gfm/)),
 corrisponde ad un argomento/capitolo differente. Per facilitarne la navigazione
@@ -27,7 +27,7 @@ Potrebbero essere presenti dei file del tipo `L<num>_temp.md`, sono i file degli
 appunti presi a lezione, non ancora rielaborati. Questi file saranno eliminati
 quando verranno rielaborati.
 
-### `📁 py`
+### `📁 py` ([⮨](#top))
 
 Ogni file Python corrisponde ad un esercizio svolto a lezione, oppure che è
 stato assegnato. Per facilitarne la navigazione, sono divisi a seconda
@@ -47,7 +47,7 @@ stesso.
 La soluzione che non corrisponde a quella del professore verrà commentata e
 lasciata nell'esercizio. Gli esercizi verranno, inoltre, commentati a dovere.
 
-### `📁 .husky`
+### `📁 .husky` ([⮨](#top))
 
 [Husky](https://github.com/typicode/husky) è un pacchetto che semplifica la
 creazione dei _Git hooks_.
@@ -61,13 +61,13 @@ Nella cartella sono presenti due _hooks_:
    il file `noodles.yaml` (dove viene esportato l'ambiente _conda_) è stato
    modificato.
 
-## Importare l'ambiente conda
+## Importare l'ambiente conda ([⮨](#top))
 
 Come importare l'ambiente conda dal file `noodles.yaml`.
 
 Work in Progress
 
-## License
+## License ([⮨](#top))
 
 The content of the project itself is licensed under the
 [GNU General Public License v3.0](https://github.com/sRavioli/pythoncs/blob/main/LICENCE.txt).

@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 04 – Programmazione orientata agli oggetti in Python
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,17 +14,17 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [04 – Programmazione orientata agli oggetti in Python](#04--programmazione-orientata-agli-oggetti-in-python)
-   1. [La programmazione orientata agli oggetti](#la-programmazione-orientata-agli-oggetti)
-   2. [Classi](#classi)
-      1. [Metodi e attributi](#metodi-e-attributi)
-2. [Classi in Python](#classi-in-python)
-   1. [Il metodo `__init__()`](#il-metodo-__init__)
-   2. [Modificatori di accesso](#modificatori-di-accesso)
-3. [Metodi](#metodi)
-   1. [Metodi di classe](#metodi-di-classe)
-   2. [Metodi statici](#metodi-statici)
-   3. [Metodi astratti](#metodi-astratti)
-4. [Le proprietà](#le-proprietà)
+   1. [La programmazione orientata agli oggetti (⮨)](#la-programmazione-orientata-agli-oggetti-)
+   2. [Classi (⮨)](#classi-)
+      1. [Metodi e attributi (⮨)](#metodi-e-attributi-)
+   3. [Classi in Python](#classi-in-python)
+      1. [Il metodo `__init__()` (⮨)](#il-metodo-__init__-)
+      2. [Modificatori di accesso (⮨)](#modificatori-di-accesso-)
+   4. [Metodi](#metodi)
+      1. [Metodi di classe (⮨)](#metodi-di-classe-)
+      2. [Metodi statici (⮨)](#metodi-statici-)
+      3. [Metodi astratti (⮨)](#metodi-astratti-)
+   5. [Le proprietà (⮨)](#le-proprietà-)
 
 <!-- /TOC -->
 
@@ -32,7 +34,7 @@ Python offre un supporto esteso alla programmazione orientata agli oggetti
 (_Object-Oriented Programming_ in inglese). Prima di proseguire sarebbe
 opportuno introdurre brevemente questo concetto
 
-## La programmazione orientata agli oggetti
+## La programmazione orientata agli oggetti ([⮨](#top))
 
 Quello della _programmazione orientata agli oggetti_ (OOP per brevità) è un
 paradigma di programmazione che permette di creare dei nuovi tipi definiti
@@ -43,7 +45,7 @@ che sono centrali in linguaggi come il C o nel paradigma procedurale, ai
 
 È per questo motivo che si arriva a dire che nella OOP tutto è un oggetto.
 
-## Classi
+## Classi ([⮨](#top))
 
 Una classe è un _prototipo_ per un determinato tipo di dati, definito
 dall'utente. Ad esempio:
@@ -71,7 +73,7 @@ chiamato **istanza**. Ad esempio:
 Sostanzialmente creiamo una struttura dati che raggruppi le caratteristiche
 generali di una classe. Quest'ultima è un'astrazione.
 
-### Metodi e attributi
+### Metodi e attributi ([⮨](#top))
 
 Ogni classe ha dei _metodi_, che caratterizzano le azioni le quali possono
 essere usate su ogni istanza della classe stessa, e degli _attributi_, ovvero le
@@ -84,7 +86,7 @@ modificatori.
 Ad esempio, l'auto "Opel Corsa", targata "AA 123 CD" ha una casa costruttrice
 (Opel), un modello (Corsa), una targa (AB 123 CD), una cilindrata, etc.
 
-# Classi in Python
+## Classi in Python
 
 Per definire una classe in Python, usiamo la parola chiave `class`:
 
@@ -105,7 +107,7 @@ class ClasseFiglia(ClasseMadre):
 La classe `ClasseFiglia`, discende dalla classe `ClasseMadre` e ne eredita tutti
 i metodi e gli attributi.
 
-## Il metodo `__init__()`
+### Il metodo `__init__()` ([⮨](#top))
 
 La maggior parte dei linguaggi di programmazione prevede un costruttore per
 creare un'istanza di una classe. Python, tuttavia, non lo prevede; fa uso invece
@@ -153,7 +155,7 @@ Evidenziamo quattro punti dal codice precedente:
 
 Approfondiamo brevemente il quarto punto.
 
-## Modificatori di accesso
+### Modificatori di accesso ([⮨](#top))
 
 Python prevede l'utilizzo di modificatori di accesso ai dati. Nell specifico
 abbiamo i classici `public`, `protected` e `private`. Tuttavia, a differenza di
@@ -194,7 +196,7 @@ class Persona(object):
 Questa sintassi può ovviamente essere usata per definire dei metodi protetti
 oppure privati.
 
-# Metodi
+## Metodi
 
 La sintassi per definire un metodo di classe è analoga a quella usata per
 definire una funzione:
@@ -217,7 +219,7 @@ p.metodo(parametro)              # richiamo il metodo dall'istanza
 Usiamo l'operatore `.` per accedere ai metodi definiti all'interno delle classi,
 in questo caso accediamo a `metodo` della classe `Persona`.
 
-## Metodi di classe
+### Metodi di classe ([⮨](#top))
 
 Il _decorator_ `@classmethod` ci permette di definire i _metodi di classe_:
 
@@ -251,7 +253,7 @@ stessa e non alla singola istanza:
 Bobby, Munson
 ```
 
-## Metodi statici
+### Metodi statici ([⮨](#top))
 
 Mediante il decoratore `@staticmethod` possiamo definire un metodo _statico_. In
 Python il funzionamento di un metodo di questo tipo è assimilabile al
@@ -282,7 +284,7 @@ True
 False
 ```
 
-## Metodi astratti
+### Metodi astratti ([⮨](#top))
 
 Possiamo definire dei metodi astratti mediante il decorator `@abstractmethod`.
 Per farlo, la nostra classe deve ereditare metodi e attributi dalla classe `ABC`
@@ -310,7 +312,7 @@ class ClasseFiglia(ClasseMadre):
         pass
 ```
 
-# Le proprietà
+## Le proprietà ([⮨](#top))
 
 In molti linguaggi di programmazione si utilizzano dei metodi accessori
 (_getter_) e modificatori (_setter_) rispettivamente per accedere e modificare

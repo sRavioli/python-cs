@@ -9,73 +9,75 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <details>
 <summary>Outline</summary>
 
+<a name="top"></a>
+
 <!-- TOC -->
 
 1. [07 – NumPy](#07--numpy)
-   1. [Installare NumPy](#installare-numpy)
-2. [Introduzione a Numpy](#introduzione-a-numpy)
-   1. [Gli `ndarray`](#gli-ndarray)
-   2. [Array vs liste](#array-vs-liste)
-   3. [Operazioni Algebriche con NumPy](#operazioni-algebriche-con-numpy)
-      1. [Approccio con liste](#approccio-con-liste)
-3. [Gli array](#gli-array)
-   1. [Array e liste](#array-e-liste)
-      1. [Array eterogenei](#array-eterogenei)
-   2. [Il numero di elementi di un array](#il-numero-di-elementi-di-un-array)
-   3. [Altri metodi per creare un array](#altri-metodi-per-creare-un-array)
-      1. [Array con valori zero o unitari](#array-con-valori-zero-o-unitari)
-      2. [Array vuoti](#array-vuoti)
-      3. [Matrice identità](#matrice-identità)
-      4. [Matrici diagonali](#matrici-diagonali)
-      5. [Matrici triangolari](#matrici-triangolari)
-   4. [Accesso agli elementi di un array](#accesso-agli-elementi-di-un-array)
-   5. [Maschere booleane](#maschere-booleane)
-   6. [Slicing degli array](#slicing-degli-array)
-   7. [La funzione `nonzero()`](#la-funzione-nonzero)
-   8. [Fancy indexing](#fancy-indexing)
-4. [Operazioni fondamentali sugli array](#operazioni-fondamentali-sugli-array)
-   1. [Operazioni algebriche di base](#operazioni-algebriche-di-base)
-   2. [La funzione `sum()`](#la-funzione-sum)
-   3. [La funzione `dot()`](#la-funzione-dot)
-   4. [La funzione `sort()`](#la-funzione-sort)
-   5. [Concatenare due array](#concatenare-due-array)
-   6. [Rimozione e inserimento di elementi in un array](#rimozione-e-inserimento-di-elementi-in-un-array)
-      1. [La funzione `delete()`](#la-funzione-delete)
-         1. [Array multidimensionali e `delete()`](#array-multidimensionali-e-delete)
-      2. [La funzione `insert()`](#la-funzione-insert)
-      3. [La funzione `append()`](#la-funzione-append)
-   7. [Dimensioni e forma di un array](#dimensioni-e-forma-di-un-array)
-   8. [Modificare le dimensioni di un array](#modificare-le-dimensioni-di-un-array)
-   9. [Flattening di un array](#flattening-di-un-array)
-5. [Operazioni matriciali](#operazioni-matriciali)
-   1. [Matrice trasposta](#matrice-trasposta)
-   2. [Matrice inversa](#matrice-inversa)
-   3. [Prodotti vettoriali e tra matrici](#prodotti-vettoriali-e-tra-matrici)
-      1. [La funzione `dot()`](#la-funzione-dot-1)
-      2. [Prodotto interno](#prodotto-interno)
-      3. [Prodotto esterno](#prodotto-esterno)
-      4. [La funzione `matmul()`](#la-funzione-matmul)
-   4. [Potenza di Matrice](#potenza-di-matrice)
-   5. [Decomposizione ai valori singolari](#decomposizione-ai-valori-singolari)
-   6. [Autovalori e Autovettori](#autovalori-e-autovettori)
-   7. [Norma](#norma)
-   8. [Determinante, rango e traccia](#determinante-rango-e-traccia)
-   9. [Risoluzione di sistemi di equazioni lineari](#risoluzione-di-sistemi-di-equazioni-lineari)
-6. [Operazioni polinomiali in NumPy](#operazioni-polinomiali-in-numpy)
-   1. [Addizione di polinomi](#addizione-di-polinomi)
-   2. [Sottrazione di polinomi](#sottrazione-di-polinomi)
-   3. [Moltiplicazione di polinomi](#moltiplicazione-di-polinomi)
-   4. [Divisione tra polinomi](#divisione-tra-polinomi)
-   5. [Elevazione a potenza](#elevazione-a-potenza)
-   6. [Valore assunto da un polinomio](#valore-assunto-da-un-polinomio)
-   7. [Derivate e integrale di funzioni polinomiali](#derivate-e-integrale-di-funzioni-polinomiali)
-7. [Statistica in NumPy](#statistica-in-numpy)
-   1. [Minimo e massimo di un array](#minimo-e-massimo-di-un-array)
-   2. [Percentile e quantile](#percentile-e-quantile)
-   3. [Media aritmetica e media pesata](#media-aritmetica-e-media-pesata)
-   4. [Varianza e deviazione standard](#varianza-e-deviazione-standard)
-   5. [Matrice di covarianza](#matrice-di-covarianza)
-   6. [Istogramma](#istogramma)
+   1. [Installare NumPy (⮨)](#installare-numpy-)
+2. [Introduzione a Numpy (⮨)](#introduzione-a-numpy-)
+   1. [Gli `ndarray` (⮨)](#gli-ndarray-)
+   2. [Array vs liste (⮨)](#array-vs-liste-)
+   3. [Operazioni Algebriche con NumPy (⮨)](#operazioni-algebriche-con-numpy-)
+      1. [Approccio con liste (⮨)](#approccio-con-liste-)
+3. [Gli array (⮨)](#gli-array-)
+   1. [Array e liste (⮨)](#array-e-liste-)
+      1. [Array eterogenei (⮨)](#array-eterogenei-)
+   2. [Il numero di elementi di un array (⮨)](#il-numero-di-elementi-di-un-array-)
+   3. [Altri metodi per creare un array (⮨)](#altri-metodi-per-creare-un-array-)
+      1. [Array con valori zero o unitari (⮨)](#array-con-valori-zero-o-unitari-)
+      2. [Array vuoti (⮨)](#array-vuoti-)
+      3. [Matrice identità (⮨)](#matrice-identità-)
+      4. [Matrici diagonali (⮨)](#matrici-diagonali-)
+      5. [Matrici triangolari (⮨)](#matrici-triangolari-)
+   4. [Accesso agli elementi di un array (⮨)](#accesso-agli-elementi-di-un-array-)
+   5. [Maschere booleane (⮨)](#maschere-booleane-)
+   6. [Slicing degli array (⮨)](#slicing-degli-array-)
+   7. [La funzione `nonzero()` (⮨)](#la-funzione-nonzero-)
+   8. [Fancy indexing (⮨)](#fancy-indexing-)
+4. [Operazioni fondamentali sugli array (⮨)](#operazioni-fondamentali-sugli-array-)
+   1. [Operazioni algebriche di base (⮨)](#operazioni-algebriche-di-base-)
+   2. [La funzione `sum()` (⮨)](#la-funzione-sum-)
+   3. [La funzione `dot()` (⮨)](#la-funzione-dot-)
+   4. [La funzione `sort()` (⮨)](#la-funzione-sort-)
+   5. [Concatenare due array (⮨)](#concatenare-due-array-)
+   6. [Rimozione e inserimento di elementi in un array (⮨)](#rimozione-e-inserimento-di-elementi-in-un-array-)
+      1. [La funzione `delete()` (⮨)](#la-funzione-delete-)
+         1. [Array multidimensionali e `delete()` (⮨)](#array-multidimensionali-e-delete-)
+      2. [La funzione `insert()` (⮨)](#la-funzione-insert-)
+      3. [La funzione `append()` (⮨)](#la-funzione-append-)
+   7. [Dimensioni e forma di un array (⮨)](#dimensioni-e-forma-di-un-array-)
+   8. [Modificare le dimensioni di un array (⮨)](#modificare-le-dimensioni-di-un-array-)
+   9. [Flattening di un array (⮨)](#flattening-di-un-array-)
+5. [Operazioni matriciali (⮨)](#operazioni-matriciali-)
+   1. [Matrice trasposta (⮨)](#matrice-trasposta-)
+   2. [Matrice inversa (⮨)](#matrice-inversa-)
+   3. [Prodotti vettoriali e tra matrici (⮨)](#prodotti-vettoriali-e-tra-matrici-)
+      1. [La funzione `dot()` (⮨)](#la-funzione-dot--1)
+      2. [Prodotto interno (⮨)](#prodotto-interno-)
+      3. [Prodotto esterno (⮨)](#prodotto-esterno-)
+      4. [La funzione `matmul()` (⮨)](#la-funzione-matmul-)
+   4. [Potenza di Matrice (⮨)](#potenza-di-matrice-)
+   5. [Decomposizione ai valori singolari (⮨)](#decomposizione-ai-valori-singolari-)
+   6. [Autovalori e Autovettori (⮨)](#autovalori-e-autovettori-)
+   7. [Norma (⮨)](#norma-)
+   8. [Determinante, rango e traccia (⮨)](#determinante-rango-e-traccia-)
+   9. [Risoluzione di sistemi di equazioni lineari (⮨)](#risoluzione-di-sistemi-di-equazioni-lineari-)
+6. [Operazioni polinomiali in NumPy (⮨)](#operazioni-polinomiali-in-numpy-)
+   1. [Addizione di polinomi (⮨)](#addizione-di-polinomi-)
+   2. [Sottrazione di polinomi (⮨)](#sottrazione-di-polinomi-)
+   3. [Moltiplicazione di polinomi (⮨)](#moltiplicazione-di-polinomi-)
+   4. [Divisione tra polinomi (⮨)](#divisione-tra-polinomi-)
+   5. [Elevazione a potenza (⮨)](#elevazione-a-potenza-)
+   6. [Valore assunto da un polinomio (⮨)](#valore-assunto-da-un-polinomio-)
+   7. [Derivate e integrale di funzioni polinomiali (⮨)](#derivate-e-integrale-di-funzioni-polinomiali-)
+7. [Statistica in NumPy (⮨)](#statistica-in-numpy-)
+   1. [Minimo e massimo di un array (⮨)](#minimo-e-massimo-di-un-array-)
+   2. [Percentile e quantile (⮨)](#percentile-e-quantile-)
+   3. [Media aritmetica e media pesata (⮨)](#media-aritmetica-e-media-pesata-)
+   4. [Varianza e deviazione standard (⮨)](#varianza-e-deviazione-standard-)
+   5. [Matrice di covarianza (⮨)](#matrice-di-covarianza-)
+   6. [Istogramma (⮨)](#istogramma-)
 
 <!-- /TOC -->
 
@@ -92,7 +94,7 @@ fisiche e anche ingegneristiche.
 
 Partiamo nella nostra disamina dalla procedura di installazione della libreria.
 
-## Installare NumPy
+## Installare NumPy ([⮨](#top))
 
 > <details>
 > <summary>ℹ️ <em>Installazione di una libreria</em></summary>
@@ -110,9 +112,9 @@ $ conda activate <my-env>
 (<my-env>) ~$ pip install numpy
 ```
 
-# Introduzione a Numpy
+# Introduzione a Numpy ([⮨](#top))
 
-## Gli `ndarray`
+## Gli `ndarray` ([⮨](#top))
 
 Abbiamo visto in precedenza che per usare un package o un modulo Python
 all'interno dei nostri programmi dovremo per prima cosa importarlo:
@@ -142,7 +144,7 @@ viene passata una lista:
 >>> a = np.array([1, 2, 3])
 ```
 
-## Array vs liste
+## Array vs liste ([⮨](#top))
 
 Sono diverse le differenze presenti tra un array e una lista. Le
 sono riassunte nella seguente tabella:
@@ -162,14 +164,14 @@ In pratica:
 - gli array sono pensati specificamente per le operazioni algebriche, mentre
   le liste sono pensate per degli scopi generici.
 
-## Operazioni Algebriche con NumPy
+## Operazioni Algebriche con NumPy ([⮨](#top))
 
 Come detto, gli array NumPy sono progettati nello specifico per le operazioni
 algebriche. Ovviamente, ciò assume una notevole rilevanza dati i nostri fini.
 Per capirlo, facciamo un semplice esempio: moltiplichiamo tra loro due vettori
 monodimensionali _elemento-per-elemento_.
 
-### Approccio con liste
+### Approccio con liste ([⮨](#top))
 
 Per effettuare la suddetta operazione possiamo usare un ciclo `for` o una
 list comprehension:
@@ -225,13 +227,13 @@ risulta essere basato NumPy:
 - il broadcasting, che riguarda la possibilità di usare una sintassi comune e
   indipendente dalla dimensionalità degli array coinvolti nelle operazioni.
 
-# Gli array
+# Gli array ([⮨](#top))
 
 Nella lezione precedente abbiamo introdotto il concetto gli array, ovvero la
 struttura dati principale dell'ecosistema di NumPy. In questa lezione (e nelle
 successive) ne approfondiremo aspetti e caratteristiche principali.
 
-## Array e liste
+## Array e liste ([⮨](#top))
 
 L'impressione che si può avere osservando gli array è che questi siano molto
 simili alle liste. Tuttavia, come abbiamo già visto, esistono diverse
@@ -273,7 +275,7 @@ esempio, creare un array di stringhe:
 array(['str', 'ing'], dtype='<U3')
 ```
 
-### Array eterogenei
+### Array eterogenei ([⮨](#top))
 
 In precedenza si è accennato al fatto che gli array, a differenza delle liste,
 debbano contenere dati omogenei. Cosa succederebbe quindi se provassimo a
@@ -312,7 +314,7 @@ stavolta da intero a stringa.
 >
 > </details>
 
-## Il numero di elementi di un array
+## Il numero di elementi di un array ([⮨](#top))
 
 Gli array NumPy hanno dimensione prefissata, e sono quindi in grado di
 contenere un numero fisso di oggetti di un certo tipo. Per definire (o
@@ -341,7 +343,7 @@ Vediamo che valore assume la proprietà shape di questo array:
 Come ci aspettavamo, il nostro array ha cardinalità due sulla prima dimensione
 (ovvero il numero di righe) e tre sulla seconda (ovvero il numero di colonne).
 
-## Altri metodi per creare un array
+## Altri metodi per creare un array ([⮨](#top))
 
 Oltre al metodo visto in precedenza, possiamo creare un array utilizzando
 direttamente il costruttore della classe `ndarray`:
@@ -367,7 +369,7 @@ questo caso diverrà un $3 \times 3$.
 Oltre a questa tecnica base, esistono diversi modi per creare array di un certo
 tipo. Vediamoli in breve.
 
-### Array con valori zero o unitari
+### Array con valori zero o unitari ([⮨](#top))
 
 Possiamo creare un array di dimensioni arbitrarie in cui tutti gli elementi
 sono pari ad 1. Per farlo, usiamo la funzione `ones()`:
@@ -391,7 +393,7 @@ array([[0., 0., 0.],
        [0., 0., 0.]])
 ```
 
-### Array vuoti
+### Array vuoti ([⮨](#top))
 
 Possiamo creare un array vuoto mediante la funzione `empty()`:
 
@@ -406,7 +408,7 @@ array([[0., 0., 0.],
 Questa funzione può risultare utile quando vogliamo pre-allocare spazio per un
 array.
 
-### Matrice identità
+### Matrice identità ([⮨](#top))
 
 Possiamo creare una matrice identità usando la funzione `eye()`:
 
@@ -428,7 +430,7 @@ array([[1., 0., 0.],
 >
 > </details>
 
-### Matrici diagonali
+### Matrici diagonali ([⮨](#top))
 
 La funzione `diag()` viene usata sia per creare una matrice diagonale a partire
 da un vettore (che sarà poi la diagonale della matrice), sia per estrarre la
@@ -484,7 +486,7 @@ una matrice, mentre passando una matrice si ottiene un vettore.
 >
 > </details>
 
-### Matrici triangolari
+### Matrici triangolari ([⮨](#top))
 
 Concludiamo questa breve carrellata mostrando due metodi in grado di estrarre
 la matrice triangolare, rispettivamente superiore ed inferiore.
@@ -520,7 +522,7 @@ array([[5, 0, 0],
 >
 > </details>
 
-## Accesso agli elementi di un array
+## Accesso agli elementi di un array ([⮨](#top))
 
 Così come per le liste, il modo più immediato per accedere al valore di un
 elemento in un array è usare l'operatore `[]`, specificando contestualmente
@@ -544,7 +546,7 @@ sintassi di questo tipo:
 1
 ```
 
-## Maschere booleane
+## Maschere booleane ([⮨](#top))
 
 Possiamo accedere ad un sottoinsieme di elementi dell'array mediante una
 maschera, ovvero un altro array di dimensioni uguali a quelle di partenza, al
@@ -589,7 +591,7 @@ array([2, 4])
 array([2, 3])
 ```
 
-## Slicing degli array
+## Slicing degli array ([⮨](#top))
 
 Così come le liste, anche gli array consentono le operazioni di slicing:
 
@@ -611,7 +613,7 @@ array([[1, 2],
 array([[1, 2]])
 ```
 
-## La funzione `nonzero()`
+## La funzione `nonzero()` ([⮨](#top))
 
 Possiamo usare la funzione `nonzero()` per selezionare gli elementi e gli
 indici di un array il cui valore non sia pari a zero. Ad esempio:
@@ -659,7 +661,7 @@ colonna). Notiamo quindi che avremo i seguenti elementi diversi da zero:
 >
 > </details>
 
-## Fancy indexing
+## Fancy indexing ([⮨](#top))
 
 Chiudiamo questa lezione parlando di una tecnica molto interessante chiamata
 fancy indexing, consistente nell'usare un array di indici per accedere a più
@@ -688,9 +690,9 @@ La potenza del fancy indexing sta proprio in questo: non solo siamo in grado di
 accedere facilmente a più elementi di un array mediante un'unica operazione, ma
 possiamo anche ridisporre questi elementi come più ci aggrada!
 
-# Operazioni fondamentali sugli array
+# Operazioni fondamentali sugli array ([⮨](#top))
 
-## Operazioni algebriche di base
+## Operazioni algebriche di base ([⮨](#top))
 
 NumPy ci offre la possibilità di effettuare diversi tipi di operazioni
 algebriche di base sugli array. Ad esempio, è possibile sommare due array:
@@ -725,7 +727,7 @@ array([3., 2.])
 >
 > </details>
 
-## La funzione `sum()`
+## La funzione `sum()` ([⮨](#top))
 
 La funzione `sum(axis=None)` ci permette di sommare tutti gli elementi lungo
 l'asse specificato. Ad esempio, per sommare tutti gli elementi di un vettore:
@@ -752,7 +754,7 @@ Per sommare gli elementi per riga, invece, dovremo passare il parametro `1`:
 array([3, 7])
 ```
 
-## La funzione `dot()`
+## La funzione `dot()` ([⮨](#top))
 
 La funzione `dot()` ci permette di effettuare l'operazione di moltiplicazione
 tra matrici standard:
@@ -767,7 +769,7 @@ array([[3, 6],
        [4, 8]])
 ```
 
-## La funzione `sort()`
+## La funzione `sort()` ([⮨](#top))
 
 Mediante la funzione `sort()` è possibile ordinare gli elementi di un array. Ad
 esempio:
@@ -823,7 +825,7 @@ sort e l'heap sort.
 >
 > </details>
 
-## Concatenare due array
+## Concatenare due array ([⮨](#top))
 
 Possiamo concatenare due array usando la funzione `concatenate()`:
 
@@ -880,9 +882,9 @@ ValueError: all the input array dimensions for the concatenation axis must match
 
 <!-- markdownlint-enable MD013 -->
 
-## Rimozione e inserimento di elementi in un array
+## Rimozione e inserimento di elementi in un array ([⮨](#top))
 
-### La funzione `delete()`
+### La funzione `delete()` ([⮨](#top))
 
 La funzione `delete(arr, obj, axis=None)` ci permette di rimuovere uno o più
 elementi di un array specificandone gli indici. La funzione accetta i seguenti
@@ -931,7 +933,7 @@ array([3, 4])
 >
 > </details>
 
-#### Array multidimensionali e `delete()`
+#### Array multidimensionali e `delete()` ([⮨](#top))
 
 La funzione `delete()` può essere usata anche su array multidimensionali. In
 questo caso, è opportuno specificare l'asse su cui operare.
@@ -980,7 +982,7 @@ elemento dell'array "vettorizzato".
 >
 > </details>
 
-### La funzione `insert()`
+### La funzione `insert()` ([⮨](#top))
 
 La funzione `insert(arr, obj, values, axis=None)` permette di inserire un
 elemento all'interno di un array. I parametri accettati dalla funzione sono:
@@ -1019,7 +1021,7 @@ matrice vettorizzata:
 array([ 1,  2,  3, 10, 11, 12,  4,  5,  6,  7,  8,  9])
 ```
 
-### La funzione `append()`
+### La funzione `append()` ([⮨](#top))
 
 La funzione `append(arr, values, axis=None)` permette di inserire in coda ad un
 array i valori specificati. I parametri accettati dalla funzione sono:
@@ -1064,7 +1066,7 @@ array([[ 1,  2,  3, 10],
 >
 > </details>
 
-## Dimensioni e forma di un array
+## Dimensioni e forma di un array ([⮨](#top))
 
 Esistono diverse proprietà di un array che ne descrivono dimensioni e forma.
 
@@ -1091,7 +1093,7 @@ il numero di elementi per ciascuno degli assi dell'array:
 (3, 3)
 ```
 
-## Modificare le dimensioni di un array
+## Modificare le dimensioni di un array ([⮨](#top))
 
 Possiamo modificare le dimensioni di un array mediante la funzione
 `reshape(arr, new_shape)`. I parametri passati alla funzione sono:
@@ -1133,7 +1135,7 @@ array([[ 1,  2,  3,  4,  5,  6,  7,  8],
 >
 > </details>
 
-## Flattening di un array
+## Flattening di un array ([⮨](#top))
 
 Abbiamo già visto in precedenza la vettorizzazione di un array, effettuata in
 automatico in alcune situazioni (come ad esempio la chiamata di `delete()` o
@@ -1156,7 +1158,7 @@ array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16])
 >
 > </details>
 
-# Operazioni matriciali
+# Operazioni matriciali ([⮨](#top))
 
 NumPy mette a disposizione il package `linalg`, che permette di effettuare
 numerose operazioni matriciali. La maggior parte degli esempi che vedremo nel
@@ -1167,7 +1169,7 @@ importandolo.
 >>> from numpy import linalg
 ```
 
-## Matrice trasposta
+## Matrice trasposta ([⮨](#top))
 
 La prima operazione che vediamo non richiede l'uso del modulo `linalg`, ed è
 quella che ci permette di ottenere la trasposta di una matrice. Per farlo,
@@ -1181,7 +1183,7 @@ array([[1, 4],
        [3, 6]])
 ```
 
-## Matrice inversa
+## Matrice inversa ([⮨](#top))
 
 Possiamo calcolare l'inversa di una matrice usando la funzione `inv(mtrx)` del
 package `linalg`, dove `mtrx` è la matrice da invertire. Ad esempio:
@@ -1225,11 +1227,11 @@ Traceback (most recent call last):
 numpy.linalg.LinAlgError: Singular matrix
 ```
 
-## Prodotti vettoriali e tra matrici
+## Prodotti vettoriali e tra matrici ([⮨](#top))
 
 <!-- markdownlint-disable MD024 -->
 
-### La funzione `dot()`
+### La funzione `dot()` ([⮨](#top))
 
 <!-- markdownlint-enable MD024 -->
 
@@ -1253,7 +1255,7 @@ di `a` ed `b`.
 Nel caso entrambi gli array siano $n$-dimensionali, si applicano altre regole,
 che è possibile recuperare a [questo indirizzo](https://numpy.org/doc/stable/reference/generated/numpy.dot.html#numpy.dot).
 
-### Prodotto interno
+### Prodotto interno ([⮨](#top))
 
 Possiamo usare la funzione `inner(a, b)` per calcolare il _prodotto interno_ (o
 scalare) tra i vettori `a` e `b`:
@@ -1350,7 +1352,7 @@ $$
 \end{align*}
 $$
 
-### Prodotto esterno
+### Prodotto esterno ([⮨](#top))
 
 Possiamo usare la funzione `outer(a, b)` per calcolare il prodotto esterno tra
 due vettori. In particolare, dati due vettori $a = [a_1, a_2, \dotsc, a_n]$ e
@@ -1378,7 +1380,7 @@ array([[ 5,  6,  7,  8],
        [20, 24, 28, 32]])
 ```
 
-### La funzione `matmul()`
+### La funzione `matmul()` ([⮨](#top))
 
 Quando abbiamo parlato della funzione `dot(a, b)` abbiamo visto come sia
 possibile usarla per effettuare il prodotto tra matrici. Tuttavia, esiste
@@ -1399,7 +1401,7 @@ passare vettori ed array $n$-dimensionali). Esiste in realtà un'altra
 differenza importante, che riguarda le operazioni $n$-dimensionali, ma che non
 tratteremo in questa sede.
 
-## Potenza di Matrice
+## Potenza di Matrice ([⮨](#top))
 
 La funzione `matrix_power(a, n)` del package `linalg` permette di elevare a
 potenza `n` una matrice `a`. Ad esempio:
@@ -1410,7 +1412,7 @@ array([[1069, 1558],
        [2337, 3406]])
 ```
 
-## Decomposizione ai valori singolari
+## Decomposizione ai valori singolari ([⮨](#top))
 
 La _decomposizione ai valori singolari_, detta anche **SVD** dall'acronimo
 inglese _Singular Value Decomposition_, è una tecnica di decomposizione di una
@@ -1440,7 +1442,7 @@ array([[-0.57604844, -0.81741556],
        [ 0.81741556, -0.57604844]])
 ```
 
-## Autovalori e Autovettori
+## Autovalori e Autovettori ([⮨](#top))
 
 Per calcolare gli autovalori e gli autovettori di una matrice, NumPy ci mette a
 disposizione la funzione `eig(a)`, sempre appartenente al package `linalg`, che
@@ -1455,7 +1457,7 @@ array([[-0.82456484, -0.41597356],
        [ 0.56576746, -0.90937671]])
 ```
 
-## Norma
+## Norma ([⮨](#top))
 
 La funzione `linalg.norm(a)` ci permette di calcolare la norma di una matrice.
 Opzionalmente, possiamo specificare tre parametri, ovvero:
@@ -1475,7 +1477,7 @@ sintassi:
 5.477225575051661
 ```
 
-## Determinante, rango e traccia
+## Determinante, rango e traccia ([⮨](#top))
 
 Possiamo calcolare rapidamente determinante, rango e traccia di una matrice
 mediante le funzioni `det(a)`, `matrix_rank(a)` e `trace(a)`, quest'ultima non
@@ -1501,7 +1503,7 @@ sovra/sotto diagonali specificando il parametro `offset`. Ad esempio:
 0
 ```
 
-## Risoluzione di sistemi di equazioni lineari
+## Risoluzione di sistemi di equazioni lineari ([⮨](#top))
 
 Chiudiamo questa (necessariamente breve!) carrellata sulle operazioni di
 algebra lineare con la funzione `solve(a, b)`, che permette di risolvere un
@@ -1517,7 +1519,7 @@ array([-7.5,  4.5,  3.5])
 Ovviamente, la matrice `a` deve essere quadrata, mentre il vettore `b` deve
 avere esattamente $n$ elementi, con $n$ ordine di `a`!
 
-# Operazioni polinomiali in NumPy
+# Operazioni polinomiali in NumPy ([⮨](#top))
 
 Il modulo `numpy.polynomial.polynomial` ci offre numerose classi e funzionalità
 per il trattamento dei polinomi. Vediamo quali sono le principali.
@@ -1548,7 +1550,7 @@ Il vantaggio principale degli oggetti `poly1d` sta sia nella loro
 rappresentazione, sia nel fatto che possono essere direttamente utilizzati
 all'interno delle funzioni per il calcolo polinomiale che vedremo in seguito.
 
-## Addizione di polinomi
+## Addizione di polinomi ([⮨](#top))
 
 Per effettuare l'addizione di due polinomi, possiamo usare il metodo
 `polyadd(c1, c2)`, che accetta come parametri due vettori `c1` e `c2` che
@@ -1578,7 +1580,7 @@ array([3., 4., 2.])
 Ovviamente, il risultato precedente può essere errato in base al valore assunto
 dal polinomio `c3`.
 
-## Sottrazione di polinomi
+## Sottrazione di polinomi ([⮨](#top))
 
 Possiamo poi sottrarre due polinomi usando la funzione `polysub(c1, c2)`, i cui
 parametri sono identici a quelli passati a `polyadd()`:
@@ -1588,7 +1590,7 @@ parametri sono identici a quelli passati a `polyadd()`:
 array([1., 1., 1.])
 ```
 
-## Moltiplicazione di polinomi
+## Moltiplicazione di polinomi ([⮨](#top))
 
 Le considerazioni precedenti possono essere banalmente traslate al caso della
 moltiplicazione tra polinomi, ottenibile mediante la funzione
@@ -1607,7 +1609,7 @@ array([0., 2., 7., 7., 2.])
 >
 > </details>
 
-## Divisione tra polinomi
+## Divisione tra polinomi ([⮨](#top))
 
 La divisione tra polinomi è un'operazione leggermente più complessa delle
 altre, e prevede l'uso della funzione `polydiv(c1, c2)`, che restituirà
@@ -1626,7 +1628,7 @@ array([-0.5,  0.5])
 Anche in questo caso, i coefficienti sono ordinati da quello a grado più basso
 a quello a grado più alto.
 
-## Elevazione a potenza
+## Elevazione a potenza ([⮨](#top))
 
 Chiudiamo questa breve panoramica parlando dell'elevazione a potenza di un
 polinomio, effettuabile mediante la funzione `polypow(c, pow)`, con `c` vettore
@@ -1639,7 +1641,7 @@ array([0., 0., 4., 4., 1.])
 
 Anche in questo caso, vengono riportati i termini pari a zero nei risultati.
 
-## Valore assunto da un polinomio
+## Valore assunto da un polinomio ([⮨](#top))
 
 Per valutare il valore $y$ assunto dal polinomio per un determinato valore di
 $x$, usiamo la funzione `polyval(x, p)`, che accetta come argomento un intero
@@ -1654,7 +1656,7 @@ segue:
 array([3., 8.])
 ```
 
-## Derivate e integrale di funzioni polinomiali
+## Derivate e integrale di funzioni polinomiali ([⮨](#top))
 
 Concludiamo questa breve carrellata con due metodi in grado di calcolare,
 rispettivamente, la derivata e l'integrale di una funzione polinomiale.
@@ -1683,12 +1685,12 @@ array([0., 0., 1., 0.33333333])
 >
 > </details>
 
-# Statistica in NumPy
+# Statistica in NumPy ([⮨](#top))
 
 NumPy ci mette a disposizione diverse funzioni per il calcolo statistico.
 Vediamone assieme una breve carrellata.
 
-## Minimo e massimo di un array
+## Minimo e massimo di un array ([⮨](#top))
 
 Partiamo con due funzioni che possono essere utili per determinare il valore
 minimo e massimo di un array `a`, ovvero `amin(a)` ed `amax(a)`. Entrambe
@@ -1765,7 +1767,7 @@ ricerca del minimo (o del massimo) elemento nella matrice:
 9
 ```
 
-## Percentile e quantile
+## Percentile e quantile ([⮨](#top))
 
 Ricordiamo che il $q$-_percentile_ di un vettore $v$ di lunghezza $n$ è
 definito come il valore pari a $q/100$ calcolato a partire da una copia
@@ -1824,7 +1826,7 @@ Come previsto, dando il valore `0` al parametro `axis` avremo il calcolo del
 percentile su ciascuna colonna, mentre passando il valore `1` avremo il calcolo
 del percentile su ciascuna riga.
 
-## Media aritmetica e media pesata
+## Media aritmetica e media pesata ([⮨](#top))
 
 Per il calcolo del valore medio di un array, NumPy mette a disposizione due
 metodi. Il primo è la funzione `average(a, weights)`, che viene usata per
@@ -1882,7 +1884,7 @@ array([6.33333333, 2.33333333, 6.        ])
 array([4.66666667, 2.33333333, 7.66666667])
 ```
 
-## Varianza e deviazione standard
+## Varianza e deviazione standard ([⮨](#top))
 
 Non possono mancare le funzioni `std(a)` e `var(a)`, dedicate al calcolo della
 deviazione standard e della varianza di un vettore:
@@ -1904,7 +1906,7 @@ array([ 9.55555556, 10.88888889,  0.66666667])
 array([11.55555556,  4.22222222,  0.88888889])
 ```
 
-## Matrice di covarianza
+## Matrice di covarianza ([⮨](#top))
 
 La _matrice di covarianza_ è la matrice che racchiude tutti i _coefficienti di_
 _correlazione_, che ci permettono di valutare come una certa variabile $x_i$
@@ -1976,7 +1978,7 @@ $$
 
 I valori di $R$ compresi tra $-1$ e $1$ inclusi.
 
-## Istogramma
+## Istogramma ([⮨](#top))
 
 Un istogramma offre una visualizzazione grafica dei valori contenuti in un
 vettore, raggruppandoli all'interno di un certo numero di partizioni, detto

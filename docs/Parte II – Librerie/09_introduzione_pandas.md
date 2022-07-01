@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 09 – Introduzione a pandas
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,19 +14,19 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [09 – Introduzione a pandas](#09--introduzione-a-pandas)
-   1. [Installazione e configurazione di Pandas](#installazione-e-configurazione-di-pandas)
-2. [Pandas e la gestione dei dati](#pandas-e-la-gestione-dei-dati)
-   1. [Le Series](#le-series)
-      1. [Accesso agli elementi di una serie](#accesso-agli-elementi-di-una-serie)
-      2. [Accesso agli elementi del dataframe](#accesso-agli-elementi-del-dataframe)
-   2. [Maschere booleane](#maschere-booleane)
-   3. [La funzione `groupby`](#la-funzione-groupby)
-3. [Scrittura e lettura dei dataframe](#scrittura-e-lettura-dei-dataframe)
-   1. [Lettura di dati da sorgenti eterogenee](#lettura-di-dati-da-sorgenti-eterogenee)
-   2. [Scrittura di dati su destinazioni eterogenee](#scrittura-di-dati-su-destinazioni-eterogenee)
-4. [Aggiunta di feature e dati](#aggiunta-di-feature-e-dati)
-5. [Visualizzazione dei dati in Pandas](#visualizzazione-dei-dati-in-pandas)
-6. [Operazioni statistiche sui dataframe](#operazioni-statistiche-sui-dataframe)
+   1. [Installazione e configurazione di Pandas (⮨)](#installazione-e-configurazione-di-pandas-)
+   2. [Pandas e la gestione dei dati (⮨)](#pandas-e-la-gestione-dei-dati-)
+      1. [Le Series (⮨)](#le-series-)
+         1. [Accesso agli elementi di una serie (⮨)](#accesso-agli-elementi-di-una-serie-)
+         2. [Accesso agli elementi del dataframe (⮨)](#accesso-agli-elementi-del-dataframe-)
+      2. [Maschere booleane (⮨)](#maschere-booleane-)
+      3. [La funzione `groupby()` (⮨)](#la-funzione-groupby-)
+   3. [Scrittura e lettura dei dataframe](#scrittura-e-lettura-dei-dataframe)
+      1. [Lettura di dati da sorgenti eterogenee (⮨)](#lettura-di-dati-da-sorgenti-eterogenee-)
+      2. [Scrittura di dati su destinazioni eterogenee (⮨)](#scrittura-di-dati-su-destinazioni-eterogenee-)
+   4. [Aggiunta di feature e dati (⮨)](#aggiunta-di-feature-e-dati-)
+   5. [Visualizzazione dei dati in Pandas (⮨)](#visualizzazione-dei-dati-in-pandas-)
+   6. [Operazioni statistiche sui dataframe (⮨)](#operazioni-statistiche-sui-dataframe-)
 
 <!-- /TOC -->
 
@@ -36,7 +38,7 @@ ad esempio file `CSV` o Excel, ma anche file `txt` e database. Vediamo brevement
 il funzionamento della libreria, ricordando che approfondiremo l'utilizzo nelle
 lezioni successive.
 
-## Installazione e configurazione di Pandas
+## Installazione e configurazione di Pandas ([⮨](#top))
 
 Installiamo Pandas:
 
@@ -52,7 +54,7 @@ stato importato nel nostro script/notebook:
 import pandas as pd
 ```
 
-# Pandas e la gestione dei dati
+## Pandas e la gestione dei dati ([⮨](#top))
 
 Pandas gestisce prevalentemente dati strutturati sotto forma tabellare. Questi
 sono simili a quelli comunemente contenuti nei fogli di calcolo o nei database.
@@ -160,7 +162,7 @@ potranno essere utilizzate per un'analisi approfondita della struttura dei dati
 sotto diversi aspetti e punti di vista; ne parleremo più ampiamente in
 seguito.
 
-## Le Series
+### Le Series ([⮨](#top))
 
 Ogni dataframe è in realtà composto da diverse colonne, ciascuna
 rappresentativa di una feature specifica.
@@ -179,7 +181,7 @@ estrarre la serie relativa agli identificativi numerici dei passeggeri:
 Name: Name, dtype: object
 ```
 
-### Accesso agli elementi di una serie
+#### Accesso agli elementi di una serie ([⮨](#top))
 
 Possiamo accedere ad un singolo elemento di una serie mediante una classica
 procedura di indicizzazione. Ad ogni campione all'interno della serie viene
@@ -200,7 +202,7 @@ indice, esattamente come accade per le liste o le sequenze:
 >
 > </details>
 
-### Accesso agli elementi del dataframe
+#### Accesso agli elementi del dataframe ([⮨](#top))
 
 L'accesso agli elementi del dataframe può avvenire attraverso diverse modalità.
 Possiamo accedere allo specifico valore di una feature di un dato campione
@@ -289,7 +291,7 @@ STON/O2. 3101282       3                        Heikkinen, Miss. Laina
 373450                 3                      Allen, Mr. William Henry
 ```
 
-## Maschere booleane
+### Maschere booleane ([⮨](#top))
 
 Supponiamo di voler selezionare soltanto gli uomini maggiorenni presenti nel
 dataset del Titanic. Per farlo, possiamo usare un'istruzione che implementi
@@ -317,9 +319,9 @@ condizioni:
 - `df["Sex"] == "male"`: questa condizione genera una maschera booleana che è
   vera soltanto se il sesso del passeggero è maschile.
 
-## La funzione `groupby`
+### La funzione `groupby()` ([⮨](#top))
 
-Possiamo sfruttare la funzione [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html)
+Possiamo sfruttare la funzione [`groupby()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html)
 per raggruppare insiemi di dati (normalmente pertinenti a _categorie_).
 
 Ad esempio, potremmo raggruppare i passeggeri per sesso:
@@ -340,9 +342,9 @@ male      30.726645
 Name: Age, dtype: float64
 ```
 
-# Scrittura e lettura dei dataframe
+## Scrittura e lettura dei dataframe
 
-## Lettura di dati da sorgenti eterogenee
+### Lettura di dati da sorgenti eterogenee ([⮨](#top))
 
 Nel nostro primo esempio abbiamo usato la funzione `read_csv()` per creare un
 dataframe a partire da i dati memorizzati in un file di formato `CSV`.
@@ -374,7 +376,7 @@ essere individuate sulla [reference](https://pandas.pydata.org/pandas-docs/stabl
 In generale, la sintassi è sempre `read_<type>(<data-source>)`, dove `<type>`
 è il tipo di sorgente dati (`csv`, `excel`, etc)
 
-## Scrittura di dati su destinazioni eterogenee
+### Scrittura di dati su destinazioni eterogenee ([⮨](#top))
 
 Possiamo scrivere un dataframe su file mediante le funzioni duali alle
 `read_<type>()`, che usano il suffisso `to_<type>()` seguito dall'estensione
@@ -385,7 +387,7 @@ metodo `to_csv()`:
 df.to_csv("train.xlsx")
 ```
 
-# Aggiunta di feature e dati
+## Aggiunta di feature e dati ([⮨](#top))
 
 Immaginiamo di voler aggiungere una nuova feature ad un dataframe già
 esistente. Per farlo, iniziamo creando un dataframe da zero:
@@ -454,7 +456,7 @@ I valori relativi alle righe con indice che va da $1$ a $4$, che ovviamente non
 saranno presenti, saranno automaticamente impostati a `NaN`, acronimo di _Not a_
 _Number_.
 
-# Visualizzazione dei dati in Pandas
+## Visualizzazione dei dati in Pandas ([⮨](#top))
 
 Pandas offre un supporto nativo a Matplotlib per permettere la visualizzazione
 dei dati contenuti all'interno di un dataframe.
@@ -504,7 +506,7 @@ Otterremo:
 >
 > </details>
 
-# Operazioni statistiche sui dataframe
+## Operazioni statistiche sui dataframe ([⮨](#top))
 
 Pandas mette a disposizione delle funzioni, simili a quelle offerte da NumPy,
 per calcolare delle statistiche per ciascuna delle colonne presenti in un

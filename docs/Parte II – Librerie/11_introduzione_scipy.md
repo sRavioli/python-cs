@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 11 – Introduzione a SciPy
 
 > Corso di Python per il Calcolo Scientifico
@@ -12,17 +14,17 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [11 – Introduzione a SciPy](#11--introduzione-a-scipy)
-2. [L'ecosistema SciPy](#lecosistema-scipy)
-3. [La libreria SciPy](#la-libreria-scipy)
-4. [Validazione empirica di due distribuzioni](#validazione-empirica-di-due-distribuzioni)
-5. [Calcolo del determinate e inversa di una matrice](#calcolo-del-determinate-e-inversa-di-una-matrice)
-6. [Filtraggio di un segnale](#filtraggio-di-un-segnale)
+   1. [L'ecosistema SciPy (⮨)](#lecosistema-scipy-)
+   2. [La libreria SciPy (⮨)](#la-libreria-scipy-)
+   3. [Validazione empirica di due distribuzioni (⮨)](#validazione-empirica-di-due-distribuzioni-)
+   4. [Calcolo del determinate e inversa di una matrice (⮨)](#calcolo-del-determinate-e-inversa-di-una-matrice-)
+   5. [Filtraggio di un segnale (⮨)](#filtraggio-di-un-segnale-)
 
 <!-- /TOC -->
 
 </details>
 
-# L'ecosistema SciPy
+## L'ecosistema SciPy ([⮨](#top))
 
 Ai lettori più attenti può apparire evidente come tutte le librerie viste
 finora facciano parte di una sorta di ecosistema pensato per permettere
@@ -37,7 +39,7 @@ Tuttavia, abbiamo omesso una delle librerie fondamentali di questo ecosistema,
 talmente importante che prende il nome del framework stesso: ovviamente, stiamo
 parlando della libreria SciPy.
 
-# La libreria SciPy
+## La libreria SciPy ([⮨](#top))
 
 La libreria SciPy presenta un [vastissimo insieme di algoritmi e funzioni matematiche](https://docs.scipy.org/doc/scipy/reference/)
 costruite a partire dagli oggetti definiti da NumPy.
@@ -52,7 +54,7 @@ $ conda activate <my-env>
 In questa brevissima introduzione, vedremo alcune delle potenzialità
 di SciPy, basandoci su un paio di casi d'uso (più o meno) reali.
 
-# Validazione empirica di due distribuzioni
+## Validazione empirica di due distribuzioni ([⮨](#top))
 
 Vediamo come comparare visivamente il valore teorico assunto da due
 distribuzioni di probabilità "standard" (ovvero la uniforme e la normale) e
@@ -122,7 +124,7 @@ e otterremo:
 
 ![Distribuzione uniforme con scipy](../img/scipy/uniform_distribution.png)
 
-# Calcolo del determinate e inversa di una matrice
+## Calcolo del determinate e inversa di una matrice ([⮨](#top))
 
 SciPy offre anche la possibilità di effettuare calcoli algebrici grazie ad un
 numero di funzioni molto più elevato rispetto a quelle presenti in NumPy.
@@ -148,7 +150,7 @@ i = linalg.inv(mat)
 >
 > </details>
 
-# Filtraggio di un segnale
+## Filtraggio di un segnale ([⮨](#top))
 
 SciPy ha al suo interno diverse librerie per l'elaborazione dei segnali a
 diverse dimensionalità.

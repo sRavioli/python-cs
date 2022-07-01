@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # Appendice F – Il modulo `argparse`
 
 > Corso di Python per il Calcolo Scientifico

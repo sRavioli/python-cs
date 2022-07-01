@@ -1,3 +1,5 @@
+<a name="top"></a>
+
 # 00 – Programma e obiettivi del corso
 
 > Corso di Python per il calcolo scientifico
@@ -12,16 +14,16 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [00 – Programma e obiettivi del corso](#00--programma-e-obiettivi-del-corso)
-2. [Informazioni utili](#informazioni-utili)
-3. [Programma del corso](#programma-del-corso)
-4. [Metodo di Valutazione](#metodo-di-valutazione)
-   1. [Modalità $1$ – Colloquio Orale](#modalità-1--colloquio-orale)
-   2. [Modalità $2$ – Tema d'anno](#modalità-2--tema-danno)
+   1. [Informazioni utili (⮨)](#informazioni-utili-)
+   2. [Programma del corso (⮨)](#programma-del-corso-)
+   3. [Metodo di Valutazione (⮨)](#metodo-di-valutazione-)
+      1. [Modalità $1$ – Colloquio Orale (⮨)](#modalità-1--colloquio-orale-)
+      2. [Modalità $2$ – Tema d'anno (⮨)](#modalità-2--tema-danno-)
 
 <!-- /TOC -->
 </details>
 
-# Informazioni utili
+## Informazioni utili ([⮨](#top))
 
 - **Indirizzo email:** angelo.cardellicchio@stiima.cnr.it;
 - **Svolgimento delle lezioni:** le lezioni sono svolte in modalità ibrida. È
@@ -31,7 +33,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 - **Materiale didattico:** [del prof](https://python.angelocardellicchio.it),
   [mio](https://www.github.com/sRavioli/pythoncs).
 
-# Programma del corso
+## Programma del corso ([⮨](#top))
 
 > Parte $1$ (Fondamentali)
 
@@ -72,18 +74,18 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 <!-- markdown-lint enable MD013 -->
 
-# Metodo di Valutazione
+## Metodo di Valutazione ([⮨](#top))
 
 Sono presenti due modalità di valutazione.
 
-## Modalità $1$ – Colloquio Orale
+### Modalità $1$ – Colloquio Orale ([⮨](#top))
 
 Consiste in un colloquio della durata indicativa di $30$ minuti all’interno del
 quale saranno poste tre domande, una di natura teorica, e due di natura
 pratica. Per le domande di natura pratica sarà necessario disporre di un
 editor di testo.
 
-## Modalità $2$ – Tema d'anno
+### Modalità $2$ – Tema d'anno ([⮨](#top))
 
 **Questa è la modalità suggerita**.
 
