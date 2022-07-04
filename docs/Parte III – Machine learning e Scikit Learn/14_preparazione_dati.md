@@ -19,11 +19,11 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 </details>
 
-Nella lezione precedente abbiamo evidenziato come uno dei passi fondamentali
-per il machine learning sia quello di determinare i dati sui quali il modello
-deve essere addestrato: per ottenere buone predizioni, dovremo _costruire un_
-_dataset_, ed eventualmente effettuare delle opportune _trasformazioni_ sui
-dati. Queste operazioni sono normalmente riassumibili nei concetti di
+Nella lezione precedente è stato evidenziato che uno dei passi fondamentali per
+il machine learning sia quello di determinare i dati sui quali il modello deve
+essere addestrato. Per ottenere delle buone predizioni, è necessario _costruire_
+_un dataset_ ed eventualmente effettuare delle opportune _trasformazioni_ sui
+dati. Queste operazioni sono, salvo eccezioni, riassumibili nei concetti di
 _campionamento_ e _preparazione dei dati_.
 
 ## Il campionamento ([⮨](#top))
@@ -35,12 +35,12 @@ aspetti: la _dimensione_ e la _qualità_ dei dati che abbiamo raccolto.
 ### Dimensione del dataset ([⮨](#top))
 
 Non vi è una regola vera e propria per determinare il quantitativo di dati
-_sufficiente_ per addestrare adeguatamente un modello. In generale, tuttavia,
-potremmo dire che il modello deve essere addestrato su un quantitativo di dati
-che sia maggiore di almeno un ordine di grandezza rispetto al numero dei
-parametri dello stesso. A scopo puramente esemplificativo, usando una rete
-neurale con $100$ neuroni dovremmo indicativamente avere almeno $1000$ campioni
-a disposizione.
+_sufficiente_ per addestrare adeguatamente un modello. In generale, potremmo
+dire che il modello deve essere addestrato su un quantitativo di dati che sia
+maggiore di almeno un ordine di grandezza rispetto al numero dei parametri
+dello stesso. A scopo puramente esemplificativo, usando una rete neurale con
+$100$ neuroni dovremmo indicativamente avere almeno $1000$ campioni a
+disposizione.
 
 ### Qualità del dataset ([⮨](#top))
 
@@ -50,50 +50,59 @@ quantità di dati non basta se questi non sono anche _significativi_ nella
 caratterizzazione del fenomeno sotto osservazione.
 
 Per comprendere questo concetto, possiamo usare un approccio empirico.
-Immaginiamo di voler creare il nostro solito modello di predizione delle
-precipitazioni, e di dover scegliere per addestrarlo tra due dataset. Il
-dataset A contiene i campionamenti ogni $15$ minuti dei valori di temperatura e
-di pressione degli ultimi $100$ anni, ma soltanto per il mese di luglio, mentre
-il dataset B contiene un unico valore giornaliero, ma preso per tutti i mesi
-dell'anno. E' facile calcolare che il numero di campioni del dataset A è pari a
-$4 \cdot 24 \cdot 31 \cdot 100 = 297.600$ valori, mentre quello per il dataset
-B è pari a $365 \cdot 100 = 36.500$. Tuttavia, la qualità del dataset B è
-migliore rispetto a quella del dataset A: infatti, nonostante quest'ultimo
-abbia quasi il decuplo dei dati, sarà praticamente inutile per la stima delle
-precipitazioni in inverno, primavera o autunno.
+Immaginiamo di voler creare un modello di predizione delle precipitazioni e di
+dover scegliere per addestrarlo tra due dataset. Il dataset $A$ contiene i
+campionamenti ogni $15\,{\rm min}$ dei valori di temperatura e di pressione
+degli ultimi $100\,{\rm a}$, soltanto per il mese di luglio, mentre il dataset
+$B$ contiene un unico valore giornaliero, ma preso per tutti i mesi dell'anno.
+È facile calcolare che il numero di campioni del dataset $A$ è pari a
+
+$$
+4 \cdot 24 \cdot 31 \cdot 100 = 297,600
+$$
+
+valori, mentre quello per il dataset $B$ è pari a
+
+$$
+365 \cdot 100 = 36,500.
+$$
+
+Tuttavia, la qualità del dataset $B$ è migliore rispetto a quella del dataset
+$A$: infatti, nonostante quest'ultimo abbia quasi il decuplo dei dati
+($\times 8.15$), sarà praticamente inutile per la stima delle precipitazioni in
+inverno, primavera o autunno.
 
 ## Preparazione dei dati ([⮨](#top))
 
-Una volta completata la procedura di campionamento, dovremo passare ad
-effettuare la preparazione dei dati. Il primo step è in molti casi trascurato,
-ma è di vitale importanza nel caso si stiano utilizzando delle informazioni in
-qualche modo sensibili, come ad esempio informazioni legate alle condizioni
-sanitarie di diversi pazienti. In questi casi, infatti, è strettamente
-necessario provvedere all'_anonimizzazione_ dei dati, rimuovendo tutte le
-informazioni definite come _personally identifiable_ (_PII_).
+Completata la procedura di campionamento, è necessario effettuare la
+preparazione dei dati. Il primo step è spesso trascurato, ma è di vitale
+importanza nel caso in cui si stia lavorando con delle informazioni sensibili,
+come informazioni legate alle condizioni sanitarie di diversi pazienti. In
+questi casi è strettamente necessario provvedere all'_anonimizzazione_ dei
+dati, rimuovendo tutte le informazioni definite come _Personally Identifiable_
+_Information_ (PII).
 
 Una volta completato questo passaggio, potremo passare alle azioni maggiormente
 rilevanti dal punto di vista scientifico.
 
 ### Pulizia dei dati ([⮨](#top))
 
-Abbiamo in precedenza sottolineato come l'affidabilità del dataset sia
-essenziale a garantire performance ottimali del modello addestrato. In tal
-senso, occorre determinare diversi fattori, tra cui:
+L'affidabilità del dataset è essenziale per garantire performance ottimali del
+modello addestrato. Occorre determinare diversi fattori, tra cui:
 
 - **errori nel labelling**: bisogna valutare a grandi linee se il lavoro svolto
   dall'essere umano nell'etichettatura è accettabile, o se questa procedura è
-  stata soggetta ad errori di natura grossolana;
+  stata soggetta a errori di natura grossolana;
 - **rumorosità del dataset**: è importante valutare se i dati sono affetti da
   rumore. Ad esempio, le letture di un sensore potrebbero essere tutte quante
   affette da offset o bias o, nel caso peggiore, essere causate da lettori non
   più tarati e quindi inutilizzabili;
-- **dati mancanti**: potrebbe darsi che i valori di alcune feature non siano
+- **dati mancanti**: è possibile che i valori di alcune feature non siano
   disponibili per alcuni campioni;
-- **valori contrastanti o duplicati**: ad esempio, ci potrebbero essere parti
-  di dataset in cui una lettura di temperatura avviene in gradi Kelvin, ed
-  altre in cui la lettura avviene in gradi centigradi, oppure ancora ci
-  potrebbero essere valori duplicati a causa di errori nell'I/O del sensore.
+- **valori contrastanti o duplicati**: ci potrebbero essere parti di dataset in
+  cui una lettura di temperatura avviene in Kelvin, e altre in cui la lettura
+  avviene in gradi Celsius, oppure ci potrebbero essere valori duplicati a
+  causa di errori nell'I/O del sensore.
 
 In tutti questi casi, va scelta una strategia di pulizia: in certe situazioni
 potrebbe essere sufficiente eliminare un campione, oppure effettuare
@@ -109,19 +118,23 @@ maggiormente evidente nei problemi di classificazione, nei quali abbiamo un
 feedback immediato sulle differenti proporzioni grazie proprio alla presenza
 delle label per le classi.
 
-In particolare, avremo due tipi di "suddivisioni": le _classi maggioritarie_
-saranno quelle con il maggior numero di campioni, mentre quelle _minoritarie_
-saranno prevedibilmente quelle con a disposizione un numero limitato di dati.
-Un dataset in cui sussiste questa ineguaglianza è detto _sbilanciato_.
+In particolare, avremo due tipi di "suddivisioni":
+
+1. le **classi maggioritarie**, ovvero quelle con il maggior numero di
+   campioni,
+2. le **classi minoritarie**, ovvero quelle con a disposizione un numero
+   limitato di dati.
+
+Un dataset in cui sussiste questa ineguaglianza è detto **sbilanciato**.
 
 E' possibile quantificare approssimativamente lo sbilanciamento del dataset. In
-tal senso, possiamo rifarci alla seguente tabella:ì
+tal senso, possiamo rifarci alla seguente tabella:
 
-| Grado di sblianciamento | $\%$ di campioni di classi minoritarie |
-| ----------------------- | -------------------------------------- |
-| Leggero                 | 20-40 $\%$ del datset                  |
-| moderato                | 1-20 $\%$ del dataset                  |
-| Estremo                 | < 1 $\%$ del dataset                   |
+| Grado di sblianciamento | Percentuale di campioni di classi minoritarie |
+| :---------------------- | :-------------------------------------------- |
+| Leggero                 | dal $20\,\%$ al $40\,\%$ del dataset          |
+| Moderato                | dall'$1\,\%$ al $20\,\%$ del dataset          |
+| Estremo                 | meno dell'$1\,\%$ del dataset                 |
 
 #### Influenza dello sbilanciamento ([⮨](#top))
 
@@ -129,29 +142,30 @@ Per capire qual è il problema legato allo sbilanciamento del dataset,
 immaginiamo di dover creare un modello che individui una mail di spam. Per
 farlo, usiamo un dataset con la seguente proporzione:
 
-|                    | Mail non spam | Mail spam |
-| ------------------ | ------------- | --------- |
-| Numero di immagini | $5$           | $995$     |
-| Percentuale        | $0.5 \%$      | $99.5 \%$ |
+|                    | Mail spam | Mail non spam |
+| :----------------: | :-------- | :------------ |
+| Numero di immagini | $5$       | $995$         |
+|    Percentuale     | $0.5\,\%$ | $99.5\,\%$    |
 
 Il problema sta nel fatto che un numero così esiguo di mail di spam farà sì che
 il modello spenda la maggior parte dell'addestramento su mail normali, non
 imparando quindi a riconoscere i casi di spam. Per fare un parallelismo con il
-nostro cervello, se vedessimo 995 immagini di penne, e solo 5 di matite, è
+nostro cervello, se vedessimo $995$ immagini di penne e solo $5$ di matite, è
 probabile che non saremmo in grado di distinguere una matita da una penna
 perché, semplicemente, _non sapremmo come è fatta una matita_.
 
-#### Downsampling ed upweighting ([⮨](#top))
+#### Sottocampionamento e upweighting ([⮨](#top))
 
 Un modo efficace per gestire situazioni in cui il dataset è sbilanciato è
 quello di utilizzare tecniche di _data balancing_. Ne esistono di diverse, più
 o meno efficaci; tuttavia, la più semplice è quella di rimuovere un certo
-numero di campioni di classe maggioritaria (_downsampling_), dando agli esempi
-sottocampionati un peso maggiore nell'addestramento (_upweighting_).
+numero di campioni di classe maggioritaria (_sottocampionamento_ o
+_downsampling_), dando agli esempi sottocampionati un peso maggiore
+nell'addestramento (_upweighting_).
 
-In pratica, se scegliessimo di mantenere soltanto il $10 \%$ delle mail non-
-spam, avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di spam
-e quelle non di spam a circa il $5 \%$, passando da una situazione di
+In pratica, se scegliessimo di mantenere soltanto il $10\,\%$ delle mail
+non-spam, avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di
+spam e quelle non di spam a circa il $5\,\%$, passando da una situazione di
 sbilanciamento estremo ad una di sbilanciamento moderato.
 
 A valle di questa operazione, dovremmo dare maggior peso ai campioni delle mail

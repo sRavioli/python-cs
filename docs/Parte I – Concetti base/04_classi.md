@@ -65,10 +65,12 @@ mondo, sia esso reale o informatico.
 chiamato **istanza**. Ad esempio:
 
 - lo studente "Angelo Cardellicchio" è un'istanza della classe `Studente`;
-- l'auto "Opel Corsa", targata "AB 123 CD" è un'istanza della classe `Auto`;
-- l'auto "Hyundai Tucson", targata "CD 321 AB" è un'istanza della classe `Auto`;
-- l'auto "Opel Corsa", targata "AA 123 CC" è un'altra istanza della classe
+- l'auto "Opel Corsa", targata ${\rm AB\,123\,CD}$ è un'istanza della classe
   `Auto`;
+- l'auto "Hyundai Tucson", targata ${\rm CD\,321\,AB}$ è un'istanza della classe
+  `Auto`;
+- l'auto "Opel Corsa", targata ${\rm AA\,123\,CC}$ è un'altra istanza della
+  classe `Auto`;
 
 Sostanzialmente creiamo una struttura dati che raggruppi le caratteristiche
 generali di una classe. Quest'ultima è un'astrazione.
@@ -83,8 +85,9 @@ In particolare, ogni nuovo tipo, chiamato Classe, avrà opportuni attributi e
 metodi, ognuno dei quali sarà accessibile dall'esterno mediante opportuni
 modificatori.
 
-Ad esempio, l'auto "Opel Corsa", targata "AA 123 CD" ha una casa costruttrice
-(Opel), un modello (Corsa), una targa (AB 123 CD), una cilindrata, etc.
+Ad esempio, l'auto "Opel Corsa", targata ${\rm AA\,123\,CD}$ ha una casa
+costruttrice (Opel), un modello (Corsa), una targa $({\rm AB\,123\,CD})$, una
+cilindrata, etc.
 
 ## Classi in Python
 

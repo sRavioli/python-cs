@@ -15,8 +15,8 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 
 1. [Appendice G – Algoritmi](#appendice-g--algoritmi)
 2. [G.1 – Decomposizione ai valori singolari (⮨)](#g1--decomposizione-ai-valori-singolari-)
-   1. [G.1.1 – Trasformazione 1: rescaling di matrice (⮨)](#g11--trasformazione-1-rescaling-di-matrice-)
-   2. [G.1.2 – Trasformazione 2: rotazione di matrice (⮨)](#g12--trasformazione-2-rotazione-di-matrice-)
+   1. [G.1.1 – Trasformazione $1$: rescaling di matrice (⮨)](#g11--trasformazione-1-rescaling-di-matrice-)
+   2. [G.1.2 – Trasformazione $2$: rotazione di matrice (⮨)](#g12--trasformazione-2-rotazione-di-matrice-)
    3. [G.1.3 – Interpretazione della SVD (⮨)](#g13--interpretazione-della-svd-)
 
 <!-- /TOC -->
@@ -51,7 +51,7 @@ Inoltre:
 Prima di dare una definizione intuitiva di SVD, però, è opportuno introdurre il
 concetto di trasformazione lineare.
 
-## G.1.1 – Trasformazione 1: rescaling di matrice ([⮨](#top))
+## G.1.1 – Trasformazione $1$: rescaling di matrice ([⮨](#top))
 
 Applichiamo al vettore $v$ una trasformazione lineare definita da una matrice
 diagonale $d$:
@@ -96,7 +96,7 @@ $$
 
 In pratica, abbiamo triplicato il nostro vettore!
 
-## G.1.2 – Trasformazione 2: rotazione di matrice ([⮨](#top))
+## G.1.2 – Trasformazione $2$: rotazione di matrice ([⮨](#top))
 
 Laddove le matrici diagonali sono normalmente utilizzate per effettuare un
 rescaling, le matrici non diagonali possono essere usate per indurre una

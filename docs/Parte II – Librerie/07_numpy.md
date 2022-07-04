@@ -372,7 +372,7 @@ tipo. Vediamoli in breve.
 ### Array con valori zero o unitari ([⮨](#top))
 
 Possiamo creare un array di dimensioni arbitrarie in cui tutti gli elementi
-sono pari ad 1. Per farlo, usiamo la funzione `ones()`:
+sono pari ad $1$. Per farlo, usiamo la funzione `ones()`:
 
 ```pycon
 >>> oarry = np.ones(shape=(3, 3))

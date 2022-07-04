@@ -143,7 +143,7 @@ a è uguale a 5
 
 ### Pattern matching ([⮨](#top))
 
-Fino alla versione 3.10, Python non offriva il costrutto `switch/case`. A
+Fino alla versione $3.10$, Python non offriva il costrutto `switch/case`. A
 partire da quest'ultima versione il _pattern matching_ è stato implementato con
 la seguente sintassi:
 

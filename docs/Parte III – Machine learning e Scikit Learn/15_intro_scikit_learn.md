@@ -14,7 +14,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [15 – Introduzione (breve) a Scikit Learn](#15--introduzione-breve-a-scikit-learn)
-   1. [15.1 - Stimatori e transformer (⮨)](#151---stimatori-e-transformer-)
+   1. [Stimatori e transformer (⮨)](#stimatori-e-transformer-)
    2. [Preprocessing (⮨)](#preprocessing-)
 
 <!-- /TOC -->
@@ -39,7 +39,7 @@ ed usiamo il seguente comando:
 pip install scikit-learn
 ```
 
-## 15.1 - Stimatori e transformer ([⮨](#top))
+## Stimatori e transformer ([⮨](#top))
 
 Scikit Learn si basa su due concetti fondamentali, ovvero quelli di _estimator_
 (stimatore) e di _transformer_ (traducibile maccheronicamente come

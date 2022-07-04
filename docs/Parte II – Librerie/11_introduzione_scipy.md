@@ -69,7 +69,7 @@ uniformi:
 from scipy.stats import norm, uniform
 ```
 
-Generiamo adesso 100 campioni equidistanti e compresi tra l'1 ed il 99
+Generiamo adesso $100$ campioni equidistanti e compresi tra l'$1$ e il $99$
 percentile delle distribuzioni (considerando numpy già importato):
 
 ```python
@@ -80,9 +80,9 @@ x_2 = np.linspace(uniform.ppf(0.01), uniform.ppf(0.99), 100)
 Stiamo usando la funzione `linspace()` per generare dei campioni equidistanti
 tra loro, compresi tra `dist.ppf(0.01)` e `dist.ppf(0.99)`. L'oggetto `dist`
 può essere sia `norm` che `uniform`, mentre `ppf(0.01)` rappresenta
-l'1-percentile della distribuzione (e, analogamente, `ppf(0.99)` rappresenta il
-99-percentile). In parole povere, stiamo generando cento campioni equidistanti
-tra l'1-percentile ed il 99-percentile della distribuzione `dist`.
+l'$1$-percentile della distribuzione (e, analogamente, `ppf(0.99)` rappresenta il
+$99$-percentile). In parole povere, stiamo generando cento campioni equidistanti
+tra l'$1$-percentile e il $99$-percentile della distribuzione `dist`.
 
 Successivamente, utilizziamo la funzione `rvs()` per generare casualmente un
 numero di valori che però siano distribuiti secondo le due distribuzioni

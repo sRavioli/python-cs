@@ -16,34 +16,31 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 1. [13 – Definire un problema di machine learning](#13--definire-un-problema-di-machine-learning)
    1. [Determinare l'obiettivo (⮨)](#determinare-lobiettivo-)
    2. [Comprendere i dati (⮨)](#comprendere-i-dati-)
-   3. [13.3 - Scegliere il modello (⮨)](#133---scegliere-il-modello-)
+   3. [Scegliere il modello (⮨)](#scegliere-il-modello-)
 
 <!-- /TOC -->
 
 </details>
 
-Il primo passo nella risoluzione di un problema di machine learning è, per
-l'appunto, _definirlo_. In pratica, dovremo analizzare il problema, isolando
-gli elementi essenziali da utilizzare per la sua risoluzione: determineremo la
-fattibilità del problema, fornendo un insieme chiaro di _obiettivi_ e
-_criteri_ per la sua risoluzione.
+Il primo passo nella risoluzione di un problema di machine learning è
+_definirlo_. Dovremo analizzare il problema isolando gli elementi essenziali da
+utilizzare per la sua risoluzione e determineremo la fattibilità del problema,
+fornendo un insieme chiaro di _obiettivi_ e _criteri_ per la sua risoluzione.
 
 ## Determinare l'obiettivo ([⮨](#top))
 
 Partiamo nella definizione del problema determinando il nostro obiettivo,
-ovvero definendo ciò che si vuole ottenere a valle della risoluzione del
-problema.
+ovvero ciò che si vuole ottenere a valle della risoluzione del problema.
 
 Ad esempio, potremmo voler calcolare le precipitazioni orarie in una
 determinata zona, oppure vorremmo definire un modo di individuare
 automaticamente lo spam in un'applicazione email, o ancora identificare delle
-transazioni fraudolente in applicazioni di tipo bancario.
+transazioni fraudolente in applicazioni bancarie.
 
-Questo passo è fondamentale per un motivo: infatti, a volte il machine
-learning è visto come uno strumento "universale", in grado di risolvere
-qualsiasi problema a cui viene applicato. In realtà, questo non è vero, ed il
-machine learning è applicabile solo a determinati problemi, i quali alle volte
-possono essere anche risolti mediante approcci meno complessi.
+Questo passo è fondamentale per un motivo. A volte il machine learning è visto
+come uno strumento "universale", in grado di risolvere qualsiasi problema. Questo
+non è vero e il machine learning è applicabile solo a determinati problemi, i
+quali alle volte possono essere anche risolti mediante approcci meno complessi.
 
 Una volta verificato che il problema può essere risolto mediante approcci di
 machine learning, dovremo stabilire quale sia l'esatta natura del task che
@@ -62,34 +59,34 @@ vogliamo portare avanti. Mantenendoci al caso precedente:
 ## Comprendere i dati ([⮨](#top))
 
 La disponibilità di dati per l'analisi è alla base del machine learning. Per
-effettuare delle predizioni efficaci, infatti, abbiamo bisogno di usare dati
-dotati di un certo potere predittivo. In particolare, i dati devono essere:
+effettuare delle predizioni efficaci è necessario usare dati dotati di un
+certo potere predittivo. In particolare, i dati devono essere:
 
-- **abbondanti**: più esempi rilevanti abbiamo a disposizione, migliore sarà il
-  nostro algoritmo risolutivo;
-- **consistenti**: i dati devono essere raccolti usando criteri e strumenti ben
-  determinati e coerenti. Ad esempio, un algoritmo meteo beneficerà di dati
-  raccolti ogni mese per cento anni, piuttosto che di dati raccolti lungo lo
-  stesso arco di tempo ma soltanto nel mese di luglio;
-- **affidabili**: occorre valutare la sorgente dei nostri dati: siamo in grado
-  di comprenderla e ritenerla affidabile, oppure è soltanto parzialmente sotto
-  il nostro controllo?
-- **disponibili**: dobbiamo assicurarci che i dati siano disponibili e
-  completamente accessibili. Infatti, qualora ci siano delle parti del dataset
-  parzialmente omesse, potrebbe essere preferibile trascurarle completamente in
-  fase di analisi;
-- **corretti**: molto spesso vi è una percentuale di dati con feature o label
-  non corrette. Per quanto possibile, questi dati andrebbero isolati e rimossi
-  in fase di preprocessing;
-- **rappresentativi**: il dataset dovrebbe rappresentare in maniera completa il
-  fenomeno sottostante, riflettendone accuratamente aspetti e caratteristiche.
-  Utilizzare un dataset non rappresentativo inficerà negativamente le
-  performance predittive del modello.
+1. **abbondanti**: maggiori sono gli esempi rilevanti a disposizione e migliore
+   risulterà essere l'algoritmo risolutivo;
+2. **consistenti**: i dati devono essere raccolti usando criteri e strumenti
+   ben determinati e coerenti. Ad esempio, un algoritmo meteo beneficerà di dati
+   raccolti ogni mese per cento anni, piuttosto che di dati raccolti lungo lo
+   stesso arco di tempo ma soltanto nel mese di luglio;
+3. **affidabili**: occorre valutare la soltanto dei dati. È possibile
+   comprenderla e ritenerla affidabile oppure è solo parzialmente sotto il
+   nostro controllo?
+4. **disponibili**: è necessario assicurarsi che i dati siano disponibili e
+   completamente accessibili. Qualora siano presenti parti del dataset
+   parzialmente omesse, sarebbe preferibile trascurarle completamente in fase di
+   analisi;
+5. **corretti**: è spesso presente una percentuale di dati con feature o label
+   non corrette. Per quanto possibile, questi dati andrebbero isolati e rimossi
+   in fase di preprocessing;
+6. **rappresentativi**: è necessario che il dataset rappresenti in maniera
+   completa il fenomeno sottostante, riflettendone accuratamente gli aspetti e
+   le caratteristiche. Utilizzare un dataset non rappresentativo inficerà
+   negativamente sulle performance predittive del modello.
 
-## 13.3 - Scegliere il modello ([⮨](#top))
+## Scegliere il modello ([⮨](#top))
 
 L'ultimo step è la scelta del tipo di modello da utilizzare, valutando ad
-esempio tra classificazione, regressione e clustering.
+esempio tra **classificazione**, **regressione** e **clustering**.
 
 Per la nostra applicazione meteo, ad esempio, predire il quantitativo di
 pioggia che cadrà in un determinato luogo è un chiaro problema di regressione,
@@ -110,9 +107,9 @@ Nel caso dell'applicazione mail, dato che stiamo cercando di valutare se un
 messaggio è classificabile o meno come spam, avremo a che fare con un problema
 di classificazione binaria.
 
-Una volta determinato il tipo di problema, dovremo scegliere l'algoritmo da
+Una volta determinato il tipo di problema dovremo scegliere l'algoritmo da
 utilizzare e, in ultimo, la metrica con cui valutare i risultati. In
-particolare, quest'ultimo valore dipende molto dall'ambito applicativo: se, ad
-esempio, un errore del 10% potrebbe non essere estremamente importante
-nell'applicazione mail, questo diventerebbe estremamente rilevante e
-potenzialmente disastroso nell'individuazione di transazioni fraudolente.
+particolare, quest'ultimo valore dipende molto dall'ambito applicativo: se un
+errore del $10\%$ potrebbe non essere estremamente importante nell'applicazione
+mail, questo diventerebbe estremamente rilevante e potenzialmente disastroso
+nell'individuazione di transazioni fraudolente.

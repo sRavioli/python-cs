@@ -555,7 +555,7 @@ parentesi graffe `{}` con la stringa corrispondente nell'argomento del metodo.
 
 #### Concatenazione con le $f$-strings ([⮨](#top))
 
-Python 3.6 introduce le $f$-strings per formattare l'output in maniera più
+Python $3.6$ introduce le $f$-strings per formattare l'output in maniera più
 elegante e concisa. Possiamo usare le $f$-strings per concatenare le stringhe.
 Vediamo come:
 

@@ -185,7 +185,7 @@ Name: Name, dtype: object
 
 Possiamo accedere ad un singolo elemento di una serie mediante una classica
 procedura di indicizzazione. Ad ogni campione all'interno della serie viene
-associato ad un indice numerico crescente, il cui valore iniziale è pari a 0;
+associato ad un indice numerico crescente, il cui valore iniziale è pari a $0$;
 pertanto, possiamo accedere all'𝒊-mo elemento della serie richiamando l'𝒊-mo
 indice, esattamente come accade per le liste o le sequenze:
 
@@ -315,7 +315,7 @@ Nella pratica, stiamo filtrando il dataset in base all'`AND` logico tra due
 condizioni:
 
 - `df["Age"] > 18`: questa condizione genera una maschera booleana che è `True`
-  soltanto se l'età per quel passeggero è maggiore di 18;
+  soltanto se l'età per quel passeggero è maggiore di $18$;
 - `df["Sex"] == "male"`: questa condizione genera una maschera booleana che è
   vera soltanto se il sesso del passeggero è maschile.
 
@@ -436,7 +436,7 @@ poi usare la funzione `concat()`:
 
 La funzione `concat()` accetta, tra gli altri, il parametro `axis`. Se questo è
 uguale a zero (come lo è di default), `concat()` effettua la concatenazione per
-righe; se è pari ad 1, invece, la concatenazione avviene per colonne. Tuttavia,
+righe; se è pari ad $1$, invece, la concatenazione avviene per colonne. Tuttavia,
 è importante sottolineare come la concatenazione avvenga anche nel caso le
 misure non siano completamente coerenti: infatti, se provassimo ad effettuare
 una concatenazione per colonne, avremmo un risultato del tipo:
