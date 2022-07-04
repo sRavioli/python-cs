@@ -29,7 +29,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 - **Svolgimento delle lezioni:** le lezioni sono svolte in modalità ibrida. È
   comunque **fortemente consigliata** la frequenza in presenza;
 - È **obbligatorio**, ai fini del superamento dell’esame, **seguire almeno il
-  70% delle lezioni**, in qualunque modalità;
+  $70\%$ delle lezioni**, in qualunque modalità;
 - **Materiale didattico:** [del prof](https://python.angelocardellicchio.it),
   [mio](https://www.github.com/sRavioli/pythoncs).
 
@@ -56,7 +56,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 | $30/05/2022$                       | Introduzione a SciPy <br/> Pandas ed i dataframe                                                                                                             |
 | $01/06/2022$                       | Introduzione a Scikit Learn <br/> Concetti fondamentali di data analysis                                                                                     |
 | $06/06/2022$                       | Scikit Learn: transformer e data preprocessing                                                                                                               |
-| $08/06/2022$                       | Scikit Learn: clustering, classificatori e regressori (parte 1)                                                                                              |
+| $08/06/2022$                       | Scikit Learn: clustering, classificatori e regressori (parte $2$)                                                                                            |
 | $13/06/2022$                       | Scikit Learn: clustering, classificatori e regressori (parte $1$) <br/> Concetti avanzati: pipeline, cross – validazione, ottimizzazione degli iperparametri |
 | $15/06/2022$                       | Analisi delle serie temporali: Statsmodels e Scikit Time                                                                                                     |
 | $20/06/2022$                       | TensorFlow e Keras per il Deep Learning su dati strutturati                                                                                                  |
