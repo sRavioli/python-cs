@@ -54,7 +54,7 @@ all'interno di un dataset.
 
 In tal senso, proviamo innanzitutto a caricare un insieme di dati, affidandoci
 al metodo `load_dataset()`, che estrae uno dei dataset già presenti nella
-libreria. Ad esempio:
+libreria. Usiamo il dataset [`tips.csv`](../data/tips.csv). Ad esempio:
 
 ```pycon
 >>> tips = sns.load_dataset("tips")
