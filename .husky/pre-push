@@ -14,106 +14,106 @@ COMMIT_MARK='\033[1;35m→\033[0m'
 
 # Invoke conda to export environment to .yaml file
 call_conda() {
-  # take environment name as argument
-  ENVIRONMENT="$1"
+    # take environment name as argument
+    ENVIRONMENT="$1"
 
-  if ! [ $CONDA_SHLVL = 1 ]; then
-    # Activate the environment, print status
-    printf "Activating ${ENVIRONMENT}...\n" &&
-      conda activate ./noodles &&
-      printf "${OVERWRITE}${CHECK_MARK} Activated\n"
-  else
-    # print status
-    printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
-  fi
+    if ! [ $CONDA_SHLVL = 1 ]; then
+        # Activate the environment, print status
+        printf "Activating ${ENVIRONMENT}...\n" &&
+            conda activate ./noodles &&
+            printf "${OVERWRITE}${CHECK_MARK} Activated\n"
+    else
+        # print status
+        printf "${CHECK_MARK} ${ENVIRONMENT} Already active\n"
+    fi
 
-  # Export environment to .yaml
-  printf "Exporting to ${ENVIRONMENT}_temp.yaml...\n" &&
-    conda env export >noodles_temp.yaml &&
-    printf "${OVERWRITE}${CHECK_MARK} Exported ${ENVIRONMENT}_temp.yaml\n"
+    # Export environment to .yaml
+    printf "Exporting to ${ENVIRONMENT}_temp.yaml...\n" &&
+        conda env export >noodles_temp.yaml &&
+        printf "${OVERWRITE}${CHECK_MARK} Exported ${ENVIRONMENT}_temp.yaml\n"
 
-  # Deactivate environment, print status
-  printf "Deactivating ${ENVIRONMENT}...\n" &&
-    conda deactivate &&
-    printf "${OVERWRITE}${CHECK_MARK} Deactivated\n"
+    # Deactivate environment, print status
+    printf "Deactivating ${ENVIRONMENT}...\n" &&
+        conda deactivate &&
+        printf "${OVERWRITE}${CHECK_MARK} Deactivated\n"
 
 }
 
 # get user input to decide whether to push even if file differs
 get_input() {
-  exec </dev/tty # open STDIN to read input
+    exec </dev/tty # open STDIN to read input
 
-  # read user input
-  while true; do
-    # `read -p` does not support standard formatting. Use `$'...'`
-    read -p $'\033[1;33m?\033[0m Allow push even if file differs? (Y/n) ' yn
+    # read user input
+    while true; do
+        # `read -p` does not support standard formatting. Use `$'...'`
+        read -p $'\033[1;33m?\033[0m Allow push even if file differs? (Y/n) ' yn
 
-    # Blank input == allow push
-    if [ "$yn" = "" ]; then
-      yn='Y'
-    fi
+        # Blank input == allow push
+        if [ "$yn" = "" ]; then
+            yn='Y'
+        fi
 
-    # check input
-    case "$yn" in
-    [Yy])
-      printf "${CHECK_MARK} Allowing push\n" # Allow push, exit normally
-      return
-      ;;
-    [Nn])
-      printf "${CROSS_MARK} Denying push\n" # Denying push, throw error
-      exit 126                              # "command not executable"
-      ;;
-    *)
-      echo "Please answer 'Y' or 'N'."
-      ;;
-    esac
-  done
+        # check input
+        case "$yn" in
+        [Yy])
+            printf "${CHECK_MARK} Allowing push\n" # Allow push, exit normally
+            return
+            ;;
+        [Nn])
+            printf "${CROSS_MARK} Denying push\n" # Denying push, throw error
+            exit 126                              # "command not executable"
+            ;;
+        *)
+            echo "Please answer 'Y' or 'N'."
+            ;;
+        esac
+    done
 
-  exec <&- # close STDIN
+    exec <&- # close STDIN
 
-  return
+    return
 }
 
 # When exporting the conda environment to the same .yaml file, git will always
 # think that the environment has been changed.
 # Workaround: export to temp file, compare files then act accordingly
 check_diff() {
-  printf "\n" # blank line
-
-  if ! cmp -s "./${ENVIRONMENT}.yaml" "./${ENVIRONMENT}_temp.yaml"; then
-    # File changed, replace and deny push
-    printf "${WARNING} Environment changed\n"
-
-    # Rename temp to noodles.yaml
-    mv ./${ENVIRONMENT}_temp.yaml ./${ENVIRONMENT}.yaml
-
-    # Track changes
-    printf "${ADD_MARK} Tracking changes\n" &&
-      git add ./${ENVIRONMENT}.yaml
-
-    # Commit changes, can edit with `git commit --amend`
-    printf "${COMMIT_MARK} Committing changes (edit: git commit --amend)\n" &&
-      git commit -m "feat(env): auto-updated"
-
     printf "\n" # blank line
 
-    # push?
-    get_input
-    return
-  fi
+    if ! cmp -s "./${ENVIRONMENT}.yaml" "./${ENVIRONMENT}_temp.yaml"; then
+        # File changed, replace and deny push
+        printf "${WARNING} Environment changed\n"
 
-  printf "${CHECK_MARK} Environment unchanged\n"
+        # Rename temp to noodles.yaml
+        mv ./${ENVIRONMENT}_temp.yaml ./${ENVIRONMENT}.yaml
 
-  # File unchanged, allow push
-  printf "${CHECK_MARK} Allowing push\n" &&
-    rm ./${ENVIRONMENT}_temp.yaml # Remove temp file
+        # Track changes
+        printf "${ADD_MARK} Tracking changes\n" &&
+            git add ./${ENVIRONMENT}.yaml
+
+        # Commit changes, can edit with `git commit --amend`
+        printf "${COMMIT_MARK} Committing changes (edit: git commit --amend)\n" &&
+            git commit -m "feat(env): auto-updated"
+
+        printf "\n" # blank line
+
+        # push?
+        get_input
+        return
+    fi
+
+    printf "${CHECK_MARK} Environment unchanged\n"
+
+    # File unchanged, allow push
+    printf "${CHECK_MARK} Allowing push\n" &&
+        rm ./${ENVIRONMENT}_temp.yaml # Remove temp file
 }
 
 main() {
-  call_conda noodles
-  check_diff
+    call_conda noodles
+    check_diff
 
-  return
+    return
 }
 
 main
