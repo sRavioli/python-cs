@@ -14,6 +14,22 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [14 – Preparazione dei dati](#14--preparazione-dei-dati)
+   1. [Il campionamento (⮨)](#il-campionamento-)
+      1. [Dimensione del dataset (⮨)](#dimensione-del-dataset-)
+      2. [Qualità del dataset (⮨)](#qualità-del-dataset-)
+   2. [Preparazione dei dati (⮨)](#preparazione-dei-dati-)
+      1. [Pulizia dei dati (⮨)](#pulizia-dei-dati-)
+      2. [Sbilanciamento del dataset (⮨)](#sbilanciamento-del-dataset-)
+         1. [Influenza dello sbilanciamento (⮨)](#influenza-dello-sbilanciamento-)
+         2. [Sottocampionamento e upweighting (⮨)](#sottocampionamento-e-upweighting-)
+      3. [Trasformazione dei dati (⮨)](#trasformazione-dei-dati-)
+         1. [Trasformazione dei dati numerici (⮨)](#trasformazione-dei-dati-numerici-)
+            1. [Scaling (⮨)](#scaling-)
+            2. [Clipping (⮨)](#clipping-)
+            3. [Trasformazione logaritmica (⮨)](#trasformazione-logaritmica-)
+            4. [Z-score (⮨)](#z-score-)
+         2. [Trasformazione dei dati categorici (⮨)](#trasformazione-dei-dati-categorici-)
+      4. [Suddivisione dei dati (⮨)](#suddivisione-dei-dati-)
 
 <!-- /TOC -->
 
@@ -241,8 +257,8 @@ Per calcolarlo, si usa la seguente formula:
 
 $$y = \frac{x - \mu}{\sigma}$$
 
-dove $\mu$ è la media della distribuzione dei nostri dati, mentre $\sigma$ è
-la varianza.
+$\text{dove } \mu$ è la media della distribuzione dei nostri dati,
+mentre $\sigma$ è la varianza.
 
 #### Trasformazione dei dati categorici ([⮨](#top))
 
