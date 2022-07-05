@@ -132,9 +132,9 @@ tal senso, possiamo rifarci alla seguente tabella:
 
 | Grado di sblianciamento | Percentuale di campioni di classi minoritarie |
 | :---------------------- | :-------------------------------------------- |
-| Leggero                 | dal $20\,\%$ al $40\,\%$ del dataset          |
-| Moderato                | dall'$1\,\%$ al $20\,\%$ del dataset          |
-| Estremo                 | meno dell'$1\,\%$ del dataset                 |
+| Leggero                 | dal $20\\,\\%$ al $40\\,\\%$ del dataset      |
+| Moderato                | dall'$1\\,\\%$ al $20\\,\\%$ del dataset      |
+| Estremo                 | meno dell'$1\\,\\%$ del dataset               |
 
 #### Influenza dello sbilanciamento ([⮨](#top))
 
@@ -142,10 +142,10 @@ Per capire qual è il problema legato allo sbilanciamento del dataset,
 immaginiamo di dover creare un modello che individui una mail di spam. Per
 farlo, usiamo un dataset con la seguente proporzione:
 
-|                    | Mail spam | Mail non spam |
-| :----------------: | :-------- | :------------ |
-| Numero di immagini | $5$       | $995$         |
-|    Percentuale     | $0.5\,\%$ | $99.5\,\%$    |
+|                    | Mail spam   | Mail non spam |
+| :----------------: | :---------- | :------------ |
+| Numero di immagini | $5$         | $995$         |
+|    Percentuale     | $0.5\\,\\%$ | $99.5\\,\\%$  |
 
 Il problema sta nel fatto che un numero così esiguo di mail di spam farà sì che
 il modello spenda la maggior parte dell'addestramento su mail normali, non
@@ -163,9 +163,9 @@ numero di campioni di classe maggioritaria (_sottocampionamento_ o
 _downsampling_), dando agli esempi sottocampionati un peso maggiore
 nell'addestramento (_upweighting_).
 
-In pratica, se scegliessimo di mantenere soltanto il $10\,\%$ delle mail
+In pratica, se scegliessimo di mantenere soltanto il $10\\,\\%$ delle mail
 non-spam, avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di
-spam e quelle non di spam a circa il $5\,\%$, passando da una situazione di
+spam e quelle non di spam a circa il $5\\,\\%$, passando da una situazione di
 sbilanciamento estremo ad una di sbilanciamento moderato.
 
 A valle di questa operazione, dovremmo dare maggior peso ai campioni delle mail
@@ -328,6 +328,6 @@ risultati ottenuti; ciò è legato alla volontà di verificare la capacità di
 _generalizzazione_ del modello, ovvero a quanto è in grado di "funzionare" il
 nostro algoritmo in caso di analisi di dati su cui non è stato addestrato.
 
-Un rapporto molto usato in tal senso è quello che prevede che il $70\,\%$ dei
-dati sia usato per l'addestramento, mentre il restante $30\,\%$ per la
+Un rapporto molto usato in tal senso è quello che prevede che il $70\\,\\%$ dei
+dati sia usato per l'addestramento, mentre il restante $30\\,\\%$ per la
 validazione dei risultati ottenuti.
