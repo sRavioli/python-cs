@@ -181,9 +181,9 @@ alcuni valori. In tal senso, possiamo operare per due ragioni principali.
 La prima è che siano necessarie delle trasformazioni obbligatorie volte a
 garantire la compatibilità dei dati, come ad esempio:
 
-- **convertire feature non numeriche in numeriche**: in pratica, non possiamo
-  effettuare operazioni sensate tra interi e stringhe, per cui dovremmo
-  trovarci ad individuare un modo per favorire il confronto;
+- **convertire feature non numeriche in numeriche**: non è possibile
+  effettuare operazioni sensate tra interi e stringhe, per cui bisogna
+  individuare un modo per favorire il confronto;
 - **ridimensionare gli input ad una dimensione fissa**: alcuni modelli, come ad
   esempio le reti neurali, prevedono un numero fisso di nodi di input, per cui
   i dati in ingresso devono avere sempre la stessa dimensione.
@@ -197,17 +197,18 @@ Vediamo più nel dettaglio alcune possibilità.
 #### Trasformazione dei dati numerici ([⮨](#top))
 
 Abbiamo detto in precedenza che potremmo voler applicare delle
-_normalizzazioni_ a dei dati numerici per migliorare le performance del nostro
+**normalizzazioni** a dei dati numerici per migliorare le performance del
 modello.
 
 Per comprenderne il motivo, immaginiamo di avere un dataset che comprende
 feature per età (che possiamo presupporre assuma valori da $0$ a $100$) e
-stipendio (che possiamo presupporre assuma valori da $10.000$ a $100.000$ €).
-Quando andiamo ad utilizzare questi valori in algoritmi che effettuano delle
-operazioni tra feature, l'età diventerà presto trascurabile rispetto allo
-stipendio, che è di due o tre ordini di grandezza superiore, per cui il modello
-si troverà a prediligere quest'ultimo in fase di analisi. Ciò implica quindi la
-necessità di arrivare ad una "base comune" a partire dalla quale operare.
+stipendio (che possiamo presupporre assuma valori da $10,000\,€$ a
+$100,000\,€$). Quando andiamo ad utilizzare questi valori in algoritmi che
+effettuano delle operazioni tra feature, l'età diventerà presto trascurabile
+rispetto allo stipendio, che è di due o tre ordini di grandezza superiore, per
+cui il modello si troverà a prediligere quest'ultimo in fase di analisi. Ciò
+implica quindi la necessità di arrivare ad una "base comune" a partire dalla
+quale operare.
 
 Le principali tecniche di normalizzazione disponibili sono quattro.
 
@@ -218,7 +219,7 @@ range che va di solito tra $[0, 1]$ o $[-1, 1]$. La formula dello scaling è la
 seguente:
 
 $$
-y = \frac{(x - x_{min})}{(x_{max} - x_{min})}
+y = \frac{(x - x_{\min})}{(x_{\max} - x_{\min})}
 $$
 
 ##### Clipping ([⮨](#top))
@@ -236,22 +237,22 @@ logaritmica, comprimendo un range ampio in uno più piccolo usando la funzione
 logaritmo:
 
 $$
-y = Log(x)
+y = \log{x}
 $$
 
 ##### Z-score ([⮨](#top))
 
 Un ultimo tipo di trasformazione prevede l'uso dello _z-score_, che prevede una
 riformulazione dei valori assunti dalla feature per fare in modo che questi
-aderiscano ad una distribuzione a media nulla e deviazione tandard unitaria.
+aderiscano ad una distribuzione a media nulla e deviazione standard unitaria.
 Per calcolarlo, si usa la seguente formula:
 
 $$
 y = \frac{x - \mu}{\sigma}
 $$
 
-dove $\mu$ è la media della distribuzione dei nostri dati, mentre $\sigma$ ne è
-chiaramente la varianza.
+dove $\mu$ è la media della distribuzione dei nostri dati, mentre $\sigma$ è
+la varianza.
 
 #### Trasformazione dei dati categorici ([⮨](#top))
 
@@ -267,27 +268,26 @@ possono essere sia stringhe sia numeri.
 > Spesso, dobbiamo trattare feature categoriche che contengono valori numerici.
 > Per fare un esempio, consideriamo il codice postale, che è un numero. Se lo
 > si rappresentasse come una feature di tipo numerico, il nostro modello
-> potrebbe interpretare la distanza tra Bari (70126) e Taranto (74121) come
-> pari a $3.995$, il che non avrebbe ovviamente alcun senso.
+> potrebbe interpretare la distanza tra Bari ($70126$) e Taranto ($74121$) come
+> pari a $3,995$, il che non avrebbe ovviamente alcun senso.
 >
 > </details>
 
-Per essere trattate, comunque, le feature categoriche hanno rappresentazioni di
-tipo numerico, _mantenendo il riferimento al significato categorico e
-discreto_. Per comprendere le implicazioni di questo concetto, immaginiamo i
-giorni della settimana. Il modo più semplice per passare da una
-rappresentazione puramente categorica ad una numerica è quella di usare un
-numero:
+Per essere trattate, le feature categoriche hanno rappresentazioni di tipo
+numerico, _mantenendo il riferimento al significato categorico e discreto_. Per
+comprendere le implicazioni di questo concetto, immaginiamo i giorni della
+settimana. Il modo più semplice per passare da una rappresentazione puramente
+categorica ad una numerica è quella di usare un numero:
 
 | Giorno    | Rappresentazione |
-| --------- | ---------------- |
-| Lunedì    | 1                |
-| Martedì   | 2                |
-| Mercoledì | 3                |
-| Giovedì   | 4                |
-| Venerdì   | 5                |
-| Sabato    | 6                |
-| Domenica  | 7                |
+| :-------- | :--------------- |
+| Lunedì    | $1$              |
+| Martedì   | $2$              |
+| Mercoledì | $3$              |
+| Giovedì   | $4$              |
+| Venerdì   | $5$              |
+| Sabato    | $6$              |
+| Domenica  | $7$              |
 
 In questa maniera creeremo un "dizionario", nel quale potremo accedere ad una
 chiave (la rappresentazione) che rappresenterà un determinato valore (il
@@ -296,8 +296,8 @@ giorno).
 > <details open>
 > <summary>⚠️ <strong>Attenzione!</strong></summary>
 >
-> A valle di questa trasformazione, la differenza aritmetica tra domenica e
-> sabato continua ad avere un senso alquanto limitato, e comunque relativo ad
+> A valle di questa trasformazione, la differenza aritmetica tra Domenica e
+> Sabato continua ad avere un senso alquanto limitato, e comunque relativo a
 > un generico concetto di _distanza_.
 >
 > </details>
@@ -307,16 +307,16 @@ _rappresentazione sparsa_, detta anche _one-hot encoding_, nella quale ogni
 valore è rappresentato da un vettore $V$ di lunghezza $m$, con $m$ numero di
 categorie possibili. In questo caso, tutti i valori di $V$ saranno pari a $0$,
 tranne quello rappresentativo del valore attualmente assunto dalla feature, che
-sarà pari ad $1$. Ad esempio, la rappresentazione sparsa del lunedì è data da:
+sarà pari ad $1$. Ad esempio, la rappresentazione sparsa del Lunedì è data da:
 
-```py
-lunedi = np.array([1 0 0 0 0 0 0])
+```python
+lunedì = np.array([1 0 0 0 0 0 0])
 ```
 
-mentre quella del giovedì:
+mentre quella del Giovedì:
 
-```py
-giovedi = np.array([0 0 0 1 0 0 0])
+```python
+giovedì = np.array([0 0 0 1 0 0 0])
 ```
 
 ### Suddivisione dei dati ([⮨](#top))
@@ -328,6 +328,6 @@ risultati ottenuti; ciò è legato alla volontà di verificare la capacità di
 _generalizzazione_ del modello, ovvero a quanto è in grado di "funzionare" il
 nostro algoritmo in caso di analisi di dati su cui non è stato addestrato.
 
-Un rapporto molto usato in tal senso è quello che prevede che il $70\%$ dei
-dati sia usato per l'addestramento, mentre il restante $30\%$ per la
+Un rapporto molto usato in tal senso è quello che prevede che il $70\,\%$ dei
+dati sia usato per l'addestramento, mentre il restante $30\,\%$ per la
 validazione dei risultati ottenuti.

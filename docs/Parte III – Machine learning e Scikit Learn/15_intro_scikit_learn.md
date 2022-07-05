@@ -24,19 +24,21 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 _Scikit Learn_ è una tra le librerie per il machine learning più utilizzate in
 Python. Ciò avviene principalmente per tre fattori:
 
-- il supporto ad un numero molto elevato di algoritmi di machine learning;
-- la semplicità di utilizzo della libreria;
-- la perfetta integrazione con NumPy e Pandas.
+1. il supporto ad un numero molto elevato di algoritmi di machine learning;
+2. la semplicità di utilizzo della libreria;
+3. la perfetta integrazione con NumPy e Pandas.
 
 Partiamo quindi nella nostra discussione sulla libreria da una panoramica ad
 ampio spettro delle potenzialità della stessa.
 
 Come di consueto, però, la prima cosa da fare è installare la libreria. Per
 farlo, spostiamoci (eventualmente) nell'ambiente virtuale usato per il corso,
-ed usiamo il seguente comando:
+e usiamo il seguente comando:
 
 ```sh
-pip install scikit-learn
+$ pip install scikit-learn
+Collecting scikit-learn
+# ...
 ```
 
 ## Stimatori e transformer ([⮨](#top))
@@ -53,7 +55,7 @@ sono degli estimator, mentre quelle della classe [`StandardScaler`](http://sciki
 sono dei transformer.
 
 Questa suddivisione permette di implementare un'interfaccia comune, la quale
-offre nella maggior parte dei casi i metodi `fit` e `transform` per,
+offre nella maggior parte dei casi i metodi `fit()` e `transform()` per,
 rispettivamente, effettuare l'addestramento e la trasformazione dei dati.
 Tuttavia, è importante notare come ogni stimatore e transformer abbiano
 parametri specifici e dipendenti dalla natura dell'algoritmo utilizzato; ogni
