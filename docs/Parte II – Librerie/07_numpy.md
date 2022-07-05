@@ -1339,16 +1339,35 @@ np.inner(a, b) == sum(a[i, :] * b[j, :])
 ovvero:
 
 $$
-\newcommand{\mtrx}[2]{\begin{pmatrix}#1 \\ #2\end{pmatrix}}
-\newcommand{\ms}[4]{#1 \cdot #2 + #3 \cdot #4}
-
 \begin{align*}
-{\tt dot()}   &= \mtrx{1 & 2}{3 & 4} \cdot \mtrx{5 & 6}{7 & 8}
-               = \mtrx{\ms{1}{5}{2}{7} & \ms{1}{6}{2}{8}}{\ms{3}{5}{4}{7} &
-                 \ms{1}{6}{4}{8}}
-               = \mtrx{19 & 22}{43 & 50}   \\
-{\tt inner()} &= \mtrx{1 & 2}{3 & 4} \cdot \mtrx{5 & 6}{7 & 8}
-               = \mtrx{17 & 23}{39 & 53}
+{\tt dot()}   &= \begin{pmatrix}
+                    1 & 2                                           \\
+                    3 & 4
+                 \end{pmatrix} \cdot
+                 \begin{pmatrix}
+                    5 & 6                                           \\
+                    7 & 8
+                 \end{pmatrix}
+               = \begin{pmatrix}
+                    1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8   \\
+                    3 \cdot 5 + 4 \cdot 7 & 1 \cdot 6 + 4 \cdot 8
+                 \end{pmatrix}
+               = \begin{pmatrix}
+                    19 & 22                                         \\
+                    43 & 50
+                 \end{pmatrix}                                      \\
+{\tt inner()} &= \begin{pmatrix}
+                    1 & 2                                           \\
+                    3 & 4
+                 \end{pmatrix} \cdot
+                 \begin{pmatrix}
+                    5 & 6                                           \\
+                    7 & 8
+                 \end{pmatrix}
+               = \begin{pmatrix}
+                    17 & 23                                         \\
+                    39 & 53
+                 \end{pmatrix}
 \end{align*}
 $$
 
