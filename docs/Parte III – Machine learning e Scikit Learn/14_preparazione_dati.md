@@ -202,8 +202,8 @@ modello.
 
 Per comprenderne il motivo, immaginiamo di avere un dataset che comprende
 feature per età (che possiamo presupporre assuma valori da $0$ a $100$) e
-stipendio (che possiamo presupporre assuma valori da $10,000\,€$ a
-$100,000\,€$). Quando andiamo ad utilizzare questi valori in algoritmi che
+stipendio (che possiamo presupporre assuma valori da $10,000\\,€$ a
+$100,000\\,€$). Quando andiamo ad utilizzare questi valori in algoritmi che
 effettuano delle operazioni tra feature, l'età diventerà presto trascurabile
 rispetto allo stipendio, che è di due o tre ordini di grandezza superiore, per
 cui il modello si troverà a prediligere quest'ultimo in fase di analisi. Ciò
