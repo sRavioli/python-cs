@@ -14,22 +14,6 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 <!-- TOC -->
 
 1. [14 – Preparazione dei dati](#14--preparazione-dei-dati)
-   1. [Il campionamento (⮨)](#il-campionamento-)
-      1. [Dimensione del dataset (⮨)](#dimensione-del-dataset-)
-      2. [Qualità del dataset (⮨)](#qualità-del-dataset-)
-   2. [Preparazione dei dati (⮨)](#preparazione-dei-dati-)
-      1. [Pulizia dei dati (⮨)](#pulizia-dei-dati-)
-      2. [Sbilanciamento del dataset (⮨)](#sbilanciamento-del-dataset-)
-         1. [Influenza dello sbilanciamento (⮨)](#influenza-dello-sbilanciamento-)
-         2. [Sottocampionamento e upweighting (⮨)](#sottocampionamento-e-upweighting-)
-      3. [Trasformazione dei dati (⮨)](#trasformazione-dei-dati-)
-         1. [Trasformazione dei dati numerici (⮨)](#trasformazione-dei-dati-numerici-)
-            1. [Scaling (⮨)](#scaling-)
-            2. [Clipping (⮨)](#clipping-)
-            3. [Trasformazione logaritmica (⮨)](#trasformazione-logaritmica-)
-            4. [Z-score (⮨)](#z-score-)
-         2. [Trasformazione dei dati categorici (⮨)](#trasformazione-dei-dati-categorici-)
-      4. [Suddivisione dei dati (⮨)](#suddivisione-dei-dati-)
 
 <!-- /TOC -->
 
@@ -68,19 +52,19 @@ caratterizzazione del fenomeno sotto osservazione.
 Per comprendere questo concetto, possiamo usare un approccio empirico.
 Immaginiamo di voler creare un modello di predizione delle precipitazioni e di
 dover scegliere per addestrarlo tra due dataset. Il dataset $A$ contiene i
-campionamenti ogni $15\\,{\rm min}$ dei valori di temperatura e di pressione
-degli ultimi $100\\,{\rm a}$, soltanto per il mese di luglio, mentre il dataset
+campionamenti ogni $15\text{ min}$ dei valori di temperatura e di pressione
+degli ultimi $100\text{ a}$, soltanto per il mese di luglio, mentre il dataset
 $B$ contiene un unico valore giornaliero, ma preso per tutti i mesi dell'anno.
-È facile calcolare che il numero di campioni del dataset $A$ è pari a
+È facile calcolare che il numero di campioni del dataset $A$ è pari a:
 
 $$4 \cdot 24 \cdot 31 \cdot 100 = 297,600$$
 
-valori, mentre quello per il dataset $B$ è pari a
+valori, mentre quello per il dataset $B$ è pari a:
 
-$$365 \cdot 100 = 36,500$$
+$$365 \cdot 100 = 36,500\text{.}$$
 
 Tuttavia, la qualità del dataset $B$ è migliore rispetto a quella del dataset
-$A$: infatti, nonostante quest'ultimo abbia quasi il decuplo dei dati
+$A$. Infatti, nonostante quest'ultimo abbia quasi il decuplo dei dati
 ($\times 8.15$), sarà praticamente inutile per la stima delle precipitazioni in
 inverno, primavera o autunno.
 
@@ -144,9 +128,9 @@ tal senso, possiamo rifarci alla seguente tabella:
 
 | Grado di sblianciamento | Percentuale di campioni di classi minoritarie |
 | :---------------------- | :-------------------------------------------- |
-| Leggero                 | dal $20\\,\\%$ al $40\\,\\%$ del dataset      |
-| Moderato                | dall'$1\\,\\%$ al $20\\,\\%$ del dataset      |
-| Estremo                 | meno dell'$1\\,\\%$ del dataset               |
+| Leggero                 | dal $20$ % al $40$ % del dataset              |
+| Moderato                | dall'$1$ % al $20$ % del dataset              |
+| Estremo                 | meno dell'$1$ % del dataset                   |
 
 #### Influenza dello sbilanciamento ([⮨](#top))
 
@@ -154,10 +138,10 @@ Per capire qual è il problema legato allo sbilanciamento del dataset,
 immaginiamo di dover creare un modello che individui una mail di spam. Per
 farlo, usiamo un dataset con la seguente proporzione:
 
-|                    | Mail spam   | Mail non spam |
-| :----------------: | :---------- | :------------ |
-| Numero di immagini | $5$         | $995$         |
-|    Percentuale     | $0.5\\,\\%$ | $99.5\\,\\%$  |
+|                    | Mail spam | Mail non spam |
+| :----------------: | :-------- | :------------ |
+| Numero di immagini | $5$       | $995$         |
+|    Percentuale     | $0.5$ %   | $99.5$ %      |
 
 Il problema sta nel fatto che un numero così esiguo di mail di spam farà sì che
 il modello spenda la maggior parte dell'addestramento su mail normali, non
@@ -175,9 +159,9 @@ numero di campioni di classe maggioritaria (_sottocampionamento_ o
 _downsampling_), dando agli esempi sottocampionati un peso maggiore
 nell'addestramento (_upweighting_).
 
-In pratica, se scegliessimo di mantenere soltanto il $10\\,\\%$ delle mail
+In pratica, se scegliessimo di mantenere soltanto il $10$ % delle mail
 non-spam, avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di
-spam e quelle non di spam a circa il $5\\,\\%$, passando da una situazione di
+spam e quelle non di spam a circa il $5$ %, passando da una situazione di
 sbilanciamento estremo ad una di sbilanciamento moderato.
 
 A valle di questa operazione, dovremmo dare maggior peso ai campioni delle mail
@@ -203,7 +187,7 @@ garantire la compatibilità dei dati, come ad esempio:
 La seconda è legata invece a delle trasformazioni opzionali, che ottimizzano
 l'addestramento del modello. Ad esempio, potremmo dover effettuare la
 _normalizzazione_ dei dati numerici, ovvero portarli tutti all'interno di una
-stessa scala di valori, normalmente compresa tra $[0, 1] \text{ o } [-1, 1]$.
+stessa scala di valori, normalmente compresa tra $0$ ed $1$ o tra $-1$ ed $1$.
 Vediamo più nel dettaglio alcune possibilità.
 
 #### Trasformazione dei dati numerici ([⮨](#top))
@@ -230,7 +214,9 @@ Lo **scaling** prevede la conversione dei valori assunti da una feature in un
 range che va di solito tra $[0, 1] \text{ o } [-1, 1]$. La formula dello
 scaling è la seguente:
 
-$$y = \frac{(x - x_{\rm min})}{(x_{\rm max} - x_{\rm min})}$$
+$$
+y = \frac{(x - x_{\min})}{(x_{\max} - x_{\min})}
+$$
 
 ##### Clipping ([⮨](#top))
 
@@ -246,7 +232,9 @@ Un'altra possibilità è quella di convertire i nostri valori in scala
 logaritmica, comprimendo un range ampio in uno più piccolo usando la funzione
 logaritmo:
 
-$$y = \log{x}$$
+$$
+y = \log{x}
+$$
 
 ##### Z-score ([⮨](#top))
 
@@ -255,7 +243,9 @@ riformulazione dei valori assunti dalla feature per fare in modo che questi
 aderiscano ad una distribuzione a media nulla e deviazione standard unitaria.
 Per calcolarlo, si usa la seguente formula:
 
-$$y = \frac{x - \mu}{\sigma}$$
+$$
+y = \frac{x - \mu}{\sigma}
+$$
 
 dove $\mu$ è la media della distribuzione dei nostri dati, mentre $\sigma$ è
 la varianza.
