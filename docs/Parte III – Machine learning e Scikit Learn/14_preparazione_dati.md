@@ -230,9 +230,7 @@ Lo **scaling** prevede la conversione dei valori assunti da una feature in un
 range che va di solito tra $[0, 1] \text{ o } [-1, 1]$. La formula dello
 scaling è la seguente:
 
-$$
-y = \frac{(x - x_{\rm min})}{(x_{\rm max} - x_{\rm min})}
-$$
+$$y = \frac{(x - x_{\rm min})}{(x_{\rm max} - x_{\rm min})}$$
 
 ##### Clipping ([⮨](#top))
 
@@ -248,9 +246,7 @@ Un'altra possibilità è quella di convertire i nostri valori in scala
 logaritmica, comprimendo un range ampio in uno più piccolo usando la funzione
 logaritmo:
 
-$$
-y = \log{x}
-$$
+$$y = \log{x}$$
 
 ##### Z-score ([⮨](#top))
 
@@ -259,9 +255,7 @@ riformulazione dei valori assunti dalla feature per fare in modo che questi
 aderiscano ad una distribuzione a media nulla e deviazione standard unitaria.
 Per calcolarlo, si usa la seguente formula:
 
-$$
-y = \frac{x - \mu}{\sigma}
-$$
+$$y = \frac{x - \mu}{\sigma}$$
 
 dove $\mu$ è la media della distribuzione dei nostri dati, mentre $\sigma$ è
 la varianza.
