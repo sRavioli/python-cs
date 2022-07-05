@@ -128,9 +128,9 @@ tal senso, possiamo rifarci alla seguente tabella:
 
 | Grado di sblianciamento | Percentuale di campioni di classi minoritarie |
 | :---------------------- | :-------------------------------------------- |
-| Leggero                 | dal $20$ % al $40$ % del dataset              |
-| Moderato                | dall'$1$ % al $20$ % del dataset              |
-| Estremo                 | meno dell'$1$ % del dataset                   |
+| Leggero                 | dal $20$% al $40$% del dataset                |
+| Moderato                | dall'$1$% al $20$% del dataset                |
+| Estremo                 | meno dell'$1$% del dataset                    |
 
 #### Influenza dello sbilanciamento ([⮨](#top))
 
@@ -141,7 +141,7 @@ farlo, usiamo un dataset con la seguente proporzione:
 |                    | Mail spam | Mail non spam |
 | :----------------: | :-------- | :------------ |
 | Numero di immagini | $5$       | $995$         |
-|    Percentuale     | $0.5$ %   | $99.5$ %      |
+|    Percentuale     | $0.5$%    | $99.5$%       |
 
 Il problema sta nel fatto che un numero così esiguo di mail di spam farà sì che
 il modello spenda la maggior parte dell'addestramento su mail normali, non
@@ -159,10 +159,10 @@ numero di campioni di classe maggioritaria (_sottocampionamento_ o
 _downsampling_), dando agli esempi sottocampionati un peso maggiore
 nell'addestramento (_upweighting_).
 
-In pratica, se scegliessimo di mantenere soltanto il $10$ % delle mail
-non-spam, avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di
-spam e quelle non di spam a circa il $5$ %, passando da una situazione di
-sbilanciamento estremo ad una di sbilanciamento moderato.
+In pratica, se scegliessimo di mantenere soltanto il $10$% delle mail non-spam,
+avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di spam e quelle
+non di spam a circa il $5$%, passando da una situazione di sbilanciamento estremo
+ad una di sbilanciamento moderato.
 
 A valle di questa operazione, dovremmo dare maggior peso ai campioni delle mail
 non-spam, usando un fattore tendenzialmente pari a quello che abbiamo usato in
@@ -187,7 +187,7 @@ garantire la compatibilità dei dati, come ad esempio:
 La seconda è legata invece a delle trasformazioni opzionali, che ottimizzano
 l'addestramento del modello. Ad esempio, potremmo dover effettuare la
 _normalizzazione_ dei dati numerici, ovvero portarli tutti all'interno di una
-stessa scala di valori, normalmente compresa tra $0$ ed $1$ o tra $-1$ ed $1$.
+stessa scala di valori, normalmente compresa tra $[0, 1] \text{ o } [-1, 1]$.
 Vediamo più nel dettaglio alcune possibilità.
 
 #### Trasformazione dei dati numerici ([⮨](#top))
@@ -198,8 +198,8 @@ modello.
 
 Per comprenderne il motivo, immaginiamo di avere un dataset che comprende
 feature per età (che possiamo presupporre assuma valori da $0$ a $100$) e
-stipendio (che possiamo presupporre assuma valori da $10,000\\,€$ a
-$100,000\\,€$). Quando andiamo ad utilizzare questi valori in algoritmi che
+stipendio (che possiamo presupporre assuma valori da $10,000$€ a
+$100,000$€). Quando andiamo ad utilizzare questi valori in algoritmi che
 effettuano delle operazioni tra feature, l'età diventerà presto trascurabile
 rispetto allo stipendio, che è di due o tre ordini di grandezza superiore, per
 cui il modello si troverà a prediligere quest'ultimo in fase di analisi. Ciò
@@ -214,9 +214,7 @@ Lo **scaling** prevede la conversione dei valori assunti da una feature in un
 range che va di solito tra $[0, 1] \text{ o } [-1, 1]$. La formula dello
 scaling è la seguente:
 
-$$
-y = \frac{(x - x_{\min})}{(x_{\max} - x_{\min})}
-$$
+$$y = \frac{(x - x_{\text{min}})}{(x_{\text{max}} - x_{\text{min}})}$$
 
 ##### Clipping ([⮨](#top))
 
@@ -224,7 +222,7 @@ Può capitare che il dataset contenga degli _outlier_, ovvero dei campioni che
 divergono notevolmente dalle caratteristiche statistiche del dataset. In questo
 caso, potremmo limitarci a rimuovere completamente tali valori mediante soglie
 statistiche, come i range interquartili in caso di distribuzione parametrica, o
-i classici $3 \sigma$ in caso di distribuzione normale.
+i classici $3\sigma$ in caso di distribuzione normale.
 
 ##### Trasformazione logaritmica ([⮨](#top))
 
@@ -232,9 +230,7 @@ Un'altra possibilità è quella di convertire i nostri valori in scala
 logaritmica, comprimendo un range ampio in uno più piccolo usando la funzione
 logaritmo:
 
-$$
-y = \log{x}
-$$
+$$y = \log{x}$$
 
 ##### Z-score ([⮨](#top))
 
@@ -243,9 +239,7 @@ riformulazione dei valori assunti dalla feature per fare in modo che questi
 aderiscano ad una distribuzione a media nulla e deviazione standard unitaria.
 Per calcolarlo, si usa la seguente formula:
 
-$$
-y = \frac{x - \mu}{\sigma}
-$$
+$$y = \frac{x - \mu}{\sigma}$$
 
 dove $\mu$ è la media della distribuzione dei nostri dati, mentre $\sigma$ è
 la varianza.
@@ -324,6 +318,6 @@ risultati ottenuti; ciò è legato alla volontà di verificare la capacità di
 _generalizzazione_ del modello, ovvero a quanto è in grado di "funzionare" il
 nostro algoritmo in caso di analisi di dati su cui non è stato addestrato.
 
-Un rapporto molto usato in tal senso è quello che prevede che il $70\\,\\%$ dei
-dati sia usato per l'addestramento, mentre il restante $30\\,\\%$ per la
-validazione dei risultati ottenuti.
+Un rapporto molto usato in tal senso è quello che prevede che il $70$% dei
+dati sia usato per l'addestramento, mentre il restante $30$% per la validazione
+dei risultati ottenuti.
