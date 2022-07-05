@@ -215,8 +215,8 @@ Le principali tecniche di normalizzazione disponibili sono quattro.
 ##### Scaling ([⮨](#top))
 
 Lo **scaling** prevede la conversione dei valori assunti da una feature in un
-range che va di solito tra $[0, 1]$ oppure $[-1, 1]$. La formula dello scaling è la
-seguente:
+range che va di solito tra $[0, 1] \text{ o } [-1, 1]$. La formula dello
+scaling è la seguente:
 
 $$
 y = \frac{(x - x_{\min})}{(x_{\max} - x_{\min})}
