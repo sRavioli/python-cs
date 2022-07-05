@@ -73,11 +73,11 @@ degli ultimi $100\\,{\rm a}$, soltanto per il mese di luglio, mentre il dataset
 $B$ contiene un unico valore giornaliero, ma preso per tutti i mesi dell'anno.
 È facile calcolare che il numero di campioni del dataset $A$ è pari a
 
-$$4 \cdot 24 \cdot 31 \cdot 100 = 297\,600$$
+$$4 \cdot 24 \cdot 31 \cdot 100 = 297,600$$
 
 valori, mentre quello per il dataset $B$ è pari a
 
-$$365 \cdot 100 = 36\,500$$
+$$365 \cdot 100 = 36,500$$
 
 Tuttavia, la qualità del dataset $B$ è migliore rispetto a quella del dataset
 $A$: infatti, nonostante quest'ultimo abbia quasi il decuplo dei dati
@@ -203,7 +203,7 @@ garantire la compatibilità dei dati, come ad esempio:
 La seconda è legata invece a delle trasformazioni opzionali, che ottimizzano
 l'addestramento del modello. Ad esempio, potremmo dover effettuare la
 _normalizzazione_ dei dati numerici, ovvero portarli tutti all'interno di una
-stessa scala di valori, normalmente compresa tra $0$ e $1$ o tra $-1$ ed $1$.
+stessa scala di valori, normalmente compresa tra $[0, 1] \text{ o } [-1, 1]$.
 Vediamo più nel dettaglio alcune possibilità.
 
 #### Trasformazione dei dati numerici ([⮨](#top))
@@ -231,7 +231,7 @@ range che va di solito tra $[0, 1] \text{ o } [-1, 1]$. La formula dello
 scaling è la seguente:
 
 $$
-y = \frac{(x - x_{\min})}{(x_{\max} - x_{\min})}
+y = \frac{(x - x_{\rm min})}{(x_{\rm max} - x_{\rm min})}
 $$
 
 ##### Clipping ([⮨](#top))
