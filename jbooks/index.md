@@ -10,4 +10,4 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 | :---------------------------- | :------------------------------------- |
 | Numpy, Operazioni matriciali  | [:link:](./7.4_numpy_matrix_ops.ipynb) |
 | Numpy, Operazioni polinomiali | [:link:](./7.5_numpy_poly_ops.ipynb)   |
-| Numpy, Statistica             | [:link:](./7.6_numpy_statistica.ipynb) |
+| Numpy, Statistica             | [:link:](./7.6_numpy_statistics.ipynb) |
