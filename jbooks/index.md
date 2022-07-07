@@ -1,0 +1,13 @@
+# Indice dei Jupyter notebooks
+
+> Corso di Python per il Calcolo Scientifico
+>
+> Appunti redatti da Simone Fidanza, s.fidanza1@studenti.uniba.it
+
+Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
+
+| Lezione                       | Notebook                               |
+| :---------------------------- | :------------------------------------- |
+| Numpy, Operazioni matriciali  | [:link:](./7.4_numpy_matrix_ops.ipynb) |
+| Numpy, Operazioni polinomiali | [:link:](./7.5_numpy_poly_ops.ipynb)   |
+| Numpy, Statistica             | [:link:](./7.6_numpy_statistica.ipynb) |
