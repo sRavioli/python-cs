@@ -68,8 +68,8 @@ caratterizzazione del fenomeno sotto osservazione.
 Per comprendere questo concetto, possiamo usare un approccio empirico.
 Immaginiamo di voler creare un modello di predizione delle precipitazioni e di
 dover scegliere per addestrarlo tra due dataset. Il dataset $A$ contiene i
-campionamenti ogni $15\text{ min}$ dei valori di temperatura e di pressione
-degli ultimi $100\text{ a}$, soltanto per il mese di luglio, mentre il dataset
+campionamenti ogni $15\\,{\rm min}$ dei valori di temperatura e di pressione
+degli ultimi $100\\,{\rm a}$, soltanto per il mese di luglio, mentre il dataset
 $B$ contiene un unico valore giornaliero, ma preso per tutti i mesi dell'anno.
 È facile calcolare che il numero di campioni del dataset $A$ è pari a:
 
@@ -144,9 +144,9 @@ tal senso, possiamo rifarci alla seguente tabella:
 
 | Grado di sblianciamento | Percentuale di campioni di classi minoritarie |
 | :---------------------- | :-------------------------------------------- |
-| Leggero                 | dal $20$% al $40$% del dataset                |
-| Moderato                | dall'$1$% al $20$% del dataset                |
-| Estremo                 | meno dell'$1$% del dataset                    |
+| Leggero                 | dal $20\\,\\%$ al $40\\,\\%$ del dataset      |
+| Moderato                | dall'$1\\,\\%$ al $20\\,\\%$ del dataset      |
+| Estremo                 | meno dell'$1\\,\\%$ del dataset               |
 
 #### Influenza dello sbilanciamento ([⮨](#top))
 
@@ -154,10 +154,10 @@ Per capire qual è il problema legato allo sbilanciamento del dataset,
 immaginiamo di dover creare un modello che individui una mail di spam. Per
 farlo, usiamo un dataset con la seguente proporzione:
 
-|                    | Mail spam | Mail non spam |
-| :----------------: | :-------- | :------------ |
-| Numero di immagini | $5$       | $995$         |
-|    Percentuale     | $0.5$%    | $99.5$%       |
+|                    | Mail spam   | Mail non spam |
+| :----------------: | :---------- | :------------ |
+| Numero di immagini | $5$         | $995$         |
+|    Percentuale     | $0.5\\,\\%$ | $99.5\\,\\%$  |
 
 Il problema sta nel fatto che un numero così esiguo di mail di spam farà sì che
 il modello spenda la maggior parte dell'addestramento su mail normali, non
@@ -175,10 +175,10 @@ numero di campioni di classe maggioritaria (_sottocampionamento_ o
 _downsampling_), dando agli esempi sottocampionati un peso maggiore
 nell'addestramento (_upweighting_).
 
-In pratica, se scegliessimo di mantenere soltanto il $10$% delle mail non-spam,
-avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di spam e quelle
-non di spam a circa il $5$%, passando da una situazione di sbilanciamento estremo
-ad una di sbilanciamento moderato.
+In pratica, se scegliessimo di mantenere soltanto il $10\\,\\%$ delle mail non-
+spam, avremmo circa $99$ campioni. Ciò porterà il rapporto tra le mail di spam e
+quelle non di spam a circa il $5\\,\\%$, passando da una situazione di
+sbilanciamento estremo ad una di sbilanciamento moderato.
 
 A valle di questa operazione, dovremmo dare maggior peso ai campioni delle mail
 non-spam, usando un fattore tendenzialmente pari a quello che abbiamo usato in
@@ -214,8 +214,8 @@ modello.
 
 Per comprenderne il motivo, immaginiamo di avere un dataset che comprende
 feature per età (che possiamo presupporre assuma valori da $0$ a $100$) e
-stipendio (che possiamo presupporre assuma valori da $10,000$€ a
-$100,000$€). Quando andiamo ad utilizzare questi valori in algoritmi che
+stipendio (che possiamo presupporre assuma valori da $10,000\\,€$ a
+$100,000\\,€$). Quando andiamo ad utilizzare questi valori in algoritmi che
 effettuano delle operazioni tra feature, l'età diventerà presto trascurabile
 rispetto allo stipendio, che è di due o tre ordini di grandezza superiore, per
 cui il modello si troverà a prediligere quest'ultimo in fase di analisi. Ciò
@@ -334,6 +334,6 @@ risultati ottenuti; ciò è legato alla volontà di verificare la capacità di
 _generalizzazione_ del modello, ovvero a quanto è in grado di "funzionare" il
 nostro algoritmo in caso di analisi di dati su cui non è stato addestrato.
 
-Un rapporto molto usato in tal senso è quello che prevede che il $70$% dei
-dati sia usato per l'addestramento, mentre il restante $30$% per la validazione
-dei risultati ottenuti.
+Un rapporto molto usato in tal senso è quello che prevede che il $70\\,\\%$ dei
+dati sia usato per l'addestramento, mentre il restante $30\\,\\%$ per la
+validazione dei risultati ottenuti.
