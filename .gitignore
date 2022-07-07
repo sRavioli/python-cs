@@ -1,4 +1,5 @@
 PythonCS.code-workspace
 .markdownlint.json
+.ipynb_checkpoints
 .vscode/
 noodles/
