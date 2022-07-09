@@ -17,7 +17,7 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
    1. [Visualizzare i dati in Python (⮨)](#visualizzare-i-dati-in-python-)
       1. [Installazione della libreria (⮨)](#installazione-della-libreria-)
    2. [Il primo plot (⮨)](#il-primo-plot-)
-   3. [Figure ed assi](#figure-ed-assi)
+   3. [Figure ed assi (⮨)](#figure-ed-assi-)
    4. [Esempi con Matplotlib (⮨)](#esempi-con-matplotlib-)
       1. [Plot di più Funzioni (⮨)](#plot-di-più-funzioni-)
       2. [Subplot (⮨)](#subplot-)
@@ -103,7 +103,7 @@ immagine:
 
 Cerchiamo adesso di approfondire i concetti di funzionamento di Matplotlib.
 
-## Figure ed assi
+## Figure ed assi ([⮨](#top))
 
 Alla base del funzionamento di Matplotlib abbiamo quattro classi fondamentali.
 
