@@ -27,6 +27,11 @@ Potrebbero essere presenti dei file del tipo `L<num>_temp.md`, sono i file degli
 appunti presi a lezione, non ancora rielaborati. Questi file saranno eliminati
 quando verranno rielaborati.
 
+### `📁 jbooks`
+
+Ogni notebook corrisponde ad un esempio o esercizio. Per facilitarne la
+consultazione è presente un indice ([index.md](jbooks/index.md)).
+
 ### `📁 py`
 
 Ogni file Python corrisponde ad un esercizio svolto a lezione, oppure che è
