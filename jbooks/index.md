@@ -14,3 +14,6 @@ Angelo Cardellicchio, angelo.cardellicchio@stiima.cnr.it
 | Numpy, Statistica             | [:link:](./7.6_numpy_statistics.ipynb) |
 | Matplotlib                    | [:link:](./8_matplotlib.ipynb)         |
 | Pandas                        | [:link:](./9_pandas.ipynb)             |
+| Seaborn                       | [:link:](./10_seaborn.)                |
+| SciPy                         | [:link:](./10_seaborn.ipynb)           |
+| Regressione lineare           | [:link:](./16_linear_regression.ipynb) |
