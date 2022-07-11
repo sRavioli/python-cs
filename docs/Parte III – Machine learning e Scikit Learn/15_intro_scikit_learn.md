@@ -36,9 +36,8 @@ farlo, spostiamoci (eventualmente) nell'ambiente virtuale usato per il corso,
 e usiamo il seguente comando:
 
 ```sh
-$ pip install scikit-learn
-Collecting scikit-learn
-# ...
+$ conda activate <my-env>
+(<my-env>) ~$ pip install scikit-learn
 ```
 
 ## Stimatori e transformer ([⮨](#top))
