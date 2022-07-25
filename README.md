@@ -13,6 +13,7 @@ precedente, nonché includere gli esercizi svolti sia a lezione che non.
 La struttura della repository è semplice:
 
 - `📁 docs` contiene tutti gli appunti del corso;
+- `📁 jbooks` contiene tutti i Jupyter Notebooks relativi al corso;
 - `📁 py` contiene tutti i file `.py` relativi al corso;
 - `📁 .husky` contiene i _Git hooks_.
 
@@ -21,16 +22,12 @@ La struttura della repository è semplice:
 Ogni file Markdown ([GitHub Flavoured Markdown](https://github.github.com/gfm/)),
 corrisponde ad un argomento/capitolo differente. Per facilitarne la navigazione
 presentano un indice a due cifre seguito da un'abbreviazione del
-titolo dell'argomento/capitolo, ad esempio: `00_introduzione_corso.md`.
-
-Potrebbero essere presenti dei file del tipo `L<num>_temp.md`, sono i file degli
-appunti presi a lezione, non ancora rielaborati. Questi file saranno eliminati
-quando verranno rielaborati.
+titolo dell'argomento, ad esempio: `00_introduzione_corso.md`.
 
 ### `📁 jbooks`
 
-Ogni notebook corrisponde ad un esempio o esercizio. Per facilitarne la
-consultazione è presente un indice ([index.md](jbooks/index.md)).
+Ogni notebook corrisponde ad un esempio o esercizio relativo ad un argomento.
+Per facilitarne la consultazione è presente un indice ([index.md](jbooks/index.md)).
 
 ### `📁 py`
 
@@ -49,8 +46,8 @@ ad esempio: `01_L_itera_while.py`.
 Nelle prime righe di ogni file di esercizi sarà riportata la traccia dello
 stesso.
 
-La soluzione che non corrisponde a quella del professore verrà commentata e
-lasciata nell'esercizio. Gli esercizi verranno, inoltre, commentati a dovere.
+I file presenteranno una soluzione, dopo questa sarà presente quella del
+professore che sarà commentata. Ogni esercizio sarà commentato a dovere.
 
 ### `📁 .husky`
 
@@ -64,13 +61,34 @@ Nella cartella sono presenti due _hooks_:
    [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/);
 2. Un hook personalizzato. Questo, prima di effettuare il _push_, controlla se
    il file `noodles.yaml` (dove viene esportato l'ambiente _conda_) è stato
-   modificato.
+   aggiornato.
 
 ## Importare l'ambiente conda
 
-Come importare l'ambiente conda dal file `noodles.yaml`.
+Come importare l'ambiente conda dal file `noodles.yaml`. È necessario aprire una
+finestra di terminale per i seguenti passaggi:
 
-Work in Progress
+1. Creare l'ambiente dal file `noodles.yaml`:
+
+   ```shell
+   conda env create -f noodles.yaml
+   ```
+
+2. Attivare l'ambiente appena creato:
+
+   ```shell
+   conda activate noodles
+   ```
+
+3. Verificare che l'ambiente sia stato installato correttamente:
+
+   ```shell
+   conda env list
+   ```
+
+   oppure `conda info --envs`
+
+Maggiori informazioni sono disponibili su [docs.conda.io](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file)
 
 ## License
 
