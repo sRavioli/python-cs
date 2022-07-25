@@ -1,5 +1,6 @@
 name: C:\Users\pc\Documents\UNI\PythonCS\noodles
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - ca-certificates=2022.3.29=haa95532_1
